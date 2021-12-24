@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Trip extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'description',
+        'max_visitors',
+        'price',
+        'date',
+    ];
 
     // For Guide [one-many]
     public function guide(){

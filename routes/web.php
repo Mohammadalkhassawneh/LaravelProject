@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,5 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
-Route::get('/trips', function () {
-    return view('admin.trips');
-});
+
+Route::resource('/trips',TripController::class);
