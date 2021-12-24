@@ -10,10 +10,11 @@
                         <div class="card">
                             <div class="card-header">Add Admin</div>
                             <div class="card-body card-block">
-                                <form action="" method="post" class="">
+                                <form action="{{'store'}}" method="post" class="create_user" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" id="username2" name="username2" placeholder="Username" class="form-control">
+                                            <input type="text" id="username2" name="name" placeholder="Admin Name" class="form-control">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-user"></i>
                                             </div>
@@ -21,7 +22,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="email" id="email2" name="email2" placeholder="Email" class="form-control">
+                                            <input type="email" id="email2" name="email" placeholder="Email" class="form-control">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-envelope"></i>
                                             </div>
@@ -29,9 +30,25 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
-                                            <input type="password" id="password2" name="password2" placeholder="Password" class="form-control">
+                                            <input type="password" id="password2" name="password" placeholder="Password" class="form-control">
                                             <div class="input-group-addon">
                                                 <i class="fa fa-asterisk"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="number" id="phone" name="phone" placeholder="Phone" class="form-control">
+                                            <div class="input-group-addon">
+                                                <i class="fas fa-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="file" id="image" name="image" placeholder="Image" class="form-control">
+                                            <div class="input-group-addon">
+                                                <i class="fas fa-camera"></i>
                                             </div>
                                         </div>
                                     </div>

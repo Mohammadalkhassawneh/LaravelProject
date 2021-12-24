@@ -26,6 +26,11 @@ Route::get('/trips', function () {
 
 // user routes
 Route::get('/user', [UserController::class, 'index']);
-Route::get('/create_user', [UserController::class, 'create']);
+Route::get('/create', [UserController::class, 'create']);
+Route::post('/store', [UserController::class, 'store']);
+// Route::post('/delete', [UserController::class, 'destroy']);
+Route::get('/delete.{id}', [UserController::class, 'destroy']);
+
+
 
 
