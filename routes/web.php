@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ReseverationController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,14 @@ Route::get('/', function () {
 });
 Route::get('/admin', function () {
     return view('admin.index');
-});
+})->name("admin");
+
+// Hazem
+
+Route::resource("/reservation",ReseverationController::class);
+
+//
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
