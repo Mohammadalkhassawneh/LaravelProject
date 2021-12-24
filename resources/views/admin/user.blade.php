@@ -44,28 +44,27 @@
                                     <td>{{$user->role_type}}</td>
                                     <td>
                                         <div class="table-data-feature">
-                                            <!-- <form action="{{'delete{$user->id}'}}" method="POST"> -->
+                                            <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <a href="/delete.{{$user->id}}"><i class="zmdi zmdi-delete"></i></a>
 
-                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <a href="/delete.{{$user->id}}"><i class="zmdi zmdi-delete"></i></a>
+                                            </button>
+                                            <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <a href="/edit_user{{$user->id}}"><i class="zmdi zmdi-edit"></i></a>
 
-                                    </button>
-                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                        <i class="zmdi zmdi-edit"></i>
-                                    </button>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="spacer"></tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    </td>
-                    </tr>
-                    <tr class="spacer"></tr>
-                    @endforeach
-                    </tbody>
-                    </table>
+                    <!-- END DATA TABLE -->
                 </div>
-                <!-- END DATA TABLE -->
             </div>
         </div>
     </div>
-</div>
 </div>
 
 

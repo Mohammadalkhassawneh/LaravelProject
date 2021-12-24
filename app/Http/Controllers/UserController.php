@@ -53,18 +53,6 @@ class UserController extends Controller
 
         return view('admin.user', compact('users'));
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -73,7 +61,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edited_user = User::find($id);
+        return view('admin.edit_user', compact('edited_user'));
     }
 
     /**
@@ -83,9 +72,18 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,)
     {
-        //
+        $user = User::find($request->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->phone = $request->phone;
+        $user->role_type = 'admin';
+        $user->save();
+
+        $users = User::all();
+        return view('admin.user', compact('users')); 
     }
 
     /**

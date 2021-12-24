@@ -28,8 +28,11 @@ Route::get('/trips', function () {
 Route::get('/user', [UserController::class, 'index']);
 Route::get('/create', [UserController::class, 'create']);
 Route::post('/store', [UserController::class, 'store']);
-// Route::post('/delete', [UserController::class, 'destroy']);
 Route::get('/delete.{id}', [UserController::class, 'destroy']);
+Route::get('/edit_user{id}', [UserController::class, 'edit']);
+Route::post('/update', [UserController::class, 'update']);
+
+
 
 
 
