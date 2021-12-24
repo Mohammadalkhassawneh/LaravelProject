@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,20 @@ Route::resource("/reservation",ReseverationController::class);
 
 //
 
+
+Route::get('/index', function () {
+    return view('publicSite.index');
+});
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/trips',TripController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+

@@ -189,7 +189,7 @@
                                 <i class="fas fa-table"></i>Categories</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href="{{ asset('trips') }}">
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
                         <li class="{{(request()->segment(1) == 'reservation') ? 'active' : '' }}">
