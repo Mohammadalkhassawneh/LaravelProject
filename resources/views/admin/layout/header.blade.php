@@ -128,7 +128,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="{{'user'}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
