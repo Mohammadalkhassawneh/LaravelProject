@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\ReseverationController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +23,17 @@ Route::get('/', function () {
 });
 Route::get('/admin', function () {
     return view('admin.index');
+})->name("admin");
+
+// Hazem
+
+Route::resource("/reservation",ReseverationController::class);
+
+//
+
+
+Route::get('/index', function () {
+    return view('publicSite.index');
 });
 Route::get('/trips', function () {
     return view('admin.trips');
@@ -36,5 +51,16 @@ Route::post('/update', [UserController::class, 'update']);
 
 
 
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/trips',TripController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

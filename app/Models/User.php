@@ -50,7 +50,7 @@ class User extends Authenticatable
     }
 
     public function reservation() {
-        return $this->belongsToMany(Trip::class);
+        return $this->belongsToMany(Trip::class)->withPivot('id','booking_date','status');
     }
 
 }
