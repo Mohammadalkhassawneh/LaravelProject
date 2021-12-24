@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,8 +27,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/a', function(){
 
-return view('publicSite.index');
-
-});
+Route::resource('/trips',TripController::class);
