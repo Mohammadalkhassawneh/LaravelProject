@@ -10,7 +10,17 @@
                     <h3 class="title-5 m-b-35">Manage Users</h3>
                     <div class="table-data__tool">
                         <div class="table-data__tool-left">
+                            <div class="rs-select2--light rs-select2--md">
+                                <select class="js-select2" name="property">
+                                    <option selected="selected">All Users</option>
+                                    @foreach($roles as $role)
+                                    <option><a href="/search.{{$role}}">{{$role}}</a></option>
+                                    @endforeach
+                                </select>
+                                <div class="dropDownSelect2"></div>
+                            </div>
                         </div>
+
                         <div class="table-data__tool-right">
                             <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                 <i class="zmdi zmdi-plus"></i><a href="{{'create'}}">Add Admin</a></button>
@@ -23,7 +33,7 @@
                                     <th>name</th>
                                     <th>email</th>
                                     <th>password</th>
-                                    <!-- <th>image</th> -->
+                                    <th>image</th>
                                     <th>phone</th>
                                     <th>date-created</th>
                                     <th>date-login</th>
@@ -37,7 +47,7 @@
                                     <td>{{$user->email}}
                                     </td>
                                     <td>{{$user->password}}</td>
-                                    <!-- <td><img src="{{asset('user_images/'.$user->image)}}" alt="admin_photo"></td> -->
+                                    <td><img src="{{asset('user_images/'.$user->image)}}" alt="admin_photo"></td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>{{$user->updated_at}}</td>

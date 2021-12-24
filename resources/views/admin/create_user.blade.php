@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header">Add Admin</div>
                             <div class="card-body card-block">
-                                <form action="{{'store'}}" method="post" class="create_user" enctype="multipart/form-data">
+                                <form action="{{'store'}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <div class="input-group">

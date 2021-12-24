@@ -26,6 +26,7 @@ Route::get('/trips', function () {
 
 // user routes
 Route::get('/user', [UserController::class, 'index']);
+Route::get('/search.{$role}', [UserController::class, 'index']);
 Route::get('/create', [UserController::class, 'create']);
 Route::post('/store', [UserController::class, 'store']);
 Route::get('/delete.{id}', [UserController::class, 'destroy']);

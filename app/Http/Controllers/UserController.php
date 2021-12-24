@@ -13,10 +13,16 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($role='all')
     {
-        $users = User::all();
-        return view('admin.user', compact('users'));
+        $roles = array('admin', 'user', 'guide');
+
+        if($role === 'all'){
+            $users = User::all();
+        }else{
+            $users = User::find($role);
+        }
+        return view('admin.user', compact('users', 'roles'));
     }
 
     /**
