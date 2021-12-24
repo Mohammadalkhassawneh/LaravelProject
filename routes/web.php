@@ -23,9 +23,19 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
+Route::get('/index', function () {
+    return view('publicSite.index');
+});
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/trips',TripController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('/trips',TripController::class);

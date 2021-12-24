@@ -15,36 +15,7 @@
         </section><!-- /.banner-two -->
 
 
-        <section class="tour-search-one__home-two">
-            <div class="container">
-                <form class="tour-search-one wow fadeIn" action="http://layerdrops.com/tripo/tour-sidebar.html" data-wow-duration="1500ms">
-                    <div class="tour-search-one__inner">
-                        <div class="tour-search-one__inputs">
-                            <div class="tour-search-one__input-box">
-                                <label for="place">Where to</label>
-                                <input type="text" placeholder="Enter keywords" name="place" id="place">
-                            </div><!-- /.tour-search-one__input-box -->
-                            <div class="tour-search-one__input-box">
-                                <label for="when">When</label>
-                                <input type="text" placeholder="September" name="when" id="when">
-                            </div><!-- /.tour-search-one__input-box -->
-                            <div class="tour-search-one__input-box">
-                                <label for="type">Type</label>
-                                <select class="selectpicker" id="type">
-                                    <option value="Adventure">Adventure</option>
-                                    <option value="Adventure">Adventure</option>
-                                    <option value="Wildlife">Wildlife</option>
-                                    <option value="Sightseeing">Sightseeing</option>
-                                </select>
-                            </div><!-- /.tour-search-one__input-box -->
-                        </div><!-- /.tour-search-one__inputs -->
-                        <div class="tour-search-one__btn-wrap">
-                            <button type="submit" class="thm-btn tour-search-one__btn">Find now</button>
-                        </div><!-- /.tour-search-one__btn-wrap -->
-                    </div><!-- /.tour-search-one__inner -->
-                </form><!-- /.tour-search-one -->
-            </div><!-- /.container -->
-        </section>
+        
 
 
         <section class="destinations-three">
@@ -111,46 +82,7 @@
 
         </section><!-- /.destinations-three -->
 
-        <section class="tour-category-one">
-            <div class="container">
-                <div class="block-title text-center">
-                    <p>Tour type list</p>
-                    <h3>Search Tours by Types</h3>
-                </div><!-- /.block-title -->
-                <div class="row">
-                    <div class="tour-category-one__col wow fadeInUp " data-wow-duration="1500ms" data-wow-delay="000ms">
-                        <div class="tour-category-one__single">
-                            <i class="tripo-icon-flag"></i>
-                            <h3><a href="tour-standard.html">Adventure <br> Tours</a></h3>
-                        </div><!-- /.tour-category-one__single -->
-                    </div><!-- /.tour-category-one__col -->
-                    <div class="tour-category-one__col wow fadeInDown " data-wow-duration="1500ms" data-wow-delay="100ms">
-                        <div class="tour-category-one__single">
-                            <i class="tripo-icon-deer"></i>
-                            <h3><a href="tour-sidebar.html">Wildlife <br> Tours</a></h3>
-                        </div><!-- /.tour-category-one__single -->
-                    </div><!-- /.tour-category-one__col -->
-                    <div class="tour-category-one__col wow fadeInUp " data-wow-duration="1500ms" data-wow-delay="200ms">
-                        <div class="tour-category-one__single">
-                            <i class="tripo-icon-sunset"></i>
-                            <h3><a href="tour-standard.html">Sightseeing <br> Tours</a></h3>
-                        </div><!-- /.tour-category-one__single -->
-                    </div><!-- /.tour-category-one__col -->
-                    <div class="tour-category-one__col wow fadeInDown " data-wow-duration="1500ms" data-wow-delay="300ms">
-                        <div class="tour-category-one__single">
-                            <i class="tripo-icon-paragliding"></i>
-                            <h3><a href="tour-sidebar.html">Paragliding <br> Tours</a></h3>
-                        </div><!-- /.tour-category-one__single -->
-                    </div><!-- /.tour-category-one__col -->
-                    <div class="tour-category-one__col wow fadeInUp " data-wow-duration="1500ms" data-wow-delay="400ms">
-                        <div class="tour-category-one__single">
-                            <i class="tripo-icon-hang-gliding"></i>
-                            <h3><a href="tour-standard.html">Hang Gliding <br> Tours</a></h3>
-                        </div><!-- /.tour-category-one__single -->
-                    </div><!-- /.tour-category-one__col -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.tour-category-one -->
+        
 
 
 
@@ -356,7 +288,7 @@
         </section><!-- /.tour-one -->
 
 
-        <section class="testimonials-one">
+        {{-- <section class="testimonials-one">
             <div class="container">
                 <div class="block-title text-center">
                     <p>checkout our</p>
@@ -527,18 +459,18 @@
                     </div><!-- /.item -->
                 </div><!-- /.row -->
             </div><!-- /.container -->
-        </section><!-- /.testimonials-one -->
+        </section><!-- /.testimonials-one --> --}}
 
         <section class="cta-four" style="background-image: url(assets/images/backgrounds/cta-4-bg.jpg);">
             <div class="container">
                 <p>Find next place to visit</p>
                 <h3>Explore the <span>world</span></h3>
-                <a href="tour-details.html" class="thm-btn cta-four__btn">Start Booking now</a><!-- /.thm-btn -->
+                {{-- <a href="tour-details.html" class="thm-btn cta-four__btn">Start Booking now</a><!-- /.thm-btn --> --}}
             </div><!-- /.container -->
         </section><!-- /.cta-four -->
 
 
-        <div class="brand-one brand-one__home-two">
+        {{-- <div class="brand-one brand-one__home-two">
             <div class="container">
                 <div class="brand-one__carousel owl-theme owl-carousel thm__owl-carousel" data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": false, "margin": 115, "responsive": { "0": { "items": 2, "margin": 20 }, "480": { "items": 2, "margin": 20 }, "767": { "items": 3, "margin": 20 }, "991": { "items": 4, "margin": 40 }, "1199": { "items": 5 } }}'>
                     <div class="item">
@@ -573,7 +505,7 @@
                     </div><!-- /.item -->
                 </div><!-- /.brand-one__carousel owl-theme owl-carousel thm__owl-carousel -->
             </div><!-- /.container -->
-        </div><!-- /.brand-one -->
+        </div><!-- /.brand-one --> --}}
 
         <section class="blog-one">
             <div class="container">
@@ -637,15 +569,15 @@
         <section class="mailchimp-one">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-5">
+                    <div class="col-lg-7">
                         <h3>Get Latest Tour Updates <br>
                             by Signing Up</h3>
                     </div><!-- /.col-lg-5 -->
-                    <div class="col-lg-7">
-                        <form action="#" class="mailchimp-one__form mc-form" data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
-                            <input type="text" placeholder="Email Address">
-                            <button class="thm-btn mailchimp-one__btn" type="submit">Subscribe now</button>
-                        </form><!-- /.mailchimp-one__form -->
+                    <div class="col-lg-5">
+                        {{-- <form action="#" class="mailchimp-one__form mc-form" data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
+                            <input type="text" placeholder="Email Address"> --}}
+                            <button class="thm-btn mailchimp-one__btn" type="submit">sginup Now</button>
+                        {{-- </form><!-- /.mailchimp-one__form --> --}}
                         <div class="mc-form__response"></div><!-- /.mc-form__response -->
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->

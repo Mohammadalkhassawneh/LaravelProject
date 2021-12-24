@@ -24,6 +24,5 @@ class HomeController extends Controller
     public function index()
     {
         return view('publicSite.index');
-        // return view('home');
     }
 }
