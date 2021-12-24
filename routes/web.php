@@ -23,7 +23,9 @@ Route::get('/admin', function () {
 Route::get('/trips', function () {
     return view('admin.trips');
 });
-Route::get('/user', function () {
-    return view('admin.user');
-});
+
+// user routes
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/create_user', [UserController::class, 'create']);
+
 

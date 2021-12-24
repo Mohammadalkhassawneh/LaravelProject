@@ -32,20 +32,19 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($users as $user)
                                 <tr class="tr-shadow">
-                                    <td>1</td>
-                                    <td>Lori Lynch</td>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->name}}</td>
                                     <td>
-                                        <span class="block-email">lori@example.com</span>
+                                        <span class="block-email">{{$user->email}}</span>
                                     </td>
-                                    <td class="desc">Samsung S8 Black</td>
-                                    <td>2018-09-27 02:12</td>
-                                    <td>
-                                        <span class="status--process">Processed</span>
-                                    </td>
-                                    <td>$679.00</td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$user->password}}</td>
+                                    <td>{{$user->image}}</td>
+                                    <td>{{$user->phone}}</td>
+                                    <td>{{$user->created_at}}</td>
+                                    <td>{{$user->updated_at}}</td>
+                                    <td>{{$user->role_type}}</td>
                                     <td>
                                         <div class="table-data-feature">
                                             <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -58,6 +57,7 @@
                                     </td>
                                 </tr>
                                 <tr class="spacer"></tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
