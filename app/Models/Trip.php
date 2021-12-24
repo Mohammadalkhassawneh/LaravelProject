@@ -25,4 +25,9 @@ class Trip extends Model
     public function user() {
         return $this->belongsToMany(User::class);
     }
+
+    public function category() {
+        return $this->belongsToMany(Category::class);
+    }
+
 }
