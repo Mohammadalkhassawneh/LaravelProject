@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
@@ -38,17 +37,6 @@ Route::get('/', function () {
     return view('publicSite.index');
 });
 
-<<<<<<< HEAD
-// user routes
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/search.{role}', [UserController::class, 'index']);
-Route::get('/create', [UserController::class, 'create']);
-Route::post('/store', [UserController::class, 'store']);
-Route::get('/delete.{id}', [UserController::class, 'destroy']);
-Route::get('/edit_user{id}', [UserController::class, 'edit']);
-Route::post('/update', [UserController::class, 'update']);
-=======
->>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
 // Hazem
 Route::resource('/user',UserController::class);
