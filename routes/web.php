@@ -62,3 +62,5 @@ Route::resource('trips-list',TripListController::class);
 
 Route::resource('/categories',CategoryController::class);
 
+
+Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'destination'])->name('distination');
