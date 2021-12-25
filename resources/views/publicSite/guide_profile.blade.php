@@ -3,17 +3,17 @@
         <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
             <div class="container">
                 <h2>Guide Profile</h2>
-                <ul class="thm-breadcrumb list-unstyled">
+                <ul class="thm-breadcrumb list-unstyled s">
                     <li><a href="index.html">Home</a></li>
                     <li><span>Guide Profile</span></li>
-                </ul><!-- /.thm-breadcrumb -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
+                </ul>
+            </div>
+        </section>
 
         <!-- Sahar Start -->
         <section class="profile_info">
             <div class="container">
-                <div class="row">
+                <div class="row s">
                     <!-- Guide Information -->
                     <div class="col-4 guide-info">
                         <img src="{{asset('user_images/'.'guide.jpg')}}" alt="guide_photo" width="300px" class="guide_img">

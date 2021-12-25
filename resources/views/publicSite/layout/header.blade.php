@@ -38,6 +38,9 @@
     <link rel="stylesheet" href='{{asset("assets/css/style.css")}}'>
     <link rel="stylesheet" href='{{asset("assets/css/responsive.css")}}'>
 
+<link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
+
+
 <style>
     .sign-my:hover {
         color: #ff0143 !important;
@@ -83,21 +86,21 @@
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
-                                   
+
                                         </li>
-                                    
-                             
+
+
                                 <li class="dropdown">
                                     <a href="{{route("distination")}}">Destinations</a>
-                                    
+
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{route("trips-list.index")}}">Tours</a>
-                                    
+
                                 </li>
                                 <li class="dropdown">
                                     <a href="tour-guide">Tour Guides</a>
-                                   
+
                                 </li>
 
                                 <li>

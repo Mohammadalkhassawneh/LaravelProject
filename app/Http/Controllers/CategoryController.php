@@ -46,7 +46,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-        
+
 
         return view('admin.category', compact('category'));
     }
@@ -83,7 +83,6 @@ class CategoryController extends Controller
         $request->category_img->move(public_path('uploads'), $newImageName);
         $input['category_img'] = $newImageName;
      }
-
         Category::create($input);
 
         return redirect()->route('categories.index');
@@ -100,7 +99,7 @@ class CategoryController extends Controller
         //
     }
 
-    /** 
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
