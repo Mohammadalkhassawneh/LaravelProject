@@ -12,7 +12,7 @@
                                     <div class="card-header">Category</div>
                                     <div class="card-body" style="margin:auto;">
                                         <div class="card-title">
-                                            <h3 class="text-center title-2">Add Category</h3>
+                                            <h3 class="text-center title-2">Edit Category</h3>
                                         </div>
                                         <hr>
                                         <form action="{{route('categories.update', $Category->id)}}" method="post" enctype=”multipart/form-data”>

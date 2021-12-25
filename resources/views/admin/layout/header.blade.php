@@ -14,17 +14,17 @@
     <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
-<!-- <<<<<<< HEAD -->
+
     <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
     <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-<!-- ======= -->
+
     <link href='{{asset("css/font-face.css")}}'rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-<!-- >>>>>>> 7a9ec66fd84edb29146e51d9a43d99b7f9add23c -->
+
 
     <!-- Bootstrap CSS-->
     <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -39,12 +39,12 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-<!-- <<<<<<< HEAD -->
+
     <link href="/css/theme.css" rel="stylesheet" media="all">
-<!-- ======= -->
+
     <link href="css/theme.css" rel="stylesheet" media="all">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
-<!-- >>>>>>> 7a9ec66fd84edb29146e51d9a43d99b7f9add23c -->
+
 
     /*
 
@@ -197,8 +197,9 @@
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>Categories</a>
+                                
                         </li>
                         <li>
                             <a href="{{ asset('trips') }}">
