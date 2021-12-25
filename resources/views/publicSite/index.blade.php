@@ -10,7 +10,7 @@
             <img src="assets/images/shapes/banner-two__flotated-text.png" alt="" class="banner-two__floated-text">
             <div class="container">
                 <p>explore</p>
-                <h2>the Beauty</h2>
+                <h2>Jordan Tours</h2>
             </div><!-- /.container -->
         </section><!-- /.banner-two -->
 
@@ -21,14 +21,14 @@
         <section class="destinations-three">
             <div class="container">
                 <div class="block-title text-center">
-                    <p>Checkout featured</p>
-                    <h3>Top Destinations</h3>
+                    <p>Checkout</p>
+                    <h3>The Cities</h3>
                 </div><!-- /.block-title -->
                 <div class="row">
                     @foreach ($category as $categories)
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 w-100 col-md-6" >
                         <div class="destinations-three__single">
-                            <img src="uploads/{{$categories->category_img}}" alt="">
+                            <img style="height: 45vh" src="uploads/{{$categories->category_img}}" alt="">
                             <div class="destinations-three__content">
                                 <h3><a href="destinations-details.html">{{$categories->category_name}}</a></h3>
                             </div><!-- /.destinations-three__content -->
@@ -55,9 +55,9 @@
 
         <section class="cta-one cta-one__home-two">
             <div class="container">
-                <h3>Work with our amazing tour guides</h3>
+                <h3>Discover the beauty of nature</h3>
                 <div class="cta-one__button-block">
-                    <a href="contact.html" class="thm-btn cta-one__btn">Join our team</a><!-- /.thm-btn cta-one__btn -->
+                    <a href="contact.html" class="thm-btn cta-one__btn">Book Now!</a><!-- /.thm-btn cta-one__btn -->
                 </div><!-- /.cta-one__button-block -->
             </div><!-- /.container -->
         </section><!-- /.cta-one -->
@@ -78,18 +78,17 @@
                         <div class="tour-one__single">
                             <div class="tour-one__image">
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
+                              
                             </div><!-- /.tour-one__image -->
                             <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
+                           
                                 <h3><a href="tour-details.html">{{$trips->name}}</a></h3>
-                                <p><span>$1870</span> / Per Person</p>
+                                <p><span>{{$trips->price . "JD"}}</span> / Per Person</p>
+                                <p>Capacity :{{$trips->max_visitors}} Person</p>
                                 <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
+                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
+                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
+                                    <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.tour-one__content -->
 
@@ -278,10 +277,10 @@
             </div><!-- /.container -->
         </section><!-- /.testimonials-one --> --}}
 
-        <section class="cta-four" style="background-image: url(assets/images/backgrounds/cta-4-bg.jpg);">
+        <section class="cta-four img-responsive" style="background-image: url(assets/images/gallery/FlagofJordan.jpg);">
             <div class="container">
                 <p>Find next place to visit</p>
-                <h3>Explore the <span>world</span></h3>
+                <h3>Explore the beauty of<span style="color:white"> Jordan</span></h3>
                 {{-- <a href="tour-details.html" class="thm-btn cta-four__btn">Start Booking now</a><!-- /.thm-btn --> --}}
             </div><!-- /.container -->
         </section><!-- /.cta-four -->
@@ -328,9 +327,12 @@
             <div class="container">
                 <div class="block-title text-center">
                     <p>Check out Our</p>
-                    <h3>Latest News & Articles</h3>
+                    <h3>Latest Trips</h3>
                 </div><!-- /.block-title -->
                 <div class="row">
+                    @foreach ($news as $tripDate)
+                        
+                  
                     <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                         <div class="blog-one__single">
                             <div class="blog-one__image">
@@ -339,46 +341,21 @@
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a></li>
-                                    <li><a href="news-details.html"><i class="far fa-comments"></i> 2 Comments</a></li>
+                                    <li><a href="news-details.html"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
+                                    <li><a href="news-details.html"><i class="far fa-comments"></i> {{$tripDate->date}}</a></li>
+
                                 </ul><!-- /.list-unstyled blog-one__meta -->
-                                <h3><a href="news-details.html">14 Things to see and do when
-                                        visiting japan</a></h3>
+                                <h3><a href="news-details.html">{{$tripDate->name}}</a></h3>
+                                <ul class="tour-one__meta list-unstyled">
+                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
+                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
+                                    <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
+                                </ul><!-- /.tour-one__meta -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                        <div class="blog-one__single">
-                            <div class="blog-one__image">
-                                <img src="assets/images/blog/blog-1-2.jpg" alt="">
-                                <a href="news-details.html"><i class="fa fa-long-arrow-alt-right"></i></a>
-                            </div><!-- /.blog-one__image -->
-                            <div class="blog-one__content">
-                                <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a></li>
-                                    <li><a href="news-details.html"><i class="far fa-comments"></i> 2 Comments</a></li>
-                                </ul><!-- /.list-unstyled blog-one__meta -->
-                                <h3><a href="news-details.html">Journeys are best measured
-                                        in new friends</a></h3>
-                            </div><!-- /.blog-one__content -->
-                        </div><!-- /.blog-one__single -->
-                    </div><!-- /.col-lg-4 -->
-                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                        <div class="blog-one__single">
-                            <div class="blog-one__image">
-                                <img src="assets/images/blog/blog-1-3.jpg" alt="">
-                                <a href="news-details.html"><i class="fa fa-long-arrow-alt-right"></i></a>
-                            </div><!-- /.blog-one__image -->
-                            <div class="blog-one__content">
-                                <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a></li>
-                                    <li><a href="news-details.html"><i class="far fa-comments"></i> 2 Comments</a></li>
-                                </ul><!-- /.list-unstyled blog-one__meta -->
-                                <h3><a href="news-details.html">Travel the most beautiful
-                                        places in the world</a></h3>
-                            </div><!-- /.blog-one__content -->
-                        </div><!-- /.blog-one__single -->
-                    </div><!-- /.col-lg-4 -->
+                    @endforeach
+             
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.blog-one -->

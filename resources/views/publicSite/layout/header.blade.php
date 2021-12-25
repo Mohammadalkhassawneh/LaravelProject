@@ -19,24 +19,24 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,400i,500,600,700,800,900%7CSatisfy&amp;display=swap" rel="stylesheet">
 
 
-    <link rel="stylesheet" href={{asset("assets/css/animate.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/owl.carousel.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/owl.theme.default.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/magnific-popup.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/fontawesome-all.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/swiper.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/bootstrap-select.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/tripo-icons.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/jquery.mCustomScrollbar.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/bootstrap-datepicker.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/vegas.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/nouislider.min.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/nouislider.pips.css")}}>
+    <link rel="stylesheet" href='{{asset("assets/css/animate.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/bootstrap.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/owl.carousel.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/owl.theme.default.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/magnific-popup.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/fontawesome-all.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/swiper.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/bootstrap-select.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/tripo-icons.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/jquery.mCustomScrollbar.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/bootstrap-datepicker.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/vegas.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/nouislider.min.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/nouislider.pips.css")}}'>
 
     <!-- template styles -->
-    <link rel="stylesheet" href={{asset("assets/css/style.css")}}>
-    <link rel="stylesheet" href={{asset("assets/css/responsive.css")}}>
+    <link rel="stylesheet" href='{{asset("assets/css/style.css")}}'>
+    <link rel="stylesheet" href='{{asset("assets/css/responsive.css")}}'>
 
 <style>
     .sign-my:hover {
@@ -46,7 +46,7 @@
 
 <body>
     <div class="preloader">
-        <img src={{asset("assets/images/loader.png")}} class="preloader__image" alt="">
+        <img src='{{asset("assets/images/loader.png")}}' class="preloader__image" alt="">
     </div><!-- /.preloader -->
     <div class="page-wrapper">
         <div class="site-header__header-one site-header__home-two-wrap">

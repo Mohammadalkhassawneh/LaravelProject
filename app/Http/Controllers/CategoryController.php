@@ -15,6 +15,7 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
     public function contact()
     {
         return view('publicSite.contact');
@@ -25,18 +26,28 @@ class CategoryController extends Controller
         return view('publicSite.destination', compact('category'));
     }
 
+
     public function  homeDestination()
     {
-        $category = Category::all();
+        $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
-        return view('publicSite.index', compact('category', 'trip'));
+        $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
+        // dd($news);
+
+        return view('publicSite.index', compact('category', 'trip', 'news'));
+
+
     }
+
+
 
 
 
     public function index()
     {
         $category = Category::all();
+        
+
         return view('admin.category', compact('category'));
     }
 
@@ -89,7 +100,7 @@ class CategoryController extends Controller
         //
     }
 
-    /**
+    /** 
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
