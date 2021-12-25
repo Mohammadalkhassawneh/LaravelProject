@@ -67,7 +67,7 @@
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.topbar-one -->
-            <header class="main-nav__header-one site-header__home-two">
+            <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
@@ -147,6 +147,13 @@
                                 <li>
                                     <a href="contact.html">Contact</a>
                                 </li>
+
+                                
+                           
+                                @if ($user->role_type == "guide")
+                                <li>create trip</li>
+                                @endif 
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">

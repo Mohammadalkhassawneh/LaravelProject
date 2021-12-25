@@ -12,6 +12,13 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function destination()
+    {
+        $category = Category::all();
+        return view('publicSite.destination', compact('category'));
+    }
+
+
     public function index()
     {
         $category = Category::all();

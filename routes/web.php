@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TripListController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
@@ -21,13 +23,10 @@ use App\Http\Controllers\TourController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 Route::get('/admin', function () {
     return view('admin.index');
-})->name("admin");
+})->middleware('admin');
 
 // Hazem
 
@@ -35,13 +34,10 @@ Route::resource("/reservation",ReseverationController::class);
 
 //
 
-
 Route::get('/', function () {
     return view('publicSite.index');
 });
-Route::get('/trips', function () {
-    return view('admin.trips');
-});
+
 
 // Hazem
 Route::resource('/user',UserController::class);
@@ -54,11 +50,15 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+Route::get('/home/admin', [HomeController::class, 'handleAdmin'])->name('admin.route')->middleware('admin');
 
+Route::group(['middleware' => 'App\Http\Middleware\guide'], function()
+{
+    Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
+
+});
 
 Route::resource('/trips',TripController::class);
-
+Route::resource('trips-list',TripListController::class);
 Route::resource('/categories',CategoryController::class);
-
-
-
+Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
