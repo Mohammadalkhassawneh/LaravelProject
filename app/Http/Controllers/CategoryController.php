@@ -14,6 +14,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function contact()
+    {
+        return view('publicSite.contact');
+    }
     public function destination()
     {
         $category = Category::all();

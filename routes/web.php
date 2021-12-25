@@ -38,7 +38,7 @@ Route::resource("/reservation",ReseverationController::class);
 
 //
 
-Route::get('/', [CategoryController::class, 'homeDestination']);
+Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 
 // Hazem
 Route::resource('/user',UserController::class);
@@ -63,3 +63,4 @@ Route::resource('/trips',TripController::class);
 Route::resource('trips-list',TripListController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
+Route::get('/contact', [CategoryController::class,'contact']);

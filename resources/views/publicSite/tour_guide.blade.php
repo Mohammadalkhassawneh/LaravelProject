@@ -3,7 +3,7 @@
 @section('content')
 
         <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
-            <div class="container" style="padding-top: 80px">
+            <div class="container" style="margin-top:145px;">
                 <h2>Tour Guides</h2>
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="index.html">Home</a></li>
