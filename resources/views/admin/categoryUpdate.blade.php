@@ -15,7 +15,7 @@
                                             <h3 class="text-center title-2">Edit Category</h3>
                                         </div>
                                         <hr>
-                                        <form action="{{route('categories.update', $Category->id)}}" method="post" enctype=”multipart/form-data”>
+                                        <form action="{{route('categories.update', $Category->id)}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
                                             <div class="form-group">

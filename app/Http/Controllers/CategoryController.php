@@ -43,29 +43,23 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request ,Category $Category)
+    public function store(Request $request)
     {
-        $data = $request->validate([
-            'category_name' => 'required',
-            'category_desc' => 'required',
-            'category_img' => 'required',
-
-     ]);
-     
-
-            $input = $request->all();
-
-        if ($image = $request->file('uploads')) {
-            $destinationPath = 'uploads/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move(public_path($destinationPath, $profileImage));
-            $input['image'] = "$profileImage";
-        }
+    //     $data = $request->validate([
+    //         'category_name' => 'required',
+    //         'category_desc' => 'required',
+    //         'category_img' => 'required',
+    //  ]);
 
 
-     
+        $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
+        $request->category_img->move(public_path('uploads'), $newImageName);
 
-        Category::create($data);
+        $category = new Category();
+        $category->category_name = $request->category_name;
+        $category->category_desc = $request->category_desc;
+        $category->category_img = $newImageName;
+        $category->save();
 
         return redirect()->route('categories.index');
     }

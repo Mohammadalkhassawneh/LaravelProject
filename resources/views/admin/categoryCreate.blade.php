@@ -16,7 +16,7 @@
                                             <h3 class="text-center title-2">Add Category</h3>
                                         </div>
                                         <hr>
-                                        <form action="{{ route('categories.store') }}" method="post" enctype=”multipart/form-data”>
+                                        <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
                                         @csrf
                                             <div class="form-group">
                                                 <label  class="control-label mb-1">Name</label>
