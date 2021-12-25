@@ -6,11 +6,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">Add Admin</div>
                             <div class="card-body card-block">
-                                <form action="{{'store'}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group">
                                         <div class="input-group">

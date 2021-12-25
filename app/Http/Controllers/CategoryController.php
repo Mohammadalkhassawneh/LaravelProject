@@ -3,8 +3,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Trip;
 use App\Models\Category;
+use Illuminate\Http\Request;
+
 class CategoryController extends Controller
 {
     /**
@@ -17,7 +19,15 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
-     
+
+    public function  homeDestination()
+    {
+        $category = Category::all();
+        $trip = Trip::all();
+        return view('publicSite.index', compact('category', 'trip'));
+    }
+
+
 
     public function index()
     {
@@ -45,21 +55,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-    //     $data = $request->validate([
-    //         'category_name' => 'required',
-    //         'category_desc' => 'required',
-    //         'category_img' => 'required',
-    //  ]);
+        $data = $request->validate([
+            'category_name' => 'required',
+            'category_desc' => 'required',
+            'category_img' => 'required',
+     ]);
 
-
+     $input = $request->all();
+     if($request->file("category_img")) {
         $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
         $request->category_img->move(public_path('uploads'), $newImageName);
+        $input['category_img'] = $newImageName;
+     }
 
-        $category = new Category();
-        $category->category_name = $request->category_name;
-        $category->category_desc = $request->category_desc;
-        $category->category_img = $newImageName;
-        $category->save();
+        Category::create($input);
 
         return redirect()->route('categories.index');
     }
@@ -101,6 +110,10 @@ class CategoryController extends Controller
             'category_img' => 'required',
 
         ]);
+
+        $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
+        $request->category_img->move(public_path('uploads'), $newImageName);
+
         $Category->category_name = $request->category_name;
         $Category->category_desc = $request->category_desc;
         $Category->category_img = $request->category_img;
@@ -117,7 +130,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $Category)
     {
-        
+
         $Category->delete();
         return back();
     }

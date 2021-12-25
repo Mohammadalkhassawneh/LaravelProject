@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
+
+       {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet"> --}}
+
 
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -16,15 +19,9 @@
     <!-- Fontfaces CSS-->
 
     <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <link href='{{asset("css/font-face.css")}}'rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
+    <link href={{asset("/vendor/font-awesome-4.7/css/font-awesome.min.css")}} rel="stylesheet" media="all">
+    <link href={{asset("/vendor/font-awesome-5/css/fontawesome-all.min.css")}} rel="stylesheet" media="all">
+    <link href={{asset("/vendor/mdi-font/css/material-design-iconic-font.min.css")}} rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -39,17 +36,7 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-
     <link href="/css/theme.css" rel="stylesheet" media="all">
-
-    <link href="css/theme.css" rel="stylesheet" media="all">
-    <!-- <link href="css/style.css" rel="stylesheet"> -->
-
-
-    /*
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -57,16 +44,25 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
+   <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-{{--    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">--}}
 
-    */
+    <style>
+        .color-white:hover {
+            color: white
+        }
+/*
+        table tr {
+            display: flex;
+            align-items: center
+        } */
+
+    </style>
 
 </head>
 
@@ -106,18 +102,6 @@
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
-
-{{--                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
-{{--                            <a class="dropdown-item" href="{{ route('logout') }}"--}}
-{{--                               onclick="event.preventDefault();--}}
-{{--                                                     document.getElementById('logout-form').submit();">--}}
-{{--                                {{ __('Logout') }}--}}
-{{--                            </a>--}}
-
-{{--                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
-{{--                                @csrf--}}
-{{--                            </form>--}}
-{{--                        </div>--}}
                     </li>
                 @endguest
             </ul>
@@ -131,7 +115,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src="images/icon/logo.png" alt="CoolAdmin" />
+                            <img src= {{asset('/images/icon/logo.png')}}  alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -145,20 +129,15 @@
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{{route("admin")}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="{{route("user.index")}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>categories</a>
                         </li>
                         <li>
@@ -193,13 +172,13 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="{{'user'}}">
+                            <a href="{{route("user.index")}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
                             <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>Categories</a>
-                                
+
                         </li>
                         <li>
                             <a href="{{ asset('trips') }}">
@@ -243,7 +222,7 @@
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
                                                 <div class="image">
-                                                    <a href="#">
+                                                    <a>
                                                         <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
@@ -268,7 +247,6 @@
 
                                                 </div>
                                                 <div class="account-dropdown__footer">
-
                                                 </div>
                                             </div>
                                         </div>

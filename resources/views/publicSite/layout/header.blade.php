@@ -73,7 +73,7 @@
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__logo-box">
                             <a href="index.html" class="main-nav__logo">
-                                <img src="assets/images/logo-light.png" class="main-logo" width="123" alt="Awesome Image" />
+                                <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
                             <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
                                 <!-- /.smpl-icon-menu --></a>
@@ -128,7 +128,7 @@
                                     <a href="">Tour Guides</a>
                                     <!-- <ul>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="tour-guides.html">Tour Guides</a></li>
+                                        <li><a href="{{route("tourGuide.index")}}">Tour Guides</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="faq.html">FAQ's</a></li>
                                         <li><a href="404.html">404 Page</a></li>
