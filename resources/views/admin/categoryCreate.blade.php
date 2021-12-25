@@ -1,11 +1,11 @@
 @extends("admin.layout.master")
 
 @section('content')
-     
-     
+
+
      <!-- MAIN CONTENT-->
      <div class="main-content" style="margin-left:300px;">
-                <div class="section__content section__content--p30" > 
+                <div class="section__content section__content--p30" >
                     <div class="container-fluid" >
                         <div class="row" >
                             <div class="col-lg-8">
@@ -16,7 +16,7 @@
                                             <h3 class="text-center title-2">Add Category</h3>
                                         </div>
                                         <hr>
-                                        <form action="{{ route('categories.store') }}" method="post" enctype=”multipart/form-data”>
+                                        <form action="{{route('categories.store')}}" method="post" enctype="multipart/form-data">
                                         @csrf
                                             <div class="form-group">
                                                 <label  class="control-label mb-1">Name</label>
@@ -30,7 +30,6 @@
                                                 <label  class="control-label mb-1">Image</label>
                                                 <input  name="category_img" type="file" class="form-control cc-number identified visa">
                                             </div>
-                                    
                                             </div>
                                             <div style="margin:0 0 10px 100px;">
                                             <button type="submit" class="btn btn-primary" >Submit</button>

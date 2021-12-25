@@ -67,7 +67,7 @@
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.topbar-one -->
-            <header class="main-nav__header-one site-header__home-two "style="background: #082740" >
+            <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
@@ -128,7 +128,7 @@
                                     <a href="#">Pages</a>
                                     <ul>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="tour-guides.html">Tour Guides</a></li>
+                                        <li><a href="{{route("tourGuide.index")}}">Tour Guides</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="faq.html">FAQ's</a></li>
                                         <li><a href="404.html">404 Page</a></li>
@@ -147,6 +147,13 @@
                                 <li>
                                     <a href="contact.html">Contact</a>
                                 </li>
+
+                                
+                           
+                                @if ($user->role_type == "guide")
+                                <li>create trip</li>
+                                @endif 
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">

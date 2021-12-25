@@ -25,58 +25,25 @@
                     <h3>Top Destinations</h3>
                 </div><!-- /.block-title -->
                 <div class="row">
+                    @foreach ($category as $categories)
+                        
                     <div class="col-lg-3 col-md-6">
                         <div class="destinations-three__single">
-                            <img src="assets/images/destinations/destinations-3-1-1.jpg" alt="">
+                            <img src="uploads/{{$categories->category_img}}" alt="">
                             <div class="destinations-three__content">
-                                <h3><a href="destinations-details.html">Maldives</a></h3>
+                                <h3><a href="destinations-details.html">{{$categories->category_name}}</a></h3>
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">Maldives</a></h3>
+                                <h3><a href="destinations-details.html">{{$categories->category_name}}</a></h3>
                                 <p>24 Tours</p>
                                 <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="destinations-three__single">
-                            <img src="assets/images/destinations/destinations-3-1-2.jpg" alt="">
-                            <div class="destinations-three__content">
-                                <h3><a href="destinations-details.html">Africa</a></h3>
-                            </div><!-- /.destinations-three__content -->
-                            <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">Africa</a></h3>
-                                <p>24 Tours</p>
-                                <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
-                            </div><!-- /.destinations-three__hover-content -->
-                        </div><!-- /.destinations-three__single -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="destinations-three__single">
-                            <img src="assets/images/destinations/destinations-3-1-3.jpg" alt="">
-                            <div class="destinations-three__content">
-                                <h3><a href="destinations-details.html">Egypt</a></h3>
-                            </div><!-- /.destinations-three__content -->
-                            <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">Egypt</a></h3>
-                                <p>24 Tours</p>
-                                <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
-                            </div><!-- /.destinations-three__hover-content -->
-                        </div><!-- /.destinations-three__single -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="destinations-three__single">
-                            <img src="assets/images/destinations/destinations-3-1-4.jpg" alt="">
-                            <div class="destinations-three__content">
-                                <h3><a href="destinations-details.html">London</a></h3>
-                            </div><!-- /.destinations-three__content -->
-                            <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">London</a></h3>
-                                <p>24 Tours</p>
-                                <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
-                            </div><!-- /.destinations-three__hover-content -->
-                        </div><!-- /.destinations-three__single -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
+                  
+                 
+                    @endforeach
+                
                 </div><!-- /.row -->
             </div><!-- /.container -->
 
@@ -101,9 +68,14 @@
                 <div class="block-title text-center">
                     <p>Featured tours</p>
                     <h3>Most Popular Tours</h3>
+                  
                 </div><!-- /.block-title -->
+             
                 <div class="tour-one__carousel tour-one__carousel-no-overflow thm__owl-carousel  owl-carousel owl-theme" data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": true, "margin": 30, "loop": true, "responsive": { "0": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "767": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "991": { "items": 2 }, "1199": { "items": 2 }, "1200": { "items": 3 } }}'>
+                    @foreach ($trip as $trips)
                     <div class="item">
+                        
+                            
                         <div class="tour-one__single">
                             <div class="tour-one__image">
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
@@ -113,7 +85,7 @@
                                 <div class="tour-one__stars">
                                     <i class="fa fa-star"></i> 8.0 Superb
                                 </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">National Park 2 Days Tour</a></h3>
+                                <h3><a href="tour-details.html">{{$trips->name}}</a></h3>
                                 <p><span>$1870</span> / Per Person</p>
                                 <ul class="tour-one__meta list-unstyled">
                                     <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
@@ -121,169 +93,15 @@
                                     <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.tour-one__content -->
+                      
+                         
                         </div><!-- /.tour-one__single -->
                     </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-2.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">The Dark Forest Adventure</a></h3>
-                                <p><span>$2600</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-3.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 7.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Discover Depth of Beach</a></h3>
-                                <p><span>$1399</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-4.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.8 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                <p><span>$1870</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-5.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Magic of Italy Tours</a></h3>
-                                <p><span>$1478</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-6.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Discover Depth of Beach</a></h3>
-                                <p><span>$1399</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-7.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Discover Depth of Beach</a></h3>
-                                <p><span>$2000</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-8.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">Moscow Red City Land</a></h3>
-                                <p><span>$1870</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="tour-one__single">
-                            <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-9.jpg" alt="">
-                                <a href="tour-details.html"><i class="fa fa-heart"></i></a>
-                            </div><!-- /.tour-one__image -->
-                            <div class="tour-one__content">
-                                <div class="tour-one__stars">
-                                    <i class="fa fa-star"></i> 8.0 Superb
-                                </div><!-- /.tour-one__stars -->
-                                <h3><a href="tour-details.html">National Park 2 Days Tour</a></h3>
-                                <p><span>$1870</span> / Per Person</p>
-                                <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> 3 Days</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> 12+</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
+                 
+                    @endforeach 
                 </div><!-- /.tour-one__carousel -->
+              
+
             </div><!-- /.container -->
         </section><!-- /.tour-one -->
 

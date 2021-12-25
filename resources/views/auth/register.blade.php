@@ -59,7 +59,20 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
+                            <div class="form-check col-md-6">
+                                <input class="form-check-input" type="radio" name="Guide" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  Default radio
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" name="User" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                  Default checked radio
+                                </label>
+                              </div>
                         </div>
+                      
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

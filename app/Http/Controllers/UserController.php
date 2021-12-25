@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 
 class UserController extends Controller
@@ -13,16 +14,22 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($role='all')
+    public function index()
     {
-        $roles = array('admin', 'user', 'guide');
+         $users = User::all();
+        return view('admin.user',compact('users'));
+    }
 
-        if($role === 'all'){
-            $users = User::all();
-        }else{
-            $users = User::find($role);
-        }
-        return view('admin.user', compact('users', 'roles'));
+        /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $users = User::where('role_type', $id)->get();
+        return view("admin.user",compact('users'));
     }
 
     /**
@@ -45,19 +52,16 @@ class UserController extends Controller
     {
 
         $newImage = time() . '-' . $request->image->getClientOriginalName();
-
         $request->image->move(public_path('user_images'), $newImage);
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = $request->password;
+        $user->password = Hash::make($request->password);
         $user->phone = $request->phone;
         $user->image = $newImage;
         $user->role_type = 'admin';
         $user->save();
-        $users = User::all();
-
-        return view('admin.user', compact('users'));
+        return redirect()->route("user.index");
     }
     /**
      * Show the form for editing the specified resource.
@@ -65,9 +69,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($user)
     {
-        $edited_user = User::find($id);
+        $edited_user = User::find($user);
         return view('admin.edit_user', compact('edited_user'));
     }
     public function editGuideProfile($id)
@@ -83,18 +87,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request,$id)
     {
-        $user = User::find($request->id);
+        $user = User::find($id);
+        $newImage = time() . '-' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('user_images'), $newImage);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->phone = $request->phone;
+        $user->image = $newImage;
         $user->role_type = 'admin';
         $user->save();
-
-        $users = User::all();
-        return view('admin.user', compact('users')); 
+         return redirect()->route("user.index");
     }
 
     /**
@@ -107,7 +112,6 @@ class UserController extends Controller
     {
     $user = User::find($id);
     $user->delete($id);
-    $users = User::all();
-    return view('admin.user', compact('users'));
+    return redirect()->route("user.index");
     }
 }

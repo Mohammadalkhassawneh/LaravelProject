@@ -17,7 +17,7 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
-     
+
 
     public function index()
     {
@@ -43,29 +43,22 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request ,Category $Category)
+    public function store(Request $request)
     {
         $data = $request->validate([
             'category_name' => 'required',
             'category_desc' => 'required',
             'category_img' => 'required',
-
      ]);
-     
 
-            $input = $request->all();
+     $input = $request->all();
+     if($request->file("category_img")) {
+        $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
+        $request->category_img->move(public_path('uploads'), $newImageName);
+        $input['category_img'] = $newImageName;
+     }
 
-        if ($image = $request->file('uploads')) {
-            $destinationPath = 'uploads/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move(public_path($destinationPath, $profileImage));
-            $input['image'] = "$profileImage";
-        }
-
-
-     
-
-        Category::create($data);
+        Category::create($input);
 
         return redirect()->route('categories.index');
     }
@@ -107,6 +100,10 @@ class CategoryController extends Controller
             'category_img' => 'required',
 
         ]);
+
+        $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
+        $request->category_img->move(public_path('uploads'), $newImageName);
+
         $Category->category_name = $request->category_name;
         $Category->category_desc = $request->category_desc;
         $Category->category_img = $request->category_img;
@@ -123,7 +120,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $Category)
     {
-        
+
         $Category->delete();
         return back();
     }
