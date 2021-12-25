@@ -14,13 +14,13 @@
                                 <select class="js-select2" name="property">
                                     <option selected="selected">All Users</option>
                                     @foreach($roles as $role)
-                                    <option><a href="/search.{{$role}}">{{$role}}</a></option>
+                                    <a href="{{route("user.show",$role)}}"><option>{{$role}}</option></a>
                                     @endforeach
                                 </select>
                                 <div class="dropDownSelect2"></div>
                             </div>
                         </div>
-
+                        <a href="{{route("user.show",$role)}}"><option>{{$role}}</option></a>9
                         <div class="table-data__tool-right">
                             <button class="au-btn au-btn-icon au-btn--green au-btn--small">
                                 <i class="zmdi zmdi-plus"></i><a href="{{'create'}}">Add Admin</a></button>
@@ -45,7 +45,7 @@
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}
                                     </td>
-                                    <td><img src="{{asset('user_images/'.$user->image)}}" alt="admin_photo"></td>
+                                    {{-- <td><img src="{{asset('user_images/'. $user->image)}}" alt="admin_photo"></td> --}}
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>{{$user->updated_at}}</td>

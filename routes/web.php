@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReseverationController;
 
 
 /*
@@ -41,17 +42,19 @@ Route::get('/trips', function () {
 });
 
 // user routes
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/search.{$role}', [UserController::class, 'index']);
-Route::get('/create', [UserController::class, 'create']);
-Route::post('/store', [UserController::class, 'store']);
-Route::get('/delete.{id}', [UserController::class, 'destroy']);
-Route::get('/edit_user{id}', [UserController::class, 'edit']);
-Route::post('/update', [UserController::class, 'update']);
+// Route::get('/user', [UserController::class, 'index']);
+// Route::get('/search.{$role}', [UserController::class, 'index']);
+// Route::get('/create', [UserController::class, 'create']);
+// Route::post('/store', [UserController::class, 'store']);
+// Route::get('/delete.{id}', [UserController::class, 'destroy']);
+// Route::get('/edit_user{id}', [UserController::class, 'edit']);
+// Route::post('/update', [UserController::class, 'update']);
+Route::resource('/user',UserController::class);
+
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('/trips',TripController::class);
 

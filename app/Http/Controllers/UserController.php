@@ -13,16 +13,26 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($role='all')
+    public function index()
+    {
+         $roles = array('admin', 'user', 'guide');
+
+         $users = User::all();
+
+        return view('admin.user',compact('users', 'roles'));
+    }
+
+        /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
         $roles = array('admin', 'user', 'guide');
-
-        if($role === 'all'){
-            $users = User::all();
-        }else{
-            $users = User::find($role);
-        }
-        return view('admin.user', compact('users', 'roles'));
+        $users = User::where('role_type', $id)->get();
+        return view('admin.user',compact('users', 'roles'));
     }
 
     /**
@@ -89,7 +99,7 @@ class UserController extends Controller
         $user->save();
 
         $users = User::all();
-        return view('admin.user', compact('users')); 
+        return view('admin.user', compact('users'));
     }
 
     /**
