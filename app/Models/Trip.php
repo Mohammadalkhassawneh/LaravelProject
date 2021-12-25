@@ -14,6 +14,7 @@ class Trip extends Model
         'max_visitors',
         'price',
         'date',
+        'image',
     ];
 
     // For Guide [one-many]
