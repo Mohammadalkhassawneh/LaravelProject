@@ -24,7 +24,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $trips = Trip::where('guide_id', $id)->get();
-        ddd($trips);
         return view('publicSite/guide_profile', compact('user', 'trips'));
     }
     /**
