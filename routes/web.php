@@ -49,11 +49,6 @@ Route::get('/delete.{id}', [UserController::class, 'destroy']);
 Route::get('/edit_user{id}', [UserController::class, 'edit']);
 Route::post('/update', [UserController::class, 'update']);
 
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
