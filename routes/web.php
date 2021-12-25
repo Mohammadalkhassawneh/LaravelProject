@@ -1,9 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TripController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReseverationController;
 
@@ -58,4 +59,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::resource('/trips',TripController::class);
 
+
+Route::resource('/categories',CategoryController::class);
 
