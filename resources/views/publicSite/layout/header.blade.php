@@ -82,8 +82,8 @@
                         <div class="main-nav__main-navigation">
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
-                                    <a href="index.html">Home</a>
-                                    <ul>
+                                    <a href={{route("home")}}>Home</a>
+                                    <!-- <ul>
                                         <li><a href="index.html">Home 01</a></li>
                                         <li><a href="index-2.html">Home 02</a></li>
                                         <li><a href="index-3.html">Home 03</a></li>
@@ -102,48 +102,41 @@
                                                 <li><a href="index-6.html">Header 06</a></li>
                                                 <li><a href="index-7.html">Header 07</a></li>
                                                 <li><a href="index-8.html">Header 08</a></li>
-                                            </ul><!-- /.sub-menu -->
+                                            </ul> -->
                                         </li>
                                     </ul><!-- /.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="destinations.html">Destinations</a>
-                                    <ul>
+                                    <a href="{{route("distination")}}">Destinations</a>
+                                    <!-- <ul>
                                         <li><a href="destinations.html">Destionations 01</a></li>
                                         <li><a href="destinations-2.html">Destionations 02</a></li>
                                         <li><a href="destinations-3.html">Destionations 03</a></li>
                                         <li><a href="destinations-details.html">Destionation Details</a></li>
-                                    </ul><!-- /.sub-menu -->
+                                    </ul>/.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="tour-standard.html">Tours</a>
-                                    <ul>
+                                    <a href="{{route("trips-list.index")}}">Tours</a>
+                                    <!-- <ul>
                                         <li><a href="tour-standard.html">Standard Tours</a></li>
                                         <li><a href="tour-sidebar.html">Tours Sidebar</a></li>
                                         <li><a href="tour-details.html">Tour Details 01</a></li>
                                         <li><a href="tour-details-2.html">Tour Details 02</a></li>
-                                    </ul><!-- /.sub-menu -->
+                                    </ul>/.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="#">Pages</a>
-                                    <ul>
+                                    <a href="">Tour Guides</a>
+                                    <!-- <ul>
                                         <li><a href="about.html">About Us</a></li>
                                         <li><a href="tour-guides.html">Tour Guides</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="faq.html">FAQ's</a></li>
                                         <li><a href="404.html">404 Page</a></li>
-                                    </ul><!-- /.sub-menu -->
+                                    </ul>/.sub-menu -->
                                 </li>
 
 
-                                <li class="dropdown">
-                                    <a href="news-list.html">News</a>
-                                    <ul>
-                                        <li><a href="news.html">News Page</a></li>
-                                        <li><a href="news-list.html">News List</a></li>
-                                        <li><a href="news-details.html">News Details</a></li>
-                                    </ul><!-- /.sub-menu -->
-                                </li>
+                               
                                 <li>
                                     <a href="contact.html">Contact</a>
                                 </li>
