@@ -34,7 +34,7 @@ Route::get('/admin', function () {
 
 // Hazem
 
-Route::resource("/reservation",ReseverationController::class);
+Route::resource("/reservation", ReseverationController::class);
 
 //
 Route::get('/', [CategoryController::class, 'homeDestination']);
@@ -42,9 +42,11 @@ Route::get('/', [CategoryController::class, 'homeDestination']);
 Route::get('/', [CategoryController::class, 'homeDestination']);
 
 // Hazem
-Route::resource('/user',UserController::class);
-Route::get("/filter",[FilterController::class,"roles"])->name("roles");
-Route::get("/tour-guide",[TourController::class,"index"])->name("tourGuide.index");
+Route::resource('/user', UserController::class);
+Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
+
+Route::get("/filter", [FilterController::class, "roles"])->name("roles");
+Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
 
 
 
@@ -54,13 +56,11 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/home/admin', [HomeController::class, 'handleAdmin'])->name('admin.route')->middleware('admin');
 
-Route::group(['middleware' => 'App\Http\Middleware\guide'], function()
-{
+Route::group(['middleware' => 'App\Http\Middleware\guide'], function () {
     Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
-
 });
 
-Route::resource('/trips',TripController::class);
-Route::resource('trips-list',TripListController::class);
-Route::resource('/categories',CategoryController::class);
-Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
+Route::resource('/trips', TripController::class);
+Route::resource('trips-list', TripListController::class);
+Route::resource('/categories', CategoryController::class);
+Route::get('/destination', [CategoryController::class, 'destination'])->name('distination');

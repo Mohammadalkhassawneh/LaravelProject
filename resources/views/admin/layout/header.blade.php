@@ -18,10 +18,23 @@
 
     <!-- Fontfaces CSS-->
 
+<<<<<<< HEAD
+    <link href='{{asset("css/font-face.css")}}' rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <link href='{{asset("css/font-face.css")}}' rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+=======
     <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
     <link href={{asset("/vendor/font-awesome-4.7/css/font-awesome.min.css")}} rel="stylesheet" media="all">
     <link href={{asset("/vendor/font-awesome-5/css/fontawesome-all.min.css")}} rel="stylesheet" media="all">
     <link href={{asset("/vendor/mdi-font/css/material-design-iconic-font.min.css")}} rel="stylesheet" media="all">
+>>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <!-- Bootstrap CSS-->
     <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -44,13 +57,21 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+<<<<<<< HEAD
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script>--}}
+=======
    <script src="{{ asset('js/app.js') }}" defer></script>
+>>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+<<<<<<< HEAD
+    {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet">--}}
+=======
+>>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <style>
         .color-white:hover {
@@ -87,27 +108,27 @@
                 <!-- Authentication Links -->
                 @guest
                     @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
                     @endif
 
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
                     @endif
-                @else
+                    @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
                     </li>
-                @endguest
-            </ul>
+                    @endguest
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -149,8 +170,8 @@
                                 <i class="fas fa-calendar-alt"></i>Reservation</a>
                         </li>
 
-                            </ul>
-                        </li>
+                    </ul>
+                    </li>
                     </ul>
                 </div>
             </nav>
@@ -160,7 +181,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="{{route("admin")}}">
+                <a href="{{route('admin')}}">
                     <img src="/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
@@ -168,7 +189,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="{{(request()->segment(1) == 'admin') ? 'active' : '' }}">
-                            <a class="js-arrow" href="{{route("admin")}}">
+                            <a class="js-arrow" href="{{route('admin')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
@@ -185,7 +206,7 @@
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
                         <li class="{{(request()->segment(1) == 'reservation') ? 'active' : '' }}">
-                            <a href="{{route("reservation.index")}}" >
+                            <a href="{{route('reservation.index')}}">
                                 <i class="fas fa-calendar-alt"></i>Reservation</a>
                         </li>
 
@@ -235,14 +256,13 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                     <a href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
+                                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                                    <i class="zmdi zmdi-power"></i>
+                                                        <i class="zmdi zmdi-power"></i>
                                                         {{ __('Logout') }}
-                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                        @csrf
-                                                    </form>
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                            @csrf
+                                                        </form>
                                                     </a>
 
                                                 </div>

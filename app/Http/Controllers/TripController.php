@@ -22,6 +22,11 @@ class TripController extends Controller
         
     }
 
+    public function getTrips($id){
+        $trips = Trip::find($id);
+        return view('publicSite.guide_profile', compact('trips'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
