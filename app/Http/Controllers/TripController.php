@@ -18,10 +18,10 @@ class TripController extends Controller
         $trips = Trip::all();
         return view('admin.trips', compact('trips'));
     }
-    public function getTrips($id){
+    public function getTrips(){
         $trips = Trip::all();
-        $user = User::find($id);
-        return view('publicSite.guide_profile', compact('trips', 'user'));
+        // $user = User::find($id);
+        return view('publicSite.guide_profile', compact('trips'));
     }
     /**
      * Show the form for creating a new resource.

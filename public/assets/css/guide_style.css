@@ -55,3 +55,15 @@ ul li {
 .row {
     margin-bottom: 2rem;
 }
+
+.buttons-list {
+    text-align: left;
+    padding-left: 2.5rem;
+}
+
+.buttons-list a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #40B9EB;
+    border-radius: 5px;
+}

@@ -181,11 +181,7 @@
    <div class="container">
        <div class="row">
            <div class="col-3">
-               <ul>
-                   <li></li>
-                   <li></li>
-                   <li></li>
-               </ul>
+            <img src="{{}}" alt="">
            </div>
            <div class="col-9"></div>
        </div>

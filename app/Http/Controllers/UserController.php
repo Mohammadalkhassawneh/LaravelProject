@@ -70,6 +70,11 @@ class UserController extends Controller
         $edited_user = User::find($id);
         return view('admin.edit_user', compact('edited_user'));
     }
+    public function editGuideProfile($id)
+    {
+        $edited_user = User::find($id);
+        return view('edit_guide_profile', compact('edited_user'));
+    }
 
     /**
      * Update the specified resource in storage.
