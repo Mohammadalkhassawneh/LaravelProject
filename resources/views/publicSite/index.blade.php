@@ -1,7 +1,7 @@
 @extends('publicSite.layout.master')
 
 @section('content')
-    
+
 
         <section class="banner-two">
             <div class="banner-two__bg">
@@ -15,7 +15,7 @@
         </section><!-- /.banner-two -->
 
 
-        
+
 
 
         <section class="destinations-three">
@@ -82,7 +82,7 @@
 
         </section><!-- /.destinations-three -->
 
-        
+
 
 
 

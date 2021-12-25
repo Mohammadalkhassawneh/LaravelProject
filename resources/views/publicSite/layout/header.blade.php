@@ -38,6 +38,11 @@
     <link rel="stylesheet" href={{asset("assets/css/style.css")}}>
     <link rel="stylesheet" href={{asset("assets/css/responsive.css")}}>
 
+<style>
+    .sign-my:hover {
+        color: #ff0143 !important;
+    }
+    </style>
 
 <body>
     <div class="preloader">
@@ -62,7 +67,7 @@
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.topbar-one -->
-            <header class="main-nav__header-one site-header__home-two bg-danger">
+            <header class="main-nav__header-one site-header__home-two">
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
@@ -145,53 +150,41 @@
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
-
-                            <select name="currency" id="currency" class="selectpicker">
-                                <option value="USD">USD</option>
-                                <option value="GBP">GBP</option>
-                                <option value="AUD">AUD</option>
-                            </select><!-- /#currency .selectpicker -->
-                            <select name="languages" id="languages" class="selectpicker">
-                                <option value="ENG">ENG</option>
-                                <option value="BN">BN</option>
-                                <option value="RUS">RUS</option>
-                            </select><!-- /#languages .selectpicker -->
-                            <ul class="navbar-nav ms-auto">
+                            <ul class="navbar-nav ms-auto flex-row">
                                 <!-- Authentication Links -->
                                 @guest
                                     @if (Route::has('login'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <li class="nav-item mr-4">
+                                            <a class="nav-link text-white sign-my" href="{{ route('login') }}">{{ __('Login') }}</a>
                                         </li>
                                     @endif
-        
+
                                     @if (Route::has('register'))
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <li class="nav-item mr-4">
+                                            <a class="nav-link text-white sign-my" href="{{ route('register') }}">{{ __('Register') }}</a>
                                         </li>
                                     @endif
                                 @else
-                                    <li class="nav-item dropdown">
-                                        <a id="navbarDropdown" class="p-5 text-white dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }}
+                                    <li>
+                                        <a class="p-5 text-white" role="button" style="padding-right:40px !important;" >
+                                            {!!   "Welocme, " .  "<span style='color:#FFA801'>".Auth::user()->name."</span>" !!}
                                         </a>
-                                        
-        
-                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                            <a class="" href="{{ route('logout') }}" 
-                                            onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
-                                          {{   __('Logout') }}
-                                         </a>
-        
-                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                             @csrf
-                                         </form>
-
-
-                                        </div>
                                     </li>
-                         
+                                    <div>
+                                        <a class="" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                            <button class="btn btn-danger mr-5">
+                                            {{   __('Logout') }}
+                                            </button>
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+
+
+                                    </div>
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
@@ -202,5 +195,5 @@
                 </nav>
             </header><!-- /.site-header -->
         </div>
-      
+
   <!-- /.site-header__header-one site-header__home-two-wrap -->
