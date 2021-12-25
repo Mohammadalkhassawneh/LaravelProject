@@ -60,15 +60,15 @@ Route::group(['middleware' => 'App\Http\Middleware\guide'], function () {
     Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
 });
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 Route::resource('/trips',TripController::class);
 Route::resource('trips-list',TripListController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact']);
-=======
-Route::resource('/trips', TripController::class);
-Route::resource('trips-list', TripListController::class);
-Route::resource('/categories', CategoryController::class);
-Route::get('/destination', [CategoryController::class, 'destination'])->name('distination');
->>>>>>> e64493481f2252708e3e455de545e45fbb52ddf6
+// =======
+// Route::resource('/trips', TripController::class);
+// Route::resource('trips-list', TripListController::class);
+// Route::resource('/categories', CategoryController::class);
+// Route::get('/destination', [CategoryController::class, 'destination'])->name('distination');
+// >>>>>>> e64493481f2252708e3e455de545e45fbb52ddf6
