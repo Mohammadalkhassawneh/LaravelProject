@@ -4,6 +4,7 @@ use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -35,6 +36,22 @@ Route::resource("/reservation",ReseverationController::class);
 Route::get('/', function () {
     return view('publicSite.index');
 });
+Route::get('/trips', function () {
+    return view('admin.trips');
+});
+
+// user routes
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/search.{$role}', [UserController::class, 'index']);
+Route::get('/create', [UserController::class, 'create']);
+Route::post('/store', [UserController::class, 'store']);
+Route::get('/delete.{id}', [UserController::class, 'destroy']);
+Route::get('/edit_user{id}', [UserController::class, 'edit']);
+Route::post('/update', [UserController::class, 'update']);
+
+
+
+
 
 
 Auth::routes();

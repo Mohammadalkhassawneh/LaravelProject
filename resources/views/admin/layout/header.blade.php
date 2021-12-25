@@ -14,7 +14,7 @@
     <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
-    <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
+    <link href='{{asset("css/font-face.css")}}'rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -33,6 +33,7 @@
 
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
 
     /*
 
@@ -181,7 +182,7 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
                         <li>
-                            <a href="chart.html">
+                            <a href="{{'user'}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
