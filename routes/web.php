@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
@@ -42,6 +43,10 @@ Route::get('/', [CategoryController::class, 'homeDestination']);
 
 // Hazem
 Route::resource('/user', UserController::class);
+
+// Sahar
+Route::resource('/userprofile', UserProfileController::class);
+
 Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
