@@ -3,6 +3,7 @@
 use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\TripListController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -55,6 +56,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/trips',TripController::class);
+Route::resource('trips-list',TripListController::class);
+
 
 
 Route::resource('/categories',CategoryController::class);
