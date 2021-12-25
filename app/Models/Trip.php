@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Category;
 
 class Trip extends Model
 {
@@ -18,17 +19,19 @@ class Trip extends Model
     ];
 
     // For Guide [one-many]
-    public function guide(){
+    public function guide()
+    {
         return $this->belongsTo(User::class);
     }
 
     // For Reservation [many-many]
-    public function user() {
+    public function user()
+    {
         return $this->belongsToMany(User::class);
     }
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsToMany(Category::class);
     }
-
 }

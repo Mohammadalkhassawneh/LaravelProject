@@ -34,33 +34,33 @@
                 <h3 class="footer-widget__title">Instagram</h3><!-- /.footer-widget__title -->
                 <ul class="footer-widget__gallery-list list-unstyled">
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-1.jpg" alt="">
+                            <img src="{{asset('assets/images/resources/footer-1-1.jpg')}}" alt="">
                         </a></li>
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-2.jpg" alt="">
+                            <img src={{asset('"assets/images/resources/footer-1-2.jpg')}}" alt="">
                         </a></li>
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-3.jpg" alt="">
+                            <img src="{{asset('assets/images/resources/footer-1-3.jpg')}}" alt="">
                         </a></li>
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-4.jpg" alt="">
+                            <img src="{{asset('assets/images/resources/footer-1-4.jpg')}}" alt="">
                         </a></li>
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-5.jpg" alt="">
+                            <img src="{{asset('assets/images/resources/footer-1-5.jpg')}}" alt="">
                         </a></li>
                     <li><a href="#">
-                            <img src="assets/images/resources/footer-1-6.jpg" alt="">
+                            <img src="{{asset('assets/images/resources/footer-1-6.jpg')}}" alt="">
                         </a></li>
                 </ul><!-- /.footer-widget__links-list list-unstyled -->
             </div><!-- /.footer-widget__column -->
             <div class="footer-widget__column footer-widget__options">
-                <h3 class="footer-widget__title">Options</h3><!-- /.footer-widget__title -->
+                <h3 class="footer-widget_~_title">Options</h3><!-- /.footer-widget__title -->
                 <select name="currency" id="currency-2" class="selectpicker">
                     <option value="USD">USD</option>
                     <option value="GBP">GBP</option>
                     <option value="AUD">AUD</option>
                 </select><!-- /#currency-2 .selectpicker -->
-                <select name="languages" id="languages-2" class="selectpicker">
+                <select name="languages" id="languages-2" class="selectpicker">~
                     <option value="ENG">ENG</option>
                     <option value="BN">BN</option>
                     <option value="RUS">RUS</option>

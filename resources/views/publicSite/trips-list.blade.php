@@ -56,52 +56,16 @@
                             <div class="sidebar__single sidebar__category">
                                 <h3 class="sidebar__title">All Categories</h3><!-- /.sidebar__title -->
                                 <ul class="sidebar__category-list list-unstyled">
-                                    @foreach ($collection as $item)
-                                    <li><a href="#">Trip & Tours</a></li>
+                                    @foreach ($cats as $cat)
+                                    
+                                    <li><a href={{route('trips-list.show',$cat->id)}}>{{$cat->category_name}}</a></li>
                                     @endforeach
                                     
                                     
                                 </ul><!-- /.sidebar__category-list list-unstyled -->
                             </div><!-- /.sidebar__single sidebar__category -->
-                            <div class="sidebar__single sidebar__tags">
-                                <h3 class="sidebar__title">Popular Tags</h3><!-- /.sidebar__title -->
-                                <div class="sidebar__tags-list">
-                                    <a href="#">Tour</a>
-                                    <a href="#">Travel</a>
-                                    <a href="#">beach</a>
-                                    <a href="#">Mountain</a>
-                                    <a href="#">Adventures</a>
-                                    <a href="#">parks</a>
-                                    <a href="#">Museums</a>
-                                </div><!-- /.sidebar__tags-list -->
-                            </div><!-- /.sidebar__single sidebar__tags -->
-                            <div class="sidebar__single sidebar__twitter">
-                                <h3 class="sidebar__title">Tweets</h3><!-- /.sidebar__title -->
-                                <div class="thm__owl-carousel sidebar__twitter-carousel owl-carousel owl-theme" data-options='{"dots": true, "nav": false, "items": 1, "smartSpeed": 700, "loop": true, "autoplay": true, "autoplayTimeout": 5000}'>
-                                    <div class="item">
-                                        <div class="sidebar__twitter-single">
-                                            <p><a href="#" class="sidebar__twitter-user">@Layerdrops</a> Let’s Now You Personalized
-                                                Service for Your Most Valuable Assets. <a href="http://yhdj58.tp8/JK">http://yhdj58.tp8/JK</a></p>
-                                            <h4><i class="fab fa-twitter"></i> <a href="#">Tripo</a> <span>-</span> 16 Jan, 2019</h4>
-                                        </div><!-- /.sidebar__twitter-single -->
-                                    </div><!-- /.item -->
-                                    <div class="item">
-                                        <div class="sidebar__twitter-single">
-                                            <p><a href="#" class="sidebar__twitter-user">@Layerdrops</a> Let’s Now You Personalized
-                                                Service for Your Most Valuable Assets. <a href="http://yhdj58.tp8/JK">http://yhdj58.tp8/JK</a></p>
-                                            <h4><i class="fab fa-twitter"></i> <a href="#">Tripo</a> <span>-</span> 16 Jan, 2019</h4>
-                                        </div><!-- /.sidebar__twitter-single -->
-                                    </div><!-- /.item -->
-                                    <div class="item">
-                                        <div class="sidebar__twitter-single">
-                                            <p><a href="#" class="sidebar__twitter-user">@Layerdrops</a> Let’s Now You Personalized
-                                                Service for Your Most Valuable Assets. <a href="http://yhdj58.tp8/JK">http://yhdj58.tp8/JK</a></p>
-                                            <h4><i class="fab fa-twitter"></i> <a href="#">Tripo</a> <span>-</span> 16 Jan, 2019</h4>
-                                        </div><!-- /.sidebar__twitter-single -->
-                                    </div><!-- /.item -->
-                                </div><!-- /.sidebar__twitter-carousel owl-carousel owl-theme -->
-
-                            </div><!-- /.sidebar__single sidebar__twitter -->
+                           
+                            
                             <div class="sidebar__single sidebar__social">
                                 <h3 class="sidebar__title">Follow Us</h3><!-- /.sidebar__title -->
                                 <div class="sidebar__social-list">
