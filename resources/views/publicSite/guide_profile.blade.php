@@ -201,7 +201,7 @@
                         <div class="buttons-list">
                             <div class="row">
                                 <div class="col-5">
-                                    <a href="{{route('edit_guide_profile.editGuideProfile',30)}}">Edit Profile</a>
+                                    <a href="{{edit_guide_profile.editGuideProfile}}">Edit Profile</a>
                                 </div>
                                 <div class="col-7">
                                     <a href="">Add Trip</a>

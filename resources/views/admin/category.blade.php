@@ -27,7 +27,7 @@
                                                 <option value="">3 Days</option>
                                                 <option value="">1 Week</option>
                                             </select>
-                                            <div class="dropDownSelect2"></div>
+                                            <div class="dropDownSelect2"></div> 
                                         </div>
                                         <button class="au-btn-filter">
                                             <i class="zmdi zmdi-filter-list"></i>filters</button>
