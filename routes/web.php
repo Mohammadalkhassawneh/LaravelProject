@@ -17,9 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name("admin");
@@ -31,7 +32,7 @@ Route::resource("/reservation",ReseverationController::class);
 //
 
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('publicSite.index');
 });
 
@@ -41,9 +42,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/trips',TripController::class);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
