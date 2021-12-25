@@ -14,24 +14,40 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    public function contact()
+    {
+        return view('publicSite.contact');
+    }
     public function destination()
     {
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
 
+
     public function  homeDestination()
     {
-        $category = Category::all();
+        $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
-        return view('publicSite.index', compact('category', 'trip'));
+        $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
+        // dd($news);
+
+        return view('publicSite.index', compact('category', 'trip', 'news'));
+
+
     }
+
+
 
 
 
     public function index()
     {
         $category = Category::all();
+        
+
         return view('admin.category', compact('category'));
     }
 

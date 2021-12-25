@@ -16,7 +16,10 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trip::all();
+  
+
         return view('admin.trips', compact('trips'));
+        
     }
 
     public function getTrips($id){
@@ -90,4 +93,5 @@ class TripController extends Controller
         $del->delete();
         return redirect('/trips');
     }
+    
 }
