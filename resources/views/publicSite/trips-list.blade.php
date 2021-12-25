@@ -1,18 +1,68 @@
 @extends('publicSite.layout.master')
+@section("style")
+<style>
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+    border-radius: 50%;
+    background-color: var(--thm-gray);
+    color: #9ca3a9;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 57px;
+    height: 57px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
 
+.page-item {
+    margin: 0 5px !important;
+}
+
+.page-item.disabled span.page-link {
+    background-color: #ECEEEF !important;
+}
+
+.page-item:first-child .page-link:hover,
+.page-item:last-child .page-link:hover {
+    background-color: #40b9eb;
+    color: #fff;
+}
+
+span.page-link {
+    width: 57px;
+    height: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #FFA801 !important;
+    border: none;
+}
+
+
+</style>
+@endsection
 @section('content')
 
 
-    
+
         <section class="blog-list" style="margin-top: 150px">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        
+
                         @foreach ($trips as $trip)
                         <div class="blog-two__single blog-one__single">
                             <div class="row">
-                               
+
                                 <div class="col-md-6">
                                     <div class="blog-one__image">
                                         {{-- <img src="{{asset(images/$trip->image)}}" alt=""> --}}
@@ -30,19 +80,22 @@
                                         <a href="news-details.html" class="blog-two__link">Read More</a>
                                     </div><!-- /.blog-two__content -->
                                 </div><!-- /.col-md-6 -->
-                                
-                                
+
+
                             </div><!-- /.row -->
                         </div><!-- /.blog-two__single -->
                         @endforeach
-                        
+
                         <div class="post-pagination">
-                            <a href="#"><i class="fa fa-angle-left"></i></a>
+                            {!! $trips->links() !!}
+                            {{-- <a href="#"><i class="fa fa-angle-left"></i></a>
                             <a class="active" href="#">01</a>
                             <a href="#">02</a>
                             <a href="#">03</a>
-                            <a href="#"><i class="fa fa-angle-right"></i></a>
+                            <a href="#"><i class="fa fa-angle-right"></i></a> --}}
                         </div><!-- /.post-pagination -->
+                            {{-- {!! $trips->links() !!} --}}
+
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="sidebar">
@@ -52,20 +105,20 @@
                                     <button type="submit"><i class="tripo-icon-magnifying-glass"></i></button>
                                 </form><!-- /.sidebar__search-form -->
                             </div><!-- /.sidebar__single -->
-                            
+
                             <div class="sidebar__single sidebar__category">
                                 <h3 class="sidebar__title">All Categories</h3><!-- /.sidebar__title -->
                                 <ul class="sidebar__category-list list-unstyled">
                                     @foreach ($cats as $cat)
-                                    
+
                                     <li><a href={{route('trips-list.show',$cat->id)}}>{{$cat->category_name}}</a></li>
                                     @endforeach
-                                    
-                                    
+
+
                                 </ul><!-- /.sidebar__category-list list-unstyled -->
                             </div><!-- /.sidebar__single sidebar__category -->
-                           
-                            
+
+
                             <div class="sidebar__single sidebar__social">
                                 <h3 class="sidebar__title">Follow Us</h3><!-- /.sidebar__title -->
                                 <div class="sidebar__social-list">
