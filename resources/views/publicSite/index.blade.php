@@ -26,7 +26,6 @@
                 </div><!-- /.block-title -->
                 <div class="row">
                     @foreach ($category as $categories)
-                        
                     <div class="col-lg-3 col-md-6">
                         <div class="destinations-three__single">
                             <img src="uploads/{{$categories->category_img}}" alt="">
@@ -40,10 +39,10 @@
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->
-                  
-                 
+
+
                     @endforeach
-                
+
                 </div><!-- /.row -->
             </div><!-- /.container -->
 
@@ -68,14 +67,14 @@
                 <div class="block-title text-center">
                     <p>Featured tours</p>
                     <h3>Most Popular Tours</h3>
-                  
+
                 </div><!-- /.block-title -->
-             
+
                 <div class="tour-one__carousel tour-one__carousel-no-overflow thm__owl-carousel  owl-carousel owl-theme" data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": true, "margin": 30, "loop": true, "responsive": { "0": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "767": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "991": { "items": 2 }, "1199": { "items": 2 }, "1200": { "items": 3 } }}'>
                     @foreach ($trip as $trips)
                     <div class="item">
-                        
-                            
+
+
                         <div class="tour-one__single">
                             <div class="tour-one__image">
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
@@ -93,14 +92,14 @@
                                     <li><a href="tour-details.html"><i class="far fa-map"></i> Los Angeles</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.tour-one__content -->
-                      
-                         
+
+
                         </div><!-- /.tour-one__single -->
                     </div><!-- /.item -->
-                 
-                    @endforeach 
+
+                    @endforeach
                 </div><!-- /.tour-one__carousel -->
-              
+
 
             </div><!-- /.container -->
         </section><!-- /.tour-one -->

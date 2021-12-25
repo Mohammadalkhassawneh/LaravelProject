@@ -3,8 +3,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Trip;
 use App\Models\Category;
+use Illuminate\Http\Request;
+
 class CategoryController extends Controller
 {
     /**
@@ -17,6 +19,14 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
+
+    public function  homeDestination()
+    {
+        $category = Category::all();
+        $trip = Trip::all();
+        return view('publicSite.index', compact('category', 'trip'));
+    }
+
 
 
     public function index()
