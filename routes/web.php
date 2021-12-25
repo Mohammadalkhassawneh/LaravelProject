@@ -3,6 +3,8 @@
 use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\TripListController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -68,5 +70,11 @@ Route::group(['middleware' => 'App\Http\Middleware\guide'], function()
 });
 
 Route::resource('/trips',TripController::class);
+Route::resource('trips-list',TripListController::class);
 
 
+
+Route::resource('/categories',CategoryController::class);
+
+
+Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'destination'])->name('distination');
