@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Trip;
+
 class CategoryController extends Controller
 {
     /**
@@ -12,16 +14,21 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destination()
+    public function  homeDestination()
     {
         $category = Category::all();
-        return view('publicSite.destination', compact('category'));
+        $trip = Trip::all();
+
+        return view('publicSite.index', compact('category', 'trip'));
+
+
     }
-     
 
     public function index()
     {
         $category = Category::all();
+        
+
         return view('admin.category', compact('category'));
     }
 

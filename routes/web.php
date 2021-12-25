@@ -41,11 +41,12 @@ Route::get('/admin', function () {
 Route::resource("/reservation",ReseverationController::class);
 
 //
+Route::get('/', [CategoryController::class, 'homeDestination']);
 
 
-Route::get('/', function () {
-    return view('publicSite.index');
-});
+// Route::get('/', function () {
+//     return view('publicSite.index');
+// });
 Route::get('/trips', function () {
     return view('admin.trips');
 });
@@ -77,4 +78,4 @@ Route::resource('trips-list',TripListController::class);
 Route::resource('/categories',CategoryController::class);
 
 
-Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'destination'])->name('distination');
+Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'homeDestination']);

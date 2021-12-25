@@ -148,11 +148,11 @@
                                     <a href="contact.html">Contact</a>
                                 </li>
 
-                                
+{{--                                 
                            
                                 @if ($user->role_type == "guide")
                                 <li>create trip</li>
-                                @endif 
+                                @endif  --}}
 
                             </ul>
                         </div><!-- /.navbar-collapse -->
