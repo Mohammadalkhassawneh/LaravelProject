@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -16,11 +17,17 @@ class UserController extends Controller
      */
     public function index()
     {
-         $users = User::all();
-        return view('admin.user',compact('users'));
+        $users = User::all();
+        return view('admin.user', compact('users'));
     }
-
-        /**
+    public function getGuide($id)
+    {
+        $user = User::find($id);
+        $trips = Trip::where('guide_id', $id)->get();
+        ddd($trips);
+        return view('publicSite/guide_profile', compact('user', 'trips'));
+    }
+    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -29,7 +36,7 @@ class UserController extends Controller
     public function show($id)
     {
         $users = User::where('role_type', $id)->get();
-        return view("admin.user",compact('users'));
+        return view("admin.user", compact('users'));
     }
 
     /**
@@ -87,7 +94,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $user = User::find($id);
         $newImage = time() . '-' . $request->image->getClientOriginalName();
@@ -99,7 +106,7 @@ class UserController extends Controller
         $user->image = $newImage;
         $user->role_type = 'admin';
         $user->save();
-         return redirect()->route("user.index");
+        return redirect()->route("user.index");
     }
 
     /**
@@ -110,8 +117,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-    $user = User::find($id);
-    $user->delete($id);
-    return redirect()->route("user.index");
+        $user = User::find($id);
+        $user->delete($id);
+        return redirect()->route("user.index");
     }
 }

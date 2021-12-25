@@ -184,7 +184,7 @@
                     <!-- Guide Information -->
                     <div class="col-4 guide-info">
                         <img src="{{asset('user_images/'.'guide.jpg')}}" alt="guide_photo" width="300px" class="guide_img">
-                        <h2>Joe Joe</h2>
+                        <h2>{{$user->name}}</h2>
                         <div class="container">
                             <div class="row">
                                 <div class="col-2 icons">
@@ -193,15 +193,14 @@
 
                                 </div>
                                 <div class="col-10">
-                                    <h4>guide@example.com</h4>
-                                    <h4>0777 548 684</h4>
+                                    <h4>{{$user->email}}</h4>
+                                    <h4>{{$user->phone}}</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="buttons-list">
                             <div class="row">
                                 <div class="col-5">
-                                    <a href="{{edit_guide_profile.editGuideProfile}}">Edit Profile</a>
                                 </div>
                                 <div class="col-7">
                                     <a href="">Add Trip</a>
