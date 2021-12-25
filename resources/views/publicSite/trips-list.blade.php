@@ -75,7 +75,7 @@ span.page-link {
                                             <li><a href="news-details.html"><i class="far fa-user-circle"></i>{{$trip->guide->name}}</a></li>
                                             <li><a href="news-details.html"><i class="far fa-comments"></i>{{ $trip->date }}</a></li>
                                         </ul><!-- /.list-unstyled blog-one__meta -->
-                                        <h3><a href="news-details.html">{{ $trip->name }}</a></h3>
+                                        <h3><a href="{{route('trips-details.show',$trip->id)}}">{{ $trip->name }}</a></h3>
                                         <p>{{ $trip->description}}</p>
                                         <a href="news-details.html" class="blog-two__link">Read More</a>
                                     </div><!-- /.blog-two__content -->
