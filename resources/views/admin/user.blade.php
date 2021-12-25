@@ -32,7 +32,6 @@
                                 <tr>
                                     <th>name</th>
                                     <th>email</th>
-                                    <th>password</th>
                                     <th>image</th>
                                     <th>phone</th>
                                     <th>date-created</th>
@@ -46,7 +45,6 @@
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}
                                     </td>
-                                    <td>{{$user->password}}</td>
                                     <td><img src="{{asset('user_images/'.$user->image)}}" alt="admin_photo"></td>
                                     <td>{{$user->phone}}</td>
                                     <td>{{$user->created_at}}</td>
