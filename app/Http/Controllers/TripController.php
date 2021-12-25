@@ -16,9 +16,17 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trip::all();
+  
+
         return view('admin.trips', compact('trips'));
+        
     }
 
+    public function getTrips($id){
+        $trips = Trip::find($id);
+        return view('publicSite.guide_profile', compact('trips'));
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -85,4 +93,5 @@ class TripController extends Controller
         $del->delete();
         return redirect('/trips');
     }
+    
 }
