@@ -59,3 +59,5 @@ Route::resource('/trips',TripController::class);
 
 Route::resource('/categories',CategoryController::class);
 
+
+Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'destination'])->name('distination');
