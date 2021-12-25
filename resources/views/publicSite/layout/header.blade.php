@@ -128,7 +128,7 @@
                                     <a href="#">Pages</a>
                                     <ul>
                                         <li><a href="about.html">About Us</a></li>
-                                        <li><a href="tour-guides.html">Tour Guides</a></li>
+                                        <li><a href="{{route("tourGuide.index")}}">Tour Guides</a></li>
                                         <li><a href="gallery.html">Gallery</a></li>
                                         <li><a href="faq.html">FAQ's</a></li>
                                         <li><a href="404.html">404 Page</a></li>

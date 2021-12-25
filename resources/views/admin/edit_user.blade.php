@@ -6,13 +6,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">Edit Admin</div>
                             <div class="card-body card-block">
-                                <form action="{{'update'}}" method="POST">
+                                <form action="{{route("user.update",$edited_user->id)}}" method="POST"  enctype="multipart/form-data">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{$edited_user->id}}">
+                                    @method("PUT")
                                     <div class="form-group">
                                         <div class="input-group">
                                             <input type="text" id="username2" name="name" value="{{$edited_user->name}}" placeholder="Admin Name" class="form-control">
@@ -42,6 +42,14 @@
                                             <input type="number" id="phone" name="phone" placeholder="Phone" class="form-control" value="{{$edited_user->phone}}">
                                             <div class="input-group-addon">
                                                 <i class="fas fa-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="file" id="image" name="image" placeholder="Image" class="form-control">
+                                            <div class="input-group-addon">
+                                                <i class="fas fa-camera"></i>
                                             </div>
                                         </div>
                                     </div>
