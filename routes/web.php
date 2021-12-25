@@ -63,3 +63,10 @@ Route::resource('/categories',CategoryController::class);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/guide_profile', function(){
+    return view('publicSite.guide_profile');
+});
+
+
