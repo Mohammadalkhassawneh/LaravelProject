@@ -3,6 +3,7 @@
 use App\Http\Controllers\ReseverationController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\TripController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -18,9 +19,10 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name("admin");
@@ -32,7 +34,7 @@ Route::resource("/reservation",ReseverationController::class);
 //
 
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('publicSite.index');
 });
 Route::get('/trips', function () {
@@ -48,21 +50,14 @@ Route::get('/delete.{id}', [UserController::class, 'destroy']);
 Route::get('/edit_user{id}', [UserController::class, 'edit']);
 Route::post('/update', [UserController::class, 'update']);
 
-
-
-
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/trips',TripController::class);
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::resource('/categories',CategoryController::class);
 
 
 Auth::routes();

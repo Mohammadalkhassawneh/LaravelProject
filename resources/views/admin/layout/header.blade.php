@@ -14,13 +14,20 @@
     <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
+
+    <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
     <link href='{{asset("css/font-face.css")}}'rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
+
     <!-- Bootstrap CSS-->
-    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
     <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
@@ -32,8 +39,12 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
+
+    <link href="/css/theme.css" rel="stylesheet" media="all">
+
     <link href="css/theme.css" rel="stylesheet" media="all">
     <!-- <link href="css/style.css" rel="stylesheet"> -->
+
 
     /*
 
@@ -53,7 +64,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-{{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
+{{--    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">--}}
 
     */
 
@@ -171,7 +182,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{route("admin")}}">
-                    <img src="images/icon/logo.png" alt="Cool Admin" />
+                    <img src="/images/icon/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
@@ -186,8 +197,9 @@
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>Categories</a>
+                                
                         </li>
                         <li>
                             <a href="{{ asset('trips') }}">
@@ -223,7 +235,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn"></a>
@@ -232,7 +244,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
