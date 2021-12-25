@@ -18,6 +18,8 @@ class CreateTripsTable extends Migration
             $table->string("name");
             $table->text('description')->nullable();
             $table->text('image')->nullable();
+            $table->text('days')->nullable();
+            $table->text('minimum_age')->nullable();
             $table->unsignedInteger('max_visitors')->nullable();
             $table->unsignedDouble('price')->nullable();
             $table->dateTime('date')->nullable();

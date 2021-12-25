@@ -16,7 +16,10 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trip::all();
+  
+
         return view('admin.trips', compact('trips'));
+        
     }
 
     /**
@@ -85,4 +88,5 @@ class TripController extends Controller
         $del->delete();
         return redirect('/trips');
     }
+    
 }
