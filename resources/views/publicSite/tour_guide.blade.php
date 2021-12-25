@@ -20,8 +20,16 @@
             <div class="col-lg-4 col-md-6">
                 <div class="team-one__single">
                     <div class="team-one__image">
-                        <a href="/guide.{{$guide->id}}"><img src='{{asset("images/".$guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
-                        <!-- <a href="{{url('guide/$guide->id')}}"><img src='{{asset("images/".$guide->image)}}' alt="guide_image" style="height:434.4px !important"></a> -->
+                        <a href="{{route('guide',['id'=>$guide->id])}}">
+                            <img src='{{asset("images/".$guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
+                        </a>
+                        {{-- <button type="submit">send</button> --}}
+                        {{-- <form action="{{route("guide")}}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{$guide->id}}">
+                            <img src='{{asset("images/".$guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
+                            <button type="submit">send</button>
+                        </form> --}}
                     </div>
                     <div class="team-one__content">
                         <h3>{{$guide->name}}</h3>

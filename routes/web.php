@@ -42,7 +42,7 @@ Route::get('/', [CategoryController::class, 'homeDestination']);
 
 // Hazem
 Route::resource('/user', UserController::class);
-Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
+Route::get('/guide/{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
 Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
