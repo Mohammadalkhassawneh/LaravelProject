@@ -15,7 +15,11 @@
 }
 
 .guide-info ul {
-    padding-left: 7rem;
+    padding-left: 5.5rem;
+}
+
+.guide-info ul li {
+    padding-left: 1rem;
 }
 
 .guide-info h4 {

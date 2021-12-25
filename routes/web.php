@@ -67,10 +67,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-Route::get('/guide_profile', function(){
-    return view('publicSite.guide_profile');
-});
+// Route::get('/guide_profile', [TripController::class, 'getTrips']);
+Route::resource('/guide_profile', TripController::class);
 
 
 Route::get('/destination', [App\Http\Controllers\CategoryController::class, 'destination'])->name('distination');
