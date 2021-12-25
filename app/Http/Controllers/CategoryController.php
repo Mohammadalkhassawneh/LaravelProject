@@ -12,6 +12,13 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function destination()
+    {
+        $category = Category::all();
+        return view('publicSite.destination', compact('category'));
+    }
+     
+
     public function index()
     {
         $category = Category::all();
@@ -36,7 +43,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request ,Category $Category)
     {
         $data = $request->validate([
             'category_name' => 'required',
@@ -44,14 +51,19 @@ class CategoryController extends Controller
             'category_img' => 'required',
 
      ]);
+     
+
             $input = $request->all();
 
         if ($image = $request->file('uploads')) {
             $destinationPath = 'uploads/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
+            $image->move(public_path($destinationPath, $profileImage));
             $input['image'] = "$profileImage";
         }
+
+
+     
 
         Category::create($data);
 

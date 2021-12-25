@@ -67,7 +67,7 @@
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
             </div><!-- /.topbar-one -->
-            <header class="main-nav__header-one site-header__home-two">
+            <header class="main-nav__header-one site-header__home-two "style="background: #082740" >
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
