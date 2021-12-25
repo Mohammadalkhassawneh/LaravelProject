@@ -13,8 +13,8 @@
                             <div class="rs-select2--light rs-select2--md">
                                 <select class="js-select2" name="property">
                                     <option selected="selected">All Users</option>
-                                    @foreach($roles as $role)
-                                    <option><a href="/search.{{$role}}">{{$role}}</a></option>
+                                    @foreach($roles as $roles)
+                                    <option><a href="/search.{{$roles}}">{{$roles}}</a></option>
                                     @endforeach
                                 </select>
                                 <div class="dropDownSelect2"></div>

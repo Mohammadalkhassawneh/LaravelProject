@@ -22,6 +22,14 @@ use App\Http\Controllers\UserController;
 //    return view('welcome');
 //});
 
+
+
+
+
+Route::get('/admin', function () {
+    return view('admin.index');
+})->middleware('admin');
+
 Route::get('/admin', function () {
     return view('admin.index');
 })->name("admin");
@@ -52,6 +60,12 @@ Route::post('/update', [UserController::class, 'update']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/admin', [App\Http\Controllers\HomeController::class, 'handleAdmin'])->name('admin.route')->middleware('admin');
+Route::group(['middleware' => 'App\Http\Middleware\guide'], function()
+{
+    Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
+    
+});
 
 Route::resource('/trips',TripController::class);
 
