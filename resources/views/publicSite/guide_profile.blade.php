@@ -4,7 +4,7 @@
             <div class="container">
                 <h2>Guide Profile</h2>
                 <ul class="thm-breadcrumb list-unstyled s">
-                    <li><a href="{{ route("home")}}">Home</a></li>
+                    <li><a href="{{ route("home2")}}">Home</a></li>
                     <li><span>Guide Profile</span></li>
                 </ul>
             </div>

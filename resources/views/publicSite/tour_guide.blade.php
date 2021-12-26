@@ -8,8 +8,7 @@
             <div class="container" style="margin-top:145px;">
                 <h2>Tour Guides</h2>
                 <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li><a href="{{route('home2')}}">Home</a></li>
                     <li><span>Tour Guides</span></li>
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->
