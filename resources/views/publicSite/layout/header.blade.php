@@ -40,6 +40,7 @@
 
 <link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
 
+@yield('style')
 
 <style>
     .sign-my:hover {
@@ -47,7 +48,7 @@
     }
     </style>
 
-@yield("style")
+
 
 <body>
 

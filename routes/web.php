@@ -27,8 +27,6 @@ Route::get('/admins', function () {
     return view('admin.index');
 })->name("admin");
 
-
-
 Route::get('/admin', function () {
     return view('admin.index');
 })->middleware('admin');
@@ -38,8 +36,6 @@ Route::get('/admin', function () {
 Route::resource("/reservation", ReseverationController::class);
 
 //
-Route::get('/', [CategoryController::class, 'homeDestination']);
-
 Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 
 // Hazem
@@ -47,8 +43,8 @@ Route::resource('/user', UserController::class);
 Route::get('/guide/{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
+Route::get("/search", [FilterController::class, "search"])->name("search");
 Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
-
 
 
 Auth::routes();
@@ -61,16 +57,10 @@ Route::group(['middleware' => 'App\Http\Middleware\guide'], function () {
     Route::match(['get', 'post'], '/superAdminOnlyPage/', 'HomeController@super_admin');
 });
 
-// <<<<<<< HEAD
+
 Route::resource('/trips',TripController::class);
 Route::resource('trips-list',TripListController::class);
 Route::resource('trips-details',TripDetailsController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact']);
-// =======
-// Route::resource('/trips', TripController::class);
-// Route::resource('trips-list', TripListController::class);
-// Route::resource('/categories', CategoryController::class);
-// Route::get('/destination', [CategoryController::class, 'destination'])->name('distination');
-// >>>>>>> e64493481f2252708e3e455de545e45fbb52ddf6

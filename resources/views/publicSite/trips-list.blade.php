@@ -1,6 +1,7 @@
 @extends('publicSite.layout.master')
 @section("style")
 <style>
+
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {
     border-radius: 50%;
@@ -46,19 +47,17 @@ span.page-link {
     background-color: #FFA801 !important;
     border: none;
 }
-
-
 </style>
+
 @endsection
+
+
 @section('content')
-
-
-
         <section class="blog-list" style="margin-top: 150px">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-
+                        @if(count($trips) > 0)
                         @foreach ($trips as $trip)
                         <div class="blog-two__single blog-one__single">
                             <div class="row">
@@ -86,16 +85,14 @@ span.page-link {
                         </div><!-- /.blog-two__single -->
                         @endforeach
 
+                        @else
+                            <h1 class="text-center" style="font-family: Arial, Helvetica, sans-serif">No Result Found <i class="fas fa-search ml-3"></i></h1>
+                        @endif
+
+
                         <div class="post-pagination">
                             {!! $trips->links() !!}
-                            {{-- <a href="#"><i class="fa fa-angle-left"></i></a>
-                            <a class="active" href="#">01</a>
-                            <a href="#">02</a>
-                            <a href="#">03</a>
-                            <a href="#"><i class="fa fa-angle-right"></i></a> --}}
                         </div><!-- /.post-pagination -->
-                            {{-- {!! $trips->links() !!} --}}
-
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="sidebar">
