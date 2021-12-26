@@ -15,7 +15,8 @@ class TripListController extends Controller
      */
     public function index()
     {
-        $trips = Trip::all();
+        // $trips = Trip::all();
+        $trips = Trip::paginate(4);
         $cats = Category::all();
         return view('publicSite.trips-list', compact('trips','cats'));
     }
@@ -49,7 +50,7 @@ class TripListController extends Controller
      */
     public function show($id)
     {
-        
+
         $cats = Category::all();
         
         $categorty = Category::find($id);

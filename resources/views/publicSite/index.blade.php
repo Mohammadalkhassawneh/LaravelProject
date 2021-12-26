@@ -78,10 +78,10 @@
                         <div class="tour-one__single">
                             <div class="tour-one__image">
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
-                              
+
                             </div><!-- /.tour-one__image -->
                             <div class="tour-one__content">
-                           
+
                                 <h3><a href="tour-details.html">{{$trips->name}}</a></h3>
                                 <p><span>{{$trips->price . "JD"}}</span> / Per Person</p>
                                 <p>Capacity :{{$trips->max_visitors}} Person</p>
@@ -331,8 +331,8 @@
                 </div><!-- /.block-title -->
                 <div class="row">
                     @foreach ($news as $tripDate)
-                        
-                  
+
+
                     <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                         <div class="blog-one__single">
                             <div class="blog-one__image">
@@ -355,7 +355,7 @@
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-4 -->
                     @endforeach
-             
+
                 </div><!-- /.row -->
             </div><!-- /.container -->
         </section><!-- /.blog-one -->

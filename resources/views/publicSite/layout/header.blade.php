@@ -47,7 +47,10 @@
     }
     </style>
 
+@yield("style")
+
 <body>
+
     <div class="preloader">
         <img src='{{asset("assets/images/loader.png")}}' class="preloader__image" alt="">
     </div><!-- /.preloader -->
