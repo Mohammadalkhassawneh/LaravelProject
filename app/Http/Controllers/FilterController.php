@@ -13,7 +13,13 @@ class FilterController extends Controller
     //
 
     public function roles(Request $request) {
-        $users = User::where('role_type', $request->user)->get();
+
+        if($request->user == "All Users") {
+            $users = User::all();
+        }
+        else {
+            $users = User::where('role_type', $request->user)->get();
+        }
         return view("admin.user",compact('users'));
     }
 
