@@ -2,7 +2,15 @@
 
 @section('content')
 
-
+@if (Session::has('RequestSent'))
+<div class="col-lg-10">
+    <div role="alert" class="alert alert-success alert-dismissible fade in">
+        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
+        <strong>Success! </strong>{{ Session::get('RequestSent') }}
+    </div>
+</div>
+<div class="clearfix"></div>
+@endif
         <section class="banner-two">
             <div class="banner-two__bg">
                 <div class="banner-two__bg-inner" data-options='{ "delay": 5000, "slides": [ { "src": "assets/images/backgrounds/banner-2-bg-1.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-2.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-3.jpg" } ], "transition": "fade", "timer": false }'></div><!-- /.banner-two__bg-inner -->

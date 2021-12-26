@@ -64,7 +64,7 @@ span.page-link {
 
                                 <div class="col-md-6">
                                     <div class="blog-one__image">
-                                        {{-- <img src="{{asset(images/$trip->image)}}" alt=""> --}}
+                                        <img src="{{asset('trip_images/'. $trip->image)}}" alt="">
                                         <a href="{{route('trips-details.show',$trip->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                                     </div><!-- /.blog-one__image -->
                                 </div><!-- /.col-md-6 -->

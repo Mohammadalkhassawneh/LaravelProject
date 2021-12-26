@@ -64,7 +64,7 @@
                                 <h4 style="text-transform: capitalize; color:#555">Name: {{$trip->name}}</h4>
                                 <p class="mypara">Description: {{$trip->description}}</p>
                                 <h6 style="color:#FFA801">Price: {{$trip->price }} Jd</h6>
-                                <a href=""><button class="btn show-trip mt-3">Show Trip</button></a>
+                                <a href="{{route('trips-details.edit',$trip->id)}}"><button class="btn show-trip mt-3">Edit Trip</button></a>
                             </div>
                         </div>
                         @endforeach
