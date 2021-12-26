@@ -51,6 +51,7 @@ class TripListController extends Controller
     {
         
         $cats = Category::all();
+        
         $categorty = Category::find($id);
         $trips = $categorty->trip;
         return view('publicSite.trips-list', compact('trips','cats'));

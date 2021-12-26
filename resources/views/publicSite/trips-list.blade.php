@@ -16,18 +16,18 @@
                                 <div class="col-md-6">
                                     <div class="blog-one__image">
                                         {{-- <img src="{{asset(images/$trip->image)}}" alt=""> --}}
-                                        <a href="news-details.html"><i class="fa fa-long-arrow-alt-right"></i></a>
+                                        <a href="{{route('trips-details.show',$trip->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                                     </div><!-- /.blog-one__image -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6 d-flex">
                                     <div class="blog-two__content my-auto">
                                         <ul class="list-unstyled blog-one__meta">
-                                            <li><a href="news-details.html"><i class="far fa-user-circle"></i>{{$trip->guide->name}}</a></li>
-                                            <li><a href="news-details.html"><i class="far fa-comments"></i>{{ $trip->date }}</a></li>
+                                            <li><a href="{{route('guide',$trip->guide->id)}}"><i class="far fa-user-circle"></i>{{$trip->guide->name}}</a></li>
+                                            <li><a><i class="far fa-calendar-alt"></i>{{ $trip->date }}</a></li>
                                         </ul><!-- /.list-unstyled blog-one__meta -->
                                         <h3><a href="{{route('trips-details.show',$trip->id)}}">{{ $trip->name }}</a></h3>
                                         <p>{{ $trip->description}}</p>
-                                        <a href="news-details.html" class="blog-two__link">Read More</a>
+                                        <a href="{{route('trips-details.show',$trip->id)}}" class="blog-two__link">Read More</a>
                                     </div><!-- /.blog-two__content -->
                                 </div><!-- /.col-md-6 -->
                                 
