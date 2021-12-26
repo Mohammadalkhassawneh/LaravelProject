@@ -4,7 +4,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
        <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
 
             <div class="container" style="margin-top:145px;">
@@ -15,29 +14,17 @@
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->
         </section><!-- /.page-header -->
-=======
-<section class='page-header' style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
-    <div class="container" style="margin-top:145px;">
-        <h2>Tour Guides</h2>
-        <ul class="thm-breadcrumb list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><span>Tour Guides</span></li>
-        </ul><!-- /.thm-breadcrumb -->
-    </div><!-- /.container -->
-</section><!-- /.page-header -->
->>>>>>> 45c090f5b7fdf134bf94e5c2299e9aec449ff1e1
 
 
 <section class="team-one">
-    <div class="container">
+    <div class="container">  
         <div class="row">
             @foreach ($guides as $guide)
             <div class="col-lg-4 col-md-6">
                 <div class="team-one__single">
                     <div class="team-one__image">
                         @auth
-                        <a href="{{route('guide',Auth::user()->id)}}">
+                        <a href="{{route('guide',$guide->id)}}">
                             @endauth
                             <img src='{{asset("images/". $guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
                         </a>
