@@ -17,7 +17,7 @@
             <!-- Guide Information -->
             <div class="col-4 guide-info">
                 <img src="{{asset('user_images/'.'guide.jpg')}}" alt="guide_photo" width="300px" class="guide_img">
-                <h2>{{$user->name}}</h2>
+                <h2>{{Auth::user()->name}}</h2>
                 <div class="container">
                     <div class="row">
                         <div class="col-2 icons">
@@ -26,17 +26,8 @@
 
                         </div>
                         <div class="col-10">
-                            <h4>{{$user->email}}</h4>
-                            <h4>{{$user->phone}}</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="buttons-list">
-                    <div class="row">
-                        <div class="col-5">
-                        </div>
-                        <div class="col-7">
-                            <a href="{{route('addtrip', ['id'=>$user->id])}}">Add Trip</a>
+                            <h4>{{Auth::user()->email}}</h4>
+                            <h4>{{Auth::user()->phone}}</h4>
                         </div>
                     </div>
                 </div>
@@ -51,13 +42,20 @@
                         @foreach($trips as $trip)
                         <div class="row">
                             <div class="col-5">
-                                <img src="{{asset('uploads/'.'salt.jpg')}}" alt="guide_photo" class="trip_img">
+                                <img src={{asset('trip_images/'.$trip->image)}} alt="guide_photo" class="trip_img">
                             </div>
                             <div class="col-7">
                                 <h4>{{$trip->name}}</h4>
                                 <p>{{$trip->description}}</p>
                                 <h6>{{$trip->price}} Jd</h6>
-                                <a href="" class="show-trip">Show Trip</a>
+                                <a href="{{route('trips-details.show', $trip->id)}}" class="show-trip">Show Trip</a>
+                                <form action="{{route("addtrip.destroy",$trip->id)}}" method="POST" class='deletion'>
+                                    @csrf
+                                    @method("delete")
+                                    <button type="submit" class="delete-trip" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        Delete Trip
+                                    </button>
+                                </form>
                             </div>
                         </div>
                         <hr>

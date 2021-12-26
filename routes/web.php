@@ -45,9 +45,8 @@ Route::resource('/user', UserController::class);
 
 // Sahar
 Route::resource('/userprofile', UserProfileController::class);
-// Route::resource('/addtrip', AddTripController::class);
+Route::resource('/addtrip', AddTripController::class);
 Route::get('/addtrip.{id}', [AddTripController::class, 'create'])->name('addtrip');
-Route::post('/addtrip.{id}', [AddTripController::class, 'store'])->name('storetrip');
 
 Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
 

@@ -10,7 +10,7 @@
                         <div class="card trip-form">
                             <div class="card-header">Add Trip</div>
                             <div class="card-body card-block">
-                                <form action="{{route('storetrip'), Auth::user()->id}}" method="POST" enctype="multipart/form-data" class="create-trip-form">
+                                <form action="{{route('addtrip.store')}}" method="POST" enctype="multipart/form-data" class="create-trip-form">
                                     @csrf
                                     <div class="form-group">
                                         <div class="input-group">
@@ -34,7 +34,27 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="input-group">
+                                            <input type="number" id="days" name="days" placeholder="Trip Days" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="number" id="minimum_age" name="minimum_age" placeholder="Choose Minimum Age" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
                                             <input type="date" id="date" name="date" placeholder="Trip Date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <select class="form-select" aria-label="Default select example" name='category'>
+                                                <option selected>Choose Category</option>
+                                                @foreach($categories as $category)
+                                                <option>{{$category->category_name}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="form-group">

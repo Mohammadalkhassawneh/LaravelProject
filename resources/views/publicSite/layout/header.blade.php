@@ -82,7 +82,7 @@
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__logo-box">
-                            <a href="index.html" class="main-nav__logo">
+                            <a href="{{ route('home') }}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
                             <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
@@ -113,6 +113,15 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+
+                                @auth
+                                @if(Session::get('role') == "guide")
+                                <li>
+                                    <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
+                                </li>
+                                @endif
+                                @endauth
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
