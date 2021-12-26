@@ -111,15 +111,16 @@
                                 </li>
 
                                 <li>
-                                    <a href="contact">Contact</a>
+                                    <a href="{{route("contact")}}">Contact</a>
                                 </li>
-                                @auth
-                                @if(Auth::user()->role_type == "guide")
-                                <li>
-                                    <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
-                                </li>
-                                @endif
-                                @endauth
+
+                            @auth
+                            @if(Auth::user()->role_type == "guide")
+                            <li>
+                                <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
+                            </li>
+                            @endif
+                            @endauth
 
                             </ul>
                         </div><!-- /.navbar-collapse -->
@@ -161,7 +162,7 @@
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
-                            <a href="" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>
+                            @auth <a href="{{route("userprofile.index")}}" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>@endauth
                         </div><!-- /.main-nav__right -->
                     </div>
                     <!-- /.container -->

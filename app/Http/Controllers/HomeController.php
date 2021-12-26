@@ -36,7 +36,6 @@ class HomeController extends Controller
                 $role = "";
             }
         return view('publicSite.index', compact('category', 'trip', 'news', 'role'));
-
     }
 
 

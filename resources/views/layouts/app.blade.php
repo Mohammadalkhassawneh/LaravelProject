@@ -1,6 +1,49 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Two || Tripo || Travel & Tourism Agencies HTML Template</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
+
+    <!-- plugin scripts -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,400i,500,600,700,800,900%7CSatisfy&amp;display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href={{asset("assets/css/animate.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/owl.carousel.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/owl.theme.default.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/magnific-popup.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/fontawesome-all.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/swiper.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/bootstrap-select.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/tripo-icons.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/jquery.mCustomScrollbar.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/bootstrap-datepicker.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/vegas.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/nouislider.min.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/nouislider.pips.css")}}>
+
+    <!-- template styles -->
+    <link rel="stylesheet" href={{asset("assets/css/style.css")}}>
+    <link rel="stylesheet" href={{asset("assets/css/responsive.css")}}>
+
+    <style>
+        .sign-my:hover {
+            color: #ff0143 !important;
+        }
+    </style>
+
+{{--  Me Above  --}}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,62 +61,180 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        .site-header__header-one {
+            position: initial;
+            background-color: #082740;
+            padding-top: 20px;
+        }
+
+    </style>
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+{{--        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">--}}
+{{--            <div class="container">--}}
+{{--                <a class="navbar-brand" href="{{ url('/') }}">--}}
+{{--                    {{ config('app.name', 'Laravel') }}--}}
+{{--                </a>--}}
+{{--                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">--}}
+{{--                    <span class="navbar-toggler-icon"></span>--}}
+{{--                </button>--}}
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+{{--                <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
+{{--                    <!-- Left Side Of Navbar -->--}}
+{{--                    <ul class="navbar-nav me-auto">--}}
 
-                    </ul>
+{{--                    </ul>--}}
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+{{--                    <!-- Right Side Of Navbar -->--}}
+{{--                    <ul class="navbar-nav ms-auto">--}}
+{{--                        <!-- Authentication Links -->--}}
+{{--                        @guest--}}
+{{--                            @if (Route::has('login'))--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>--}}
+{{--                                </li>--}}
+{{--                            @endif--}}
+
+{{--                            @if (Route::has('register'))--}}
+{{--                                <li class="nav-item">--}}
+{{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>--}}
+{{--                                </li>--}}
+{{--                            @endif--}}
+{{--                        @else--}}
+{{--                            <li class="nav-item dropdown">--}}
+{{--                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
+{{--                                    {{ Auth::user()->name }}--}}
+{{--                                </a>--}}
+
+{{--                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">--}}
+{{--                                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
+{{--                                       onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                                        {{ __('Logout') }}--}}
+{{--                                    </a>--}}
+
+{{--                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                                        @csrf--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                        @endguest--}}
+{{--                    </ul>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </nav>--}}
+{{--        @extends("publicSite.layout.header")--}}
+        <div class="page-wrapper">
+        <div class="site-header__header-one site-header__home-two-wrap">
+            <div class="topbar-one">
+                <div class="container-fluid">
+                    <div class="topbar-one__left">
+                        <a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a>
+                        <a href="tel:666-999-0000">666 999 0000</a>
+                        <a href="#">77 broklyn street new york</a>
+                    </div><!-- /.topbar-one__left -->
+                    <div class="topbar-one__right">
+                        <div class="topbar-one__social">
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div><!-- /.topbar-one__social -->
+                    </div><!-- /.topbar-one__right -->
+                </div><!-- /.container-fluid -->
+            </div><!-- /.topbar-one -->
+            <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
+                <nav class="header-navigation stricky">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="main-nav__logo-box">
+                            <a href="index.html" class="main-nav__logo">
+                                <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
+                            </a>
+                            <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
+                                <!-- /.smpl-icon-menu --></a>
+                        </div><!-- /.logo-box -->
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="main-nav__main-navigation">
+                            <ul class=" main-nav__navigation-box">
+                                <li class="dropdown current">
+                                    <a href={{route("home2")}}>Home</a>
+
+                                        </li>
+
+
+                                <li class="dropdown">
+                                    <a href="{{route("distination")}}">Destinations</a>
+
                                 </li>
-                            @endif
+                                <li class="dropdown">
+                                    <a href="{{route("trips-list.index")}}">Tours</a>
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
+                                <li class="dropdown">
+                                    <a href="tour-guide">Tour Guides</a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                </li>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                                <li>
+                                    <a href="contact">Contact</a>
+                                </li>
+                            </ul>
+                        </div><!-- /.navbar-collapse -->
+                        <div class="main-nav__right">
+                            <ul class="navbar-nav ms-auto flex-row">
+                                <!-- Authentication Links -->
+                                @guest
+                                    @if (Route::has('login'))
+                                        <li class="nav-item mr-4">
+                                            <a class="nav-link text-white sign-my" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        </li>
+                                    @endif
+
+                                    @if (Route::has('register'))
+                                        <li class="nav-item mr-4">
+                                            <a class="nav-link text-white sign-my" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
+                                @else
+                                    <li>
+                                        <a class="p-5 text-white" role="button" style="padding-right:40px !important;" >
+                                            {!!   "Welocme, " .  "<span style='color:#FFA801'>".Auth::user()->name."</span>" !!}
+                                        </a>
+                                    </li>
+                                    <div>
+                                        <a class="" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                          document.getElementById('logout-form').submit();">
+                                            <button class="btn btn-danger mr-5">
+                                            {{   __('Logout') }}
+                                            </button>
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+
+
+                                    </div>
+                                @endguest
+                            </ul>
+                            <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
+                            <a href="" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>
+                        </div><!-- /.main-nav__right -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+            </header><!-- /.site-header -->
+        </div>
 
         <main class="py-4">
             @yield('content')

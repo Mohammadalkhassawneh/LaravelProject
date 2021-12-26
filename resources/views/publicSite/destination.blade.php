@@ -7,7 +7,7 @@
             <div class="container">
                 <h2>Destination</h2>
                 <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('home2')}}">Home</a></li>
                     <li><span>Destination</span></li>
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->
@@ -23,13 +23,13 @@
                         <div class="destinations-three__single">
                         <img src="{{ asset('uploads/'. $val->category_img) }}" style="width:100%;height:45vh"  alt="Image">
                             <div class="destinations-three__content">
-                                <h3><a href="{{route('trips-list.show',$val->id)}}">{{ $val->category_name}}</a></h3>
+                                <h3><a href="{{route("trips-list.index",$val->id)}}">{{ $val->category_name}}</a></h3>
                                 
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">{{ $val->category_name}}</a></h3>
-                                <p>24 Tours</p>
-                                <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
+                                <h3><a href="{{route("trips-list.index",$val->id)}}">{{ $val->category_name}}</a></h3>
+                                <p>{{$val->trip()->count(). ' Tours'}}</p>
+                                <a href="{{route("trips-list.index",$val->id)}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->
