@@ -23,13 +23,12 @@
                         <div class="col-2 icons">
                             <h4><i class="fas fa-envelope"></i></h4>
                             <h4><i class="fas fa-mobile-alt"></i></h4>
-                            
+
                         </div>
                         <div class="col-10">
                             <h4>{{Auth::user()->email}}</h4>
                             <h4>{{Auth::user()->phone}}</h4>
                         </div>
-                        <a href="{{route('userprofile.edit', Auth::user()->id)}}">edit</a>
                     </div>
                 </div>
             </div>
@@ -50,6 +49,7 @@
                                 <p>{{$trip->description}}</p>
                                 <h6>{{$trip->price}} Jd</h6>
                                 <a href="{{route('trips-details.show', $trip->id)}}" class="show-trip">Show Trip</a>
+                           
                                 <!-- <form action="{{route("addtrip.destroy",$trip->id)}}" method="POST" class='deletion'>
                                     @csrf
                                     @method("delete")

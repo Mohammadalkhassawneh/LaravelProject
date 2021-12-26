@@ -65,7 +65,7 @@
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
                         <a href="tel:666-999-0000">0799665544</a>
-                        <a >alabdali/aldakleah-circle</a>
+                        <a>alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
@@ -113,33 +113,8 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
-                                {{-- @auth
-                                @if($role != "")
-                                    @if($role->role_type == "guide")
-                                    <li>
-                                        <a href="contact">Create Trip</a>
-                                    </li>
-                                    @endif
-                                    @endif
-                            @endauth --}}
-                            @auth 
-
-
-
-                            
-                            @if(Auth::user()->role_type == "guide")
-                            {{-- @if(Session::get('role') == 'guide') --}}
-                            <li>
-                                <a href="contact">Create Trip</a>
-                            </li>
-                            @endif
-                            @endauth
-
-                                    
-                               
-
                                 @auth
-                                @if(Session::get('role') == "guide")
+                                @if(Auth::user()->role_type == "guide")
                                 <li>
                                     <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
                                 </li>
