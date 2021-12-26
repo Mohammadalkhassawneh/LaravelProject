@@ -57,7 +57,7 @@
             <div class="container">
                 <h3>Discover the beauty of nature</h3>
                 <div class="cta-one__button-block">
-                    <a href="contact.html" class="thm-btn cta-one__btn">Book Now!</a><!-- /.thm-btn cta-one__btn -->
+                    <a href="{{ route('trips-list.index') }}" class="thm-btn cta-one__btn">Book Now!</a><!-- /.thm-btn cta-one__btn -->
                 </div><!-- /.cta-one__button-block -->
             </div><!-- /.container -->
         </section><!-- /.cta-one -->
@@ -342,19 +342,19 @@
                         <div class="blog-one__single">
                             <div class="blog-one__image">
                                 <img src="assets/images/blog/blog-1-1.jpg" alt="">
-                                <a href="news-details.html"><i class="fa fa-long-arrow-alt-right"></i></a>
+                                <a href="{{ route('trips-details.show',$trips->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="news-details.html"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
+                                    <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
                                     <li><a href="news-details.html"><i class="far fa-comments"></i> {{$tripDate->date}}</a></li>
 
                                 </ul><!-- /.list-unstyled blog-one__meta -->
-                                <h3><a href="news-details.html">{{$tripDate->name}}</a></h3>
+                                <h3><a href="{{ route('trips-details.show',$trips->id)}}">{{$tripDate->name}}</a></h3>
                                 <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
-                                    <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
+                                    <li><a><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
+                                    <li><a><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
+                                    <li><a href="{{ route('trips-details.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
@@ -373,11 +373,10 @@
                             by Signing Up</h3>
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
-                        {{-- <form action="#" class="mailchimp-one__form mc-form" data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
-                            <input type="text" placeholder="Email Address"> --}}
-                            <button class="thm-btn mailchimp-one__btn" type="submit">sginup Now</button>
-                        {{-- </form><!-- /.mailchimp-one__form --> --}}
-                        <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                       
+                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >sginup Now</a>
+                        
+                        <div class="mc-form__response"></div>
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->
             </div><!-- /.container -->

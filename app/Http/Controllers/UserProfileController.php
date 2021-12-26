@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Trip;
-use App\Models\User;
 use Illuminate\Http\Request;
-
-class TripController extends Controller
+use App\Models\User;
+class UserProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +13,9 @@ class TripController extends Controller
      */
     public function index()
     {
-        $trips = Trip::all();
-  
-
-        return view('admin.trips', compact('trips'));
-        
+        return view('publicSite/user_profile');
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,6 +45,7 @@ class TripController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
@@ -60,7 +56,8 @@ class TripController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        return view('publicSite/edit_user_profile', compact('user'));
     }
 
     /**
@@ -72,7 +69,15 @@ class TripController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->phone = $request->phone;
+
+        $user->update();
+        return view('publicSite/user_profile');
+        
     }
 
     /**
@@ -83,9 +88,6 @@ class TripController extends Controller
      */
     public function destroy($id)
     {
-        $del = Trip::find($id);
-        $del->delete();
-        return redirect('/trips');
+        //
     }
-    
 }

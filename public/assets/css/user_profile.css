@@ -1,0 +1,34 @@
+.user_profile {
+    margin-top: 15rem;
+    text-align: center;
+}
+
+.user_img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px rgb(221, 219, 219), 1px 1px 5px rgb(221, 219, 219);
+}
+
+.username {
+    margin-right: 5rem;
+}
+
+.trip {
+    text-align: left;
+}
+
+.edit_user_form {
+    margin-top: 15rem;
+}
+
+.edit_user_form .card {
+    width: 60%;
+    margin: auto;
+}
+
+.edit_user_form .card-header,
+.edit_user_form .user-edit-button {
+    color: #fff;
+    background-color: #082740;
+}
