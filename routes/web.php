@@ -11,6 +11,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
+use App\Http\Controllers\TripDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,7 @@ Route::group(['middleware' => 'App\Http\Middleware\guide'], function () {
 // <<<<<<< HEAD
 Route::resource('/trips',TripController::class);
 Route::resource('trips-list',TripListController::class);
+Route::resource('trips-details',TripDetailsController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact']);
