@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Trip;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 class UserProfileController extends Controller
 {
     /**
@@ -13,7 +16,12 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('publicSite/user_profile');
+        if(Auth::id()) {
+            if(Auth::user()->role_type="guide")
+            $trips = User::find(Auth::id())->trip;
+        return view('publicSite/user_profile',compact('trips'));
+        }
+        return redirect()->route("home2");
     }
 
     /**
@@ -77,7 +85,7 @@ class UserProfileController extends Controller
 
         $user->update();
         return view('publicSite/user_profile');
-        
+
     }
 
     /**

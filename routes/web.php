@@ -48,9 +48,9 @@ Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 
 // Hazem
 Route::resource('/user', UserController::class);
+Route::resource('/userprofile', UserProfileController::class);
 
 // Sahar
-Route::resource('/userprofile', UserProfileController::class);
 Route::resource('/addtrip', AddTripController::class);
 Route::get('/addtrip.{id}', [AddTripController::class, 'create'])->name('addtrip');
 

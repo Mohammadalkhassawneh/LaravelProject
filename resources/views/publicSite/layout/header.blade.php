@@ -162,7 +162,7 @@
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
-                            <a href="" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>
+                            @auth <a href="{{route("userprofile.index")}}" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>@endauth
                         </div><!-- /.main-nav__right -->
                     </div>
                     <!-- /.container -->
