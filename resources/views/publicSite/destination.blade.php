@@ -7,7 +7,7 @@
             <div class="container">
                 <h2>Destination</h2>
                 <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><span>Destination</span></li>
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->

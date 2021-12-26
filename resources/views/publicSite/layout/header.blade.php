@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from layerdrops.com/tripo/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 13:10:37 GMT -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,14 +39,16 @@
     <link rel="stylesheet" href='{{asset("assets/css/style.css")}}'>
     <link rel="stylesheet" href='{{asset("assets/css/responsive.css")}}'>
 
-<link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/user_profile.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/add_trip.css")}}">
 
-@yield('style')
+    @yield('style')
 
-<style>
-    .sign-my:hover {
-        color: #ff0143 !important;
-    }
+    <style>
+        .sign-my:hover {
+            color: #ff0143 !important;
+        }
     </style>
 
 
@@ -60,9 +63,9 @@
             <div class="topbar-one">
                 <div class="container-fluid">
                     <div class="topbar-one__left">
-                        <a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a>
-                        <a href="tel:666-999-0000">666 999 0000</a>
-                        <a href="#">77 broklyn street new york</a>
+                        <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
+                        <a href="tel:666-999-0000">0799665544</a>
+                        <a >alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
@@ -79,7 +82,7 @@
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__logo-box">
-                            <a href="index.html" class="main-nav__logo">
+                            <a href="{{ route('home') }}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
                             <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
@@ -91,7 +94,7 @@
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
 
-                                        </li>
+                                </li>
 
 
                                 <li class="dropdown">
@@ -103,55 +106,88 @@
 
                                 </li>
                                 <li class="dropdown">
-                                    <a href="tour-guide">Tour Guides</a>
+                                    <a href="{{route('tourGuide.index')}}">Tour Guides</a>
 
                                 </li>
 
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+<<<<<<< HEAD
                              
                               
+=======
+                                {{-- @auth
+                                @if($role != "")
+                                    @if($role->role_type == "guide")
+                                    <li>
+                                        <a href="contact">Create Trip</a>
+                                    </li>
+                                    @endif
+                                    @endif
+                            @endauth --}}
+                            @auth 
 
+
+
+                            
+                            @if(Auth::user()->role_type == "guide")
+                            {{-- @if(Session::get('role') == 'guide') --}}
+                            <li>
+                                <a href="contact">Create Trip</a>
+                            </li>
+                            @endif
+                            @endauth
+
+                                    
                                
+>>>>>>> 45c090f5b7fdf134bf94e5c2299e9aec449ff1e1
+
+                                @auth
+                                @if(Session::get('role') == "guide")
+                                <li>
+                                    <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
+                                </li>
+                                @endif
+                                @endauth
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
                             <ul class="navbar-nav ms-auto flex-row">
                                 <!-- Authentication Links -->
                                 @guest
-                                    @if (Route::has('login'))
-                                        <li class="nav-item mr-4">
-                                            <a class="nav-link text-white sign-my" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                        </li>
-                                    @endif
+                                @if (Route::has('login'))
+                                <li class="nav-item mr-4">
+                                    <a class="nav-link text-white sign-my" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @endif
 
-                                    @if (Route::has('register'))
-                                        <li class="nav-item mr-4">
-                                            <a class="nav-link text-white sign-my" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                    @endif
+                                @if (Route::has('register'))
+                                <li class="nav-item mr-4">
+                                    <a class="nav-link text-white sign-my" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                @endif
                                 @else
-                                    <li>
-                                        <a class="p-5 text-white" role="button" style="padding-right:40px !important;" >
-                                            {!!   "Welocme, " .  "<span style='color:#FFA801'>".Auth::user()->name."</span>" !!}
-                                        </a>
-                                    </li>
-                                    <div>
-                                        <a class="" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
+                                <li>
+                                    <a class="p-5 text-white" role="button" style="padding-right:40px !important;">
+                                        {!! "Welocme, " . "<span style='color:#FFA801'>".Auth::user()->name."</span>" !!}
+                                    </a>
+                                </li>
+                                <div>
+                                    <a class="" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                           document.getElementById('logout-form').submit();">
-                                            <button class="btn btn-danger mr-5">
-                                            {{   __('Logout') }}
-                                            </button>
-                                        </a>
+                                        <button class="btn btn-danger mr-5">
+                                            {{ __('Logout') }}
+                                        </button>
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
 
 
-                                    </div>
+                                </div>
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
@@ -163,4 +199,4 @@
             </header><!-- /.site-header -->
         </div>
 
-  <!-- /.site-header__header-one site-header__home-two-wrap -->
+        <!-- /.site-header__header-one site-header__home-two-wrap -->

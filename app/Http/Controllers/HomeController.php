@@ -36,7 +36,6 @@ class HomeController extends Controller
                 $role = "";
             }
         return view('publicSite.index', compact('category', 'trip', 'news', 'role'));
-
     }
 
 
@@ -48,7 +47,7 @@ class HomeController extends Controller
     }
     public function handleAdmin()
     {
-        return redirect('admin');
+        return redirect('/admins');
     }
 
 }

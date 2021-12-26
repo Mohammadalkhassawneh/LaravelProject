@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-{{-- @if (Auth::user() == null)
-{!! redirect('/') !!}
-@endif --}}
 
 @auth
-  // user logged in
-  @else
+  @if(Session::get('role') != "admin")
   {!! redirect('/') !!}
+  @endif
 @endauth
+
 
 
 <html lang="en">
@@ -75,47 +73,7 @@
 </head>
 
 <body class="animsition">
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm" >
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Laravel') }}
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav me-auto">
-
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ms-auto">
-                <!-- Authentication Links -->
-                @guest
-                    @if (Route::has('login'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                    </li>
-                    @endif
-
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </li>
-                    @endif
-                    @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }}
-                        </a>
-                    </li>
-                    @endguest
-                </ul>
-            </div>
-        </div>
-    </nav>
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
@@ -125,7 +83,7 @@
                         <a class="logo" href="index.html">
                             <img src= {{asset('/images/icon/logo.png')}}  alt="CoolAdmin" />
                         </a>
-                        <button class="hamburger hamburger--slider" type="button">
+                        <button class="hamburger hamburger--slider mr-3" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
                             </span>
@@ -211,14 +169,8 @@
             <header class="header-desktop">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="header-wrap">
-                            <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                            <div class="header-button">
+                        <div class="header-wrap justify-content-end">
+                            <div class="header-button justify-content-end">
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
