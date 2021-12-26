@@ -32,9 +32,6 @@ use App\models\Trip;
 Route::get('/admins', function () {
     $user = User::all();
     $trip = Trip::all();
-
-
-    // $admins = User::where('role_type','admin')->count();
     return view('admin.index', compact('user', 'trip'));
 })->name("admin");
 
@@ -75,5 +72,5 @@ Route::resource('trips-list',TripListController::class);
 Route::resource('trips-details',TripDetailsController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
-Route::get('/contact', [CategoryController::class,'contact']);
+Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 

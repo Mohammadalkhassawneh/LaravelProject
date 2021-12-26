@@ -80,13 +80,13 @@
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
 
                             </div><!-- /.tour-one__image -->
-                            
+
                             <div class="tour-one__content">
                                 <ul  class="list-unstyled blog-one__meta">
                                     <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $trips->guide->name}}</a></li>
                                     <li><a><i class="fas fa-calendar-day"></i> {{$trips->date}}</a></li>
                                 </ul>
-                                
+
                                 <h3><a href="{{ route('trips-details.show',$trips->id)}}">{{$trips->name}}</a></h3>
                                 <p><span>{{$trips->price . "JD"}}</span> / Per Person</p>
                                 <p>Capacity :{{$trips->max_visitors}} Person</p>
@@ -94,12 +94,12 @@
                                     <li><a ><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
                                     <li><a><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
                                     <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
-                                </ul><!-- /.tour-one__meta -->
-                            </div><!-- /.tour-one__content -->
+                                </ul>
+                            </div>
 
 
-                        </div><!-- /.tour-one__single -->
-                    </div><!-- /.item -->
+                        </div>
+                    </div>
 
                     @endforeach
                 </div><!-- /.tour-one__carousel -->
@@ -373,9 +373,9 @@
                             by Signing Up</h3>
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
-                       
+
                             <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >sginup Now</a>
-                        
+
                         <div class="mc-form__response"></div>
                     </div><!-- /.col-lg-7 -->
                 </div><!-- /.row -->
