@@ -6,6 +6,7 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FilterController extends Controller
 {
@@ -20,8 +21,12 @@ class FilterController extends Controller
 
                 $cats = Category::all();
                 $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
-
-             return view('publicSite.trips-list', compact('trips','cats'));
+        if(Auth::user() != null){
+        $role = User::find(Auth::user()->id);
+        } else {
+            $role = "";
+        }
+             return view('publicSite.trips-list', compact('trips','cats','role'));
     }
 
 }

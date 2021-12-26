@@ -110,18 +110,15 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
-                             
-                                    @if($role != "")
-                                        @if($role->role_type == "guide")
-                                        <li>
-                                            <a href="contact">Create Trip</a>
-                                        </li>
-                                        @endif
-                                        @endif
-                                    
-                               
 
-                               
+                                @auth
+                                    @if(Session::get('role') == "guide")
+                                    <li>
+                                        <a href="contact">Create Trip</a>
+                                    </li>
+                                    @endif
+                                @endauth
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
