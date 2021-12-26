@@ -110,6 +110,30 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+                                {{-- @auth
+                                @if($role != "")
+                                    @if($role->role_type == "guide")
+                                    <li>
+                                        <a href="contact">Create Trip</a>
+                                    </li>
+                                    @endif
+                                    @endif
+                            @endauth --}}
+                            @auth 
+
+
+
+                            
+                            @if(Auth::user()->role_type == "guide")
+                            {{-- @if(Session::get('role') == 'guide') --}}
+                            <li>
+                                <a href="contact">Create Trip</a>
+                            </li>
+                            @endif
+                            @endauth
+
+                                    
+                               
 
                                 @auth
                                     @if(Session::get('role') == "guide")

@@ -48,7 +48,7 @@ class HomeController extends Controller
     }
     public function handleAdmin()
     {
-        return redirect('admin');
+        return redirect('/admins');
     }
 
 }
