@@ -4,11 +4,8 @@
 
 @section('content')
 
-<<<<<<< HEAD
        <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
-=======
-        <section class='page-header' style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
->>>>>>> 88e359ed05e9b6b8d02764253122e00b0ea8d2e8
+
             <div class="container" style="margin-top:145px;">
                 <h2>Tour Guides</h2>
                 <ul class="thm-breadcrumb list-unstyled">
@@ -18,10 +15,7 @@
                 </ul><!-- /.thm-breadcrumb -->
             </div><!-- /.container -->
         </section><!-- /.page-header -->
-<<<<<<< HEAD
 
-=======
->>>>>>> 88e359ed05e9b6b8d02764253122e00b0ea8d2e8
 
 <section class="team-one">
     <div class="container">

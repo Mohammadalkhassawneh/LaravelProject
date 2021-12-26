@@ -111,17 +111,7 @@
                                     <a href="contact">Contact</a>
                                 </li>
                              
-                                @auth
-                                    @if($role != "")
-                                        @if($role->role_type == "guide")
-                                        <li>
-                                            <a href="contact">Create Trip</a>
-                                        </li>
-                                        @endif
-                                        @endif
-                                @endauth
-
-                               
+                              
 
                                
                             </ul>
