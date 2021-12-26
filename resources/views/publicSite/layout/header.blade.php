@@ -79,7 +79,7 @@
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
                         <div class="main-nav__logo-box">
-                            <a href="index.html" class="main-nav__logo">
+                            <a href="{{ route('home') }}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
                             <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
@@ -120,6 +120,10 @@
                                     @endif
                             @endauth --}}
                             @auth 
+
+
+
+                            
                             @if(Auth::user()->role_type == "guide")
                             {{-- @if(Session::get('role') == 'guide') --}}
                             <li>
@@ -131,7 +135,14 @@
                                     
                                
 
-                               
+                                @auth
+                                    @if(Session::get('role') == "guide")
+                                    <li>
+                                        <a href="contact">Create Trip</a>
+                                    </li>
+                                    @endif
+                                @endauth
+
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">

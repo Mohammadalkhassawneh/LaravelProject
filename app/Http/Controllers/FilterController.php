@@ -6,13 +6,20 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FilterController extends Controller
 {
     //
 
     public function roles(Request $request) {
-        $users = User::where('role_type', $request->user)->get();
+
+        if($request->user == "All Users") {
+            $users = User::all();
+        }
+        else {
+            $users = User::where('role_type', $request->user)->get();
+        }
         return view("admin.user",compact('users'));
     }
 
@@ -20,8 +27,12 @@ class FilterController extends Controller
 
                 $cats = Category::all();
                 $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
-
-             return view('publicSite.trips-list', compact('trips','cats'));
+        if(Auth::user() != null){
+        $role = User::find(Auth::user()->id);
+        } else {
+            $role = "";
+        }
+             return view('publicSite.trips-list', compact('trips','cats','role'));
     }
 
 }
