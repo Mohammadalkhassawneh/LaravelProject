@@ -22,6 +22,8 @@ class CategoryController extends Controller
     {
         return view('publicSite.contact');
     }
+
+
     public function destination()
     {
         $category = Category::all();
@@ -74,11 +76,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'category_name' => 'required',
             'category_desc' => 'required',
             'category_img' => 'required',
-     ]);
+
+        ]);
 
      $input = $request->all();
      if($request->file("category_img")) {
@@ -129,14 +132,14 @@ class CategoryController extends Controller
 
         ]);
 
+     $input = $request->all();
+     if($request->file("category_img")) {
         $newImageName = time() . '-' . $request->category_img->getClientOriginalName();
         $request->category_img->move(public_path('uploads'), $newImageName);
+        $input['category_img'] = $newImageName;
+     }
+        $Category->update($input);
 
-        $Category->category_name = $request->category_name;
-        $Category->category_desc = $request->category_desc;
-        $Category->category_img = $request->category_img;
-
-        $Category->save();
         return redirect()->route('categories.index');
     }
 
