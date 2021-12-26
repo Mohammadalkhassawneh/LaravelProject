@@ -22,16 +22,17 @@ class CategoryController extends Controller
     {
         return view('publicSite.contact');
     }
+<<<<<<< HEAD
+    
+=======
 
 
+>>>>>>> 45c090f5b7fdf134bf94e5c2299e9aec449ff1e1
     public function destination()
     {
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
-
-
-
 
     public function  homeDestination()
     {
@@ -51,8 +52,6 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
-
-
         return view('admin.category', compact('category'));
     }
 
@@ -63,8 +62,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
-
      return view('admin/categoryCreate');
     }
 

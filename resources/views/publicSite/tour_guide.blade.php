@@ -4,6 +4,18 @@
 
 @section('content')
 
+<<<<<<< HEAD
+       <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
+
+            <div class="container" style="margin-top:145px;">
+                <h2>Tour Guides</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{{route('home2')}}">Home</a></li>
+                    <li><span>Tour Guides</span></li>
+                </ul><!-- /.thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+=======
 <section class='page-header' style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
     <div class="container" style="margin-top:145px;">
         <h2>Tour Guides</h2>
@@ -14,6 +26,8 @@
         </ul><!-- /.thm-breadcrumb -->
     </div><!-- /.container -->
 </section><!-- /.page-header -->
+>>>>>>> 45c090f5b7fdf134bf94e5c2299e9aec449ff1e1
+
 
 <section class="team-one">
     <div class="container">

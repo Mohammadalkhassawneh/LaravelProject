@@ -1,6 +1,17 @@
 @extends('publicSite.layout.master')
 
 @section('content')
+
+
+<section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg);">
+    <div class="container">
+        <h2>Guide Profile</h2>
+        <ul class="thm-breadcrumb list-unstyled s">
+            <li><a href="{{ route("home2")}}">Home</a></li>
+            <li><span>Guide Profile</span></li>
+        </ul>
+    </div>
+</section>
 <!-- Sahar Start -->
 <section class="user_profile">
     <div class="container">

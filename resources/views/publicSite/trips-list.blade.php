@@ -108,7 +108,7 @@ span.page-link {
                                 <ul class="sidebar__category-list list-unstyled">
                                     @foreach ($cats as $cat)
 
-                                    <li><a href={{route('trips-list.show',$cat->id)}}>{{$cat->category_name}}</a></li>
+                                    <li><a href="{{route('trips-list.show', $cat->id)}}"> {{$cat->category_name}} </a></li>
                                     @endforeach
 
 
