@@ -109,6 +109,18 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+                             
+                                    @if($role != "")
+                                        @if($role->role_type == "guide")
+                                        <li>
+                                            <a href="contact">Create Trip</a>
+                                        </li>
+                                        @endif
+                                        @endif
+                                    
+                               
+
+                               
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
