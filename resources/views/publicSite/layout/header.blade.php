@@ -113,10 +113,6 @@
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
-<<<<<<< HEAD
-                             
-                              
-=======
                                 {{-- @auth
                                 @if($role != "")
                                     @if($role->role_type == "guide")
@@ -141,7 +137,6 @@
 
                                     
                                
->>>>>>> 45c090f5b7fdf134bf94e5c2299e9aec449ff1e1
 
                                 @auth
                                 @if(Session::get('role') == "guide")
