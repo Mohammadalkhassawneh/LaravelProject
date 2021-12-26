@@ -22,3 +22,22 @@
     border-radius: 5px;
     border: none;
 }
+
+.edit-trip {
+    padding: 0.2rem;
+    background-color: #FFA801;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+
+.sahar {
+    font-family: serif;
+    font-size: 16px;
+}
+
+.edit-trip a {
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+}

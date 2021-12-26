@@ -39,7 +39,7 @@
                 <div class="trip">
                     <div class="container">
                         <!-- Trip Information -->
-                        @foreach($trips as $trip)
+                        @foreach($guide_trips as $trip)
                         <div class="row">
                             <div class="col-5">
                                 <img src={{asset('trip_images/'.$trip->image)}} alt="guide_photo" class="trip_img">

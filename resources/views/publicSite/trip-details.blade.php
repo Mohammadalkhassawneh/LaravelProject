@@ -19,7 +19,7 @@
 
                 <div class="blog-details__image">
 
-                    <img src="assets/images/blog/blog-d-1-1.jpg" alt="" class="img-fluid">
+                    <img src={{asset('trip_images/'.$tripDetails->image)}} alt="" class="img-fluid">
                 </div><!-- /.blog-details__image -->
                 <div class="blog-details__content">
                     <ul class="list-unstyled blog-one__meta">
@@ -29,18 +29,17 @@
                     <h3>{{$tripDetails->name}}</h3>
 
                     <br>
-                    <img src={{asset('trip_images/'.$tripDetails->image)}} alt="trip_image">
                     <p>{{$tripDetails->description}}</p>
-                    <a href="{{route('trips-details.edit',$tripDetails->id)}}">
-                        <div class="blog-details__bottom">
+                    <button class="edit-trip"><a href="{{route('trips-details.edit',$tripDetails->id)}}">Edit Trip</button>
+                    <div class="blog-details__bottom">
 
-                            <div class="sidebar__social-list">
-                                <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                            </div><!-- /.sidebar__social-list -->
-                        </div><!-- /.blog-details__bottom -->
+                        <div class="sidebar__social-list">
+                            <a href="#"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                        </div><!-- /.sidebar__social-list -->
+                    </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
 
             </div><!-- /.col-lg-8 -->

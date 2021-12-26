@@ -106,7 +106,7 @@
 
                                 </li>
                                 <li class="dropdown">
-                                    <a href="tour-guide">Tour Guides</a>
+                                    <a href="{{route('tourGuide.index')}}">Tour Guides</a>
 
                                 </li>
 

@@ -101,9 +101,10 @@ class AddTripController extends Controller
      */
     public function destroy($id)
     {
-        $trip = Trip::find($id);
-        $trip->delete();
+        $trips = Trip::find($id);
+        $trips->delete();
+        $guide_trips = Trip::all();
         $categories = Category::all();
-        return view('publicSite.guide_profile', compact('categories'));
+        return view('publicSite.guide_profile', compact('categories', 'guide_trips'));
     }
 }

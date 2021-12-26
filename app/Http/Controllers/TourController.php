@@ -18,7 +18,7 @@ class TourController extends Controller
     public function getGuide($id)
     {
         $user = User::find($id);
-        $trips = Trip::where('guide_id', $id)->get();
-        return view('publicSite/guide_profile', compact('user','trips'));
+        $guide_trips = Trip::where('guide_id', $id)->get();
+        return view('publicSite/guide_profile', compact('user', 'guide_trips'));
     }
 }
