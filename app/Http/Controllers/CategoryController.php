@@ -4,9 +4,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 class CategoryController extends Controller
 {
     /**
@@ -27,21 +29,22 @@ class CategoryController extends Controller
     }
 
 
+
+
     public function  homeDestination()
     {
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        // dd($news);
-
-        return view('publicSite.index', compact('category', 'trip', 'news'));
-
+        // dd(Auth::user());
+        if(Auth::user() != null){
+        $role = User::find(Auth::user()->id);
+        } else {
+            $role = "";
+        }
+        return view('publicSite.index', compact('category', 'trip', 'news','role'));
 
     }
-
-
-
-
 
     public function index()
     {

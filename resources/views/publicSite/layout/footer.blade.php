@@ -3,8 +3,8 @@
     <!-- /.site-footer__bg -->
     <div class="container">
         <div class="row">
-          
-           
+
+
             <div class="footer-widget__column footer-widget__links">
                 <h3 class="footer-widget__title">Links</h3><!-- /.footer-widget__title -->
                 <ul class="footer-widget__links-list list-unstyled">
@@ -15,8 +15,8 @@
                     <li><a href="faq.html">FAQ's</a></li>
                 </ul><!-- /.footer-widget__links-list list-unstyled -->
             </div><!-- /.footer-widget__column -->
-            
-            
+
+
         </div><!-- /.row -->
     </div><!-- /.container -->
 </footer><!-- /.site-footer --> --}}
@@ -78,7 +78,8 @@
     <div class="cursor-follower"></div>
 </div><!-- /.search-popup__overlay -->
 <div class="search-popup__inner">
-    <form action="#" class="search-popup__form">
+    <form action="{{route("search")}}" class="search-popup__form" method="GET">
+        @csrf
         <input type="text" name="search" placeholder="Type here to Search....">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>

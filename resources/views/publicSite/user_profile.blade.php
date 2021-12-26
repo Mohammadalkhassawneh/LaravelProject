@@ -26,7 +26,7 @@
                         <div class="col-4">
                         </div>
                         <div class="col-8">
-                            <a href="{{route('userprofile.edit', 30)}}">Edit Profile</a>
+                            <a href="{{route('userprofile.edit', Auth::user()->id)}}">Edit Profile</a>
                         </div>
                     </div>
                 </div>

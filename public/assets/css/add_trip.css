@@ -1,0 +1,13 @@
+.add-trip-form {
+    margin-top: 15rem;
+}
+
+.trip-form {
+    width: 60%;
+    margin: auto;
+}
+
+.trip-form .card-header {
+    background-color: #082740;
+    color: white;
+}

@@ -30,12 +30,12 @@
                         <div class="destinations-three__single">
                             <img style="height: 45vh" src="uploads/{{$categories->category_img}}" alt="">
                             <div class="destinations-three__content">
-                                <h3><a href="destinations-details.html">{{$categories->category_name}}</a></h3>
+                                <h3><a href="{{ route('distination')}}">{{$categories->category_name}}</a></h3>
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
-                                <h3><a href="destinations-details.html">{{$categories->category_name}}</a></h3>
+                                <h3><a href="{{ route('distination')}}">{{$categories->category_name}}</a></h3>
                                 <p>24 Tours</p>
-                                <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
+                                <a href="{{ route('distination')}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->
@@ -80,14 +80,19 @@
                                 <img src="assets/images/tour/tour-1-1.jpg" alt="">
 
                             </div><!-- /.tour-one__image -->
+                            
                             <div class="tour-one__content">
-
-                                <h3><a href="tour-details.html">{{$trips->name}}</a></h3>
+                                <ul  class="list-unstyled blog-one__meta">
+                                    <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $trips->guide->name}}</a></li>
+                                    <li><a><i class="fas fa-calendar-day"></i> {{$trips->date}}</a></li>
+                                </ul>
+                                
+                                <h3><a href="{{ route('trips-details.show',$trips->id)}}">{{$trips->name}}</a></h3>
                                 <p><span>{{$trips->price . "JD"}}</span> / Per Person</p>
                                 <p>Capacity :{{$trips->max_visitors}} Person</p>
                                 <ul class="tour-one__meta list-unstyled">
-                                    <li><a href="tour-details.html"><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
-                                    <li><a href="tour-details.html"><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
+                                    <li><a ><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
+                                    <li><a><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
                                     <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.tour-one__content -->
