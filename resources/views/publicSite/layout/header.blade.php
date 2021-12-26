@@ -39,6 +39,7 @@
     <link rel="stylesheet" href='{{asset("assets/css/responsive.css")}}'>
 
 <link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
+<link rel="stylesheet" href="{{asset("assets/css/user_profile.css")}}">
 
 
 <style>

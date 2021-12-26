@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\User;
 class UserProfileController extends Controller
 {
     /**
@@ -56,7 +56,8 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::where('id', $id)->first();
+        return view('publicSite/edit_user_profile', compact('user'));
     }
 
     /**
@@ -68,7 +69,15 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->phone = $request->phone;
+
+        $user->update();
+        return view('publicSite/user_profile');
+        
     }
 
     /**

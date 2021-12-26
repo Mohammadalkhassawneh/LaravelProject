@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -24,22 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        
-        return view('publicSite.index');
-        //  return view('auth.handleuser');
-
+        return view('home');
     }
-
-    public function show($id)
-    {
-        
-        $user = User::find($id);
-        return view('publicSite.index',compact('user'));
-    }
-    public function handleAdmin()
-    {
-        return redirect('admin');
-    } 
-
 }

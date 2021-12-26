@@ -77,3 +77,7 @@ Route::get('/contact', [CategoryController::class,'contact']);
 // Route::resource('/categories', CategoryController::class);
 // Route::get('/destination', [CategoryController::class, 'destination'])->name('distination');
 // >>>>>>> e64493481f2252708e3e455de545e45fbb52ddf6
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
