@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-@auth
-  @if(Session::get('role') != "admin")
+{{-- @auth
+  @if(Auth::user()->role_type != "admin")
   {!! redirect('/') !!}
   @endif
-@endauth
+@endauth --}}
 
 
 
