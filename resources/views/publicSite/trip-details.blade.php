@@ -2,15 +2,15 @@
 
 @section('content')
 
-<section class="page-header" style="background-image:url(../assets/images/backgrounds/page-header-contact.jpg);margin-top: 145px">
-    <div class="container">
-        <h2>News Details</h2>
-        <ul class="thm-breadcrumb list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><span>News</span></li>
-        </ul><!-- /.thm-breadcrumb -->
-    </div><!-- /.container -->
-</section><!-- /.page-header -->
+        <section class="page-header" style="background-image:url(../assets/images/backgrounds/page-header-contact.jpg);margin-top: 145px">
+            <div class="container">
+                <h2>News Details</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><span>News</span></li>
+                </ul><!-- /.thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
 
 <section class="blog-list">
     <div class="container">

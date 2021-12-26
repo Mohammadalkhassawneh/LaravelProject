@@ -13,6 +13,10 @@ use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\AddTripController;
 use App\Http\Controllers\TripDetailsController;
+use App\models\User;
+use App\models\Trip;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +30,12 @@ use App\Http\Controllers\TripDetailsController;
 */
 
 Route::get('/admins', function () {
-    return view('admin.index');
+    $user = User::all();
+    $trip = Trip::all();
+ 
+
+    // $admins = User::where('role_type','admin')->count();
+    return view('admin.index', compact('user', 'trip'));
 })->name("admin");
 
 Route::get('/admin', function () {
