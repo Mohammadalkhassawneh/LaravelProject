@@ -113,25 +113,8 @@
                                 <li>
                                     <a href="{{route("contact")}}">Contact</a>
                                 </li>
-<<<<<<< HEAD
-                                {{-- @auth
-                                @if($role != "")
-                                    @if($role->role_type == "guide")
-                                    <li>
-                                        <a href="contact">Create Trip</a>
-                                    </li>
-                                    @endif
-                                    @endif
-                            @endauth --}}
-                            @auth 
-
-
-
-                            
-=======
 
                             @auth
->>>>>>> 7f372b37f7a534eed790bbb41f535068eec9b66f
                             @if(Auth::user()->role_type == "guide")
                             <li>
                                 <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
@@ -139,20 +122,6 @@
                             @endif
                             @endauth
 
-<<<<<<< HEAD
-                                    
-                               
-
-                                @auth
-                                @if(Session::get('role') == "guide")
-                                <li>
-                                    <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
-                                </li>
-                                @endif
-                                @endauth
-
-=======
->>>>>>> 7f372b37f7a534eed790bbb41f535068eec9b66f
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">

@@ -28,8 +28,8 @@
 
                         </div>
                         <div class="col-10">
-                            {{-- <h4>{{Auth::user()->email}}</h4>
-                            <h4>{{Auth::user()->phone}}</h4> --}}
+                            <h4>{{$user->email}}</h4>
+                            <h4>{{$user->phone}}</h4>
                         </div>
                     </div>
                 </div>
