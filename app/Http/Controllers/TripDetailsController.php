@@ -15,7 +15,7 @@ class TripDetailsController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -48,7 +48,7 @@ class TripDetailsController extends Controller
     public function show($id)
     {
         $tripDetails=Trip::find($id);
-        
+
         return view('publicSite.trip-details',compact('tripDetails'));
     }
 
@@ -77,24 +77,7 @@ class TripDetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tripDetails = Trip::find($id);
-        $newImage = time() . '-' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('trip_images'), $newImage);
 
-        $tripDetails->name = $request->name;
-        $tripDetails->description = $request->description;
-        $tripDetails->date = $request->date;
-        $tripDetails->days = $request->days;
-        $chosed_category = Category::where('category_name', $request->category)->first();
-        $tripDetails->category_id = $chosed_category->id;
-        $tripDetails->price = $request->price;
-        $tripDetails->max_visitors = $request->max_visitors;
-        $tripDetails->minimum_age = $request->minimum_age;
-        $tripDetails->image = $newImage;
-        $tripDetails->update();
-        $categories = Category::all();
-
-        return view('publicSite.trip-details', compact('tripDetails'));
     }
 
     /**

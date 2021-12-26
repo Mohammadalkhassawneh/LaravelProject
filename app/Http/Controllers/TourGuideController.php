@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class UserProfileController extends Controller
+class TourGuideController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        if(Auth::id()) {
-            if(Auth::user()->role_type="guide")
-            $trips = User::find(Auth::id())->trip;
-        return view('publicSite/user_profile',compact('trips'));
-        }
-        return redirect()->route("home2");
+        //
     }
 
     /**
@@ -32,6 +27,8 @@ class UserProfileController extends Controller
     public function create()
     {
         //
+        $categories = Category::all();
+        return view("publicSite.add_trip",compact('categories'));
     }
 
     /**
@@ -43,6 +40,16 @@ class UserProfileController extends Controller
     public function store(Request $request)
     {
         //
+        $trip = new Trip();
+        $request['guide_id'] = "5";
+        $input = $request->all();
+        if($request->file("image")) {
+        $newImageName = time() . '-' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('trip_images'), $newImageName);
+        $input['image'] = $newImageName;
+        }
+        $trip::create($input);
+        return redirect()->route("userprofile.index");
     }
 
     /**
@@ -64,8 +71,9 @@ class UserProfileController extends Controller
      */
     public function edit($id)
     {
-        $user = User::where('id', $id)->first();
-        return view('publicSite/edit_user_profile', compact('user'));
+        $trip = Trip::findOrFail($id);
+        $categories = Category::all();
+        return view("publicSite.edit_trip",compact('trip','categories'));
     }
 
     /**
@@ -75,25 +83,32 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $userprofile)
+    public function update(Request $request, Trip $guideTrip)
     {
 
          $request->validate([
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'phone' => 'required',
+            'description' => 'required',
+            'days' => 'required',
+            'minimum_age' => 'required',
+            'max_visitors' => 'required',
+            'price' => 'required',
+            'date' => 'required',
+            'category_id' => 'required'
         ]);
 
+        $request['guide_id'] =$guideTrip->guide_id;
+
         $input = $request->all();
+
         if($request->file("image")) {
         $newImageName = time() . '-' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('user_images'), $newImageName);
+        $request->image->move(public_path('trip_images'), $newImageName);
         $input['image'] = $newImageName;
-     }
-        $userprofile->update($input);
-        return redirect()->route("userprofile.index");
+        }
 
+         $guideTrip->update($input);
+        return redirect()->route("userprofile.index");
     }
 
     /**
@@ -102,8 +117,9 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trip $guideTrip)
     {
-        //
+        $guideTrip->delete();
+        return redirect()->route("userprofile.index");
     }
 }

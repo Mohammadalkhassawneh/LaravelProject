@@ -11,7 +11,7 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
-use App\Http\Controllers\AddTripController;
+use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\TripDetailsController;
 use App\models\User;
 use App\models\Trip;
@@ -49,17 +49,13 @@ Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 // Hazem
 Route::resource('/user', UserController::class);
 Route::resource('/userprofile', UserProfileController::class);
-
-// Sahar
-Route::resource('/addtrip', AddTripController::class);
-Route::get('/addtrip.{id}', [AddTripController::class, 'create'])->name('addtrip');
+Route::resource('/guideTrip',TourGuideController::class);
 
 Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
 Route::get("/search", [FilterController::class, "search"])->name("search");
 Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
-
 
 Auth::routes();
 
