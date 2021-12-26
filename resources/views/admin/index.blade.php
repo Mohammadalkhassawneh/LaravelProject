@@ -23,10 +23,26 @@
                                             <div class="icon">
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
-                                            <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
+                                            <div class="text mr-2">
+                                             
+                                                <h2> {{$user->where('role_type', 'user')->count()}}</h2>
+                                        
+                                                <span>Users </span>
+                                           
                                             </div>
+                                            <div class="text mr-2">
+
+                                            <h2> {{$user->where('role_type', 'guide')->count()}}</h2>
+                                            <span>Guides </span>
+
+                                        </div>
+                                        <div class="text mr-2">
+                                        
+                                            <h2> {{$user->where('role_type', 'admin')->count()}}</h2>
+                                    
+                                            <span>Admin </span>
+                                        </div>
+
                                         </div>
                                         <div class="overview-chart">
                                             <canvas id="widgetChart1"></canvas>
@@ -42,8 +58,9 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                
+                                                <h2>{{$trip->count()}}</h2>
+                                                <span>Number of trips</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">

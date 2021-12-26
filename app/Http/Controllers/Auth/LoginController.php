@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\Trip;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -55,10 +56,14 @@ class LoginController extends Controller
             $user = User::find(Auth::user()->id);
             $email = $user->email;
             $name = $user->name;
+            $role = $user->role_type;
             Session::put("email" , $email);
             Session::put("name" , $name);
+            Session::put("role" , $role);
+          
 
             if (auth()->user()->role_type == 'admin') {
+             
                 return redirect()->route('admin.route');
             }else{
 

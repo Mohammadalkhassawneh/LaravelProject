@@ -4,10 +4,11 @@
 @endif --}}
 
 @auth
-  // user logged in
-  @else
+  @if(Session::get('role') != "admin")
   {!! redirect('/') !!}
+  @endif
 @endauth
+
 
 
 <html lang="en">
