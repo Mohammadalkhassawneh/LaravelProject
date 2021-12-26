@@ -1,10 +1,18 @@
 <!DOCTYPE html>
+{{-- @if (Auth::user() == null)
+{!! redirect('/') !!}
+@endif --}}
+
+@auth
+  // user logged in
+  @else
+  {!! redirect('/') !!}
+@endauth
+
+
 <html lang="en">
 <head>
-
-
        {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet"> --}}
-
 
     <!-- Required meta tags-->
     <meta charset="UTF-8">
@@ -18,23 +26,10 @@
 
     <!-- Fontfaces CSS-->
 
-<<<<<<< HEAD
-    <link href='{{asset("css/font-face.css")}}' rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-    <link href='{{asset("css/font-face.css")}}' rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-
-=======
     <link href={{asset("css/font-face.css")}}rel="stylesheet" media="all">
     <link href={{asset("/vendor/font-awesome-4.7/css/font-awesome.min.css")}} rel="stylesheet" media="all">
     <link href={{asset("/vendor/font-awesome-5/css/fontawesome-all.min.css")}} rel="stylesheet" media="all">
     <link href={{asset("/vendor/mdi-font/css/material-design-iconic-font.min.css")}} rel="stylesheet" media="all">
->>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <!-- Bootstrap CSS-->
     <link href="/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
@@ -57,21 +52,13 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-<<<<<<< HEAD
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script>--}}
-=======
    <script src="{{ asset('js/app.js') }}" defer></script>
->>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-<<<<<<< HEAD
-    {{-- <link href="{{ asset('/css/app.css') }}" rel="stylesheet">--}}
-=======
->>>>>>> 5f4cb5f7e8b53defc238ed33cc919a14e32416b2
 
     <style>
         .color-white:hover {
@@ -249,9 +236,13 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        @if (Auth::user() != null)
+                                                        <a href="">{{ Auth::user()->name }}</a>
+                                                        {{-- @else
+                                                            {!! redirect('/') !!} --}}
+                                                        @endif
                                                     </h5>
-                                                    <span class="email">johndoe@example.com</span>
+                                                    <span class="email">{{ Session::get('email');}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">

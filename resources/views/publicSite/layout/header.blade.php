@@ -38,13 +38,20 @@
     <link rel="stylesheet" href='{{asset("assets/css/style.css")}}'>
     <link rel="stylesheet" href='{{asset("assets/css/responsive.css")}}'>
 
+<link rel="stylesheet" href="{{asset("assets/css/guide_style.css")}}">
+
+@yield('style')
+
 <style>
     .sign-my:hover {
         color: #ff0143 !important;
     }
     </style>
 
+
+
 <body>
+
     <div class="preloader">
         <img src='{{asset("assets/images/loader.png")}}' class="preloader__image" alt="">
     </div><!-- /.preloader -->
@@ -83,26 +90,40 @@
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
-                                   
+
                                         </li>
-                                    
-                             
+
+
                                 <li class="dropdown">
                                     <a href="{{route("distination")}}">Destinations</a>
-                                    
+
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{route("trips-list.index")}}">Tours</a>
-                                    
+
                                 </li>
                                 <li class="dropdown">
                                     <a href="tour-guide">Tour Guides</a>
-                                   
+
                                 </li>
 
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+                             
+                                @auth
+                                    @if($role != "")
+                                        @if($role->role_type == "guide")
+                                        <li>
+                                            <a href="contact">Create Trip</a>
+                                        </li>
+                                        @endif
+                                        @endif
+                                @endauth
+
+                               
+
+                               
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">

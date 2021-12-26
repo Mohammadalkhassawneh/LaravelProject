@@ -27,11 +27,11 @@
     margin-top: 2rem;
 }
 
-ul {
+ul.s{
     list-style-type: none;
 }
 
-ul li {
+ul.s li {
     display: inline-block;
 }
 
@@ -52,7 +52,7 @@ ul li {
     border-radius: 5px;
 }
 
-.row {
+.row.s {
     margin-bottom: 2rem;
 }
 

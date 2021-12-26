@@ -4,9 +4,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 class CategoryController extends Controller
 {
     /**
@@ -20,34 +22,31 @@ class CategoryController extends Controller
     {
         return view('publicSite.contact');
     }
+    
     public function destination()
     {
         $category = Category::all();
         return view('publicSite.destination', compact('category'));
     }
 
-
     public function  homeDestination()
     {
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        // dd($news);
-
-        return view('publicSite.index', compact('category', 'trip', 'news'));
-
+        // dd(Auth::user());
+        if(Auth::user() != null){
+        $role = User::find(Auth::user()->id);
+        } else {
+            $role = "";
+        }
+        return view('publicSite.index', compact('category', 'trip', 'news','role'));
 
     }
-
-
-
-
 
     public function index()
     {
         $category = Category::all();
-        
-
         return view('admin.category', compact('category'));
     }
 
@@ -58,8 +57,6 @@ class CategoryController extends Controller
      */
     public function create()
     {
-
-
      return view('admin/categoryCreate');
     }
 
@@ -83,7 +80,6 @@ class CategoryController extends Controller
         $request->category_img->move(public_path('uploads'), $newImageName);
         $input['category_img'] = $newImageName;
      }
-
         Category::create($input);
 
         return redirect()->route('categories.index');
@@ -100,7 +96,7 @@ class CategoryController extends Controller
         //
     }
 
-    /** 
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id

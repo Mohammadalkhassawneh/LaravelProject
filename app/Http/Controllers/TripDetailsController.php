@@ -6,7 +6,7 @@ use App\Models\Category;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 
-class TripListController extends Controller
+class TripDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,7 @@ class TripListController extends Controller
      */
     public function index()
     {
-        // $trips = Trip::all();
-        $trips = Trip::paginate(4);
-        $cats = Category::all();
-        return view('publicSite.trips-list', compact('trips','cats'));
+        
     }
 
     /**
@@ -50,12 +47,9 @@ class TripListController extends Controller
      */
     public function show($id)
     {
-
-        $cats = Category::all();
+        $tripDetails=Trip::find($id);
         
-        $categorty = Category::find($id);
-        $trips = $categorty->trip;
-        return view('publicSite.trips-list', compact('trips','cats'));
+        return view('publicSite.trip-details',compact('tripDetails'));
     }
 
     /**

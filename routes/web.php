@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
+use App\Http\Controllers\TripDetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,6 @@ Route::get('/admins', function () {
     return view('admin.index');
 })->name("admin");
 
-
-
 Route::get('/admin', function () {
     return view('admin.index');
 })->middleware('admin');
@@ -37,22 +36,21 @@ Route::get('/admin', function () {
 Route::resource("/reservation", ReseverationController::class);
 
 //
-Route::get('/', [CategoryController::class, 'homeDestination']);
-
 Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 
 // Hazem
 Route::resource('/user', UserController::class);
-Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
+Route::get('/guide/{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
+Route::get("/search", [FilterController::class, "search"])->name("search");
 Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
-
 
 
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/guide', [HomeController::class,'guide']);
 
 Route::get('/home/admin', [HomeController::class, 'handleAdmin'])->name('admin.route')->middleware('admin');
 
@@ -62,6 +60,7 @@ Route::group(['middleware' => 'App\Http\Middleware\guide'], function () {
 
 Route::resource('/trips',TripController::class);
 Route::resource('trips-list',TripListController::class);
+Route::resource('trips-details',TripDetailsController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact']);
