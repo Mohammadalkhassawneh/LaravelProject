@@ -65,7 +65,7 @@
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
                         <a href="tel:666-999-0000">0799665544</a>
-                        <a >alabdali/aldakleah-circle</a>
+                        <a>alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">

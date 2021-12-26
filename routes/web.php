@@ -51,11 +51,12 @@ Route::resource('/user', UserController::class);
 Route::resource('/userprofile', UserProfileController::class);
 Route::resource('/guideTrip',TourGuideController::class);
 
-Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
+
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
 Route::get("/search", [FilterController::class, "search"])->name("search");
 Route::get("/tour-guide", [TourController::class, "index"])->name("tourGuide.index");
+Route::get('/guide.{id}', [TourController::class, 'getGuide'])->name('guide');
 
 Auth::routes();
 

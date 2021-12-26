@@ -22,7 +22,7 @@ class CategoryController extends Controller
     {
         return view('publicSite.contact');
     }
-
+    
     public function destination()
     {
         $category = Category::all();

@@ -133,9 +133,94 @@ h6 {
 	padding: 20px 50.5px;
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
+	
+}
+.xx{
+	width: 100%;
+    height: 44px;
+    display: block;
+    border: none;
+    outline: none;
+    background-color : #ffffff !important;
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3a9;
+    padding-left: 30px;
+}
+.x{
+	width: 100%;
+    height: 64px;
+    display: block;
+    border: none;
+    outline: none;
+    background-color : #ffffff !important;
+    font-size: 18px;
+    font-weight: 500;
+    color: #9ca3a9;
+    padding-left: 30px;
+}
+.y{
+	font-size: 20px !important;
+	font-weight: 600;
+	
+}
+.yy{
+	font-size: 14px !important;
+	font-weight: 600;
+	
+}
+.login-submit{
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	background-color: var(--thm-base);
+	font-size: 14px;
+	color: var(--thm-black);
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 15px 115px;
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+	border-radius: 5px;
+}
+
+.login-header
+{
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	background-color: var(--thm-base);
+	font-size: 18px;
+	color: var(--thm-black);
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 20px 50.5px;
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+}
+.forgot-link{
+	display: inline-block;
+	vertical-align: middle;
+	border: none;
+	outline: none;
+	text-align: center;
+	font-size: 9px;
+	color: var(--thm-black);
+	font-weight: 600;
+	text-transform: uppercase;
+	
+	-webkit-transition: all .4s ease;
+	transition: all .4s ease;
+	
 }
 
 .thm-btn:hover {
+	background-color: var(--thm-primary);
+	color: #ffffff;
+}
+.login-submit:hover {
 	background-color: var(--thm-primary);
 	color: #ffffff;
 }
