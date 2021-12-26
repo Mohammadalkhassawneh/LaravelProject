@@ -91,7 +91,9 @@ span.page-link {
 
 
                         <div class="post-pagination">
+                            @isset($status)
                             {!! $trips->links() !!}
+                            @endisset
                         </div><!-- /.post-pagination -->
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">

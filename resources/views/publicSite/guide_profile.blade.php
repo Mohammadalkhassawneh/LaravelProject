@@ -17,18 +17,21 @@
             <!-- Guide Information -->
             <div class="col-4 guide-info">
                 <img src="{{asset('user_images/'.'guide.jpg')}}" alt="guide_photo" width="300px" class="guide_img">
-                <h2>{{Auth::user()->name}}</h2>
+                
+                <h2>{{$user->name}}</h2>
+                
                 <div class="container">
                     <div class="row">
                         <div class="col-2 icons">
                             <h4><i class="fas fa-envelope"></i></h4>
                             <h4><i class="fas fa-mobile-alt"></i></h4>
-
+                            
                         </div>
                         <div class="col-10">
-                            <h4>{{Auth::user()->email}}</h4>
-                            <h4>{{Auth::user()->phone}}</h4>
+                            <h4>{{$user->email}}</h4>
+                            <h4>{{$user->phone}}</h4>
                         </div>
+                        <a href="{{route('userprofile.edit', Auth::user()->id)}}">edit</a>
                     </div>
                 </div>
             </div>
@@ -49,13 +52,13 @@
                                 <p>{{$trip->description}}</p>
                                 <h6>{{$trip->price}} Jd</h6>
                                 <a href="{{route('trips-details.show', $trip->id)}}" class="show-trip">Show Trip</a>
-                                <form action="{{route("addtrip.destroy",$trip->id)}}" method="POST" class='deletion'>
+                                {{-- <form action="{{route("addtrip.destroy",$trip->id)}}" method="POST" class='deletion'>
                                     @csrf
                                     @method("delete")
                                     <button type="submit" class="delete-trip" data-toggle="tooltip" data-placement="top" title="Delete">
                                         Delete Trip
                                     </button>
-                                </form>
+                                </form> --}}
                             </div>
                         </div>
                         <hr>

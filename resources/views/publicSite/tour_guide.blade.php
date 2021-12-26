@@ -17,7 +17,7 @@
 
 
 <section class="team-one">
-    <div class="container">
+    <div class="container">  
         <div class="row">
             @foreach ($guides as $guide)
            
