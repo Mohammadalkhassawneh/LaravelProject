@@ -27,9 +27,15 @@
                                 
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
+<<<<<<< HEAD
                                 <h3><a href="{{route("trips-list.show",$val->id)}}">{{ $val->category_name}}</a></h3>
                                 <p>24 Tours</p>
                                 <a href="#" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
+=======
+                                <h3><a href="{{route("trips-list.index",$val->id)}}">{{ $val->category_name}}</a></h3>
+                                <p>{{$val->trip()->count(). ' Tours'}}</p>
+                                <a href="{{route("trips-list.index",$val->id)}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
+>>>>>>> 7f372b37f7a534eed790bbb41f535068eec9b66f
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->

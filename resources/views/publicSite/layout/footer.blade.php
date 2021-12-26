@@ -79,7 +79,6 @@
 </div><!-- /.search-popup__overlay -->
 <div class="search-popup__inner">
     <form action="{{route("search")}}" class="search-popup__form" method="GET">
-        @csrf
         <input type="text" name="search" placeholder="Type here to Search....">
         <button type="submit"><i class="fa fa-search"></i></button>
     </form>

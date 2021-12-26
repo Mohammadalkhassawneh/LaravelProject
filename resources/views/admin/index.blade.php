@@ -41,11 +41,11 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div>
                                             <div class="text mr-2">
-                                             
+
                                                 <h2> {{$user->where('role_type', 'user')->count()}}</h2>
-                                        
+
                                                 <span>Users </span>
-                                           
+
                                             </div>
                                             <div class="text mr-2">
 
@@ -54,9 +54,9 @@
 
                                         </div>
                                         <div class="text mr-2">
-                                        
+
                                             <h2> {{$user->where('role_type', 'admin')->count()}}</h2>
-                                    
+
                                             <span>Admin </span>
                                         </div>
 
@@ -75,7 +75,7 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                
+
                                                 <h2>{{$trip->count()}}</h2>
                                                 <span>Number of trips</span>
                                             </div>
@@ -451,7 +451,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="au-message__item">
+                                    < class="au-message__item">
                                         <div class="au-message__item-inner">
                                             <div class="au-message__item-text">
                                                 <div class="avatar-wrap">
@@ -468,91 +468,6 @@
                                                 <span>Sunday</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="au-message__item js-load-item">
-                                        <div class="au-message__item-inner">
-                                            <div class="au-message__item-text">
-                                                <div class="avatar-wrap online">
-                                                    <div class="avatar">
-                                                        <img src="images/icon/avatar-04.jpg" alt="Michelle Sims">
-                                                    </div>
-                                                </div>
-                                                <div class="text">
-                                                    <h5 class="name">Michelle Sims</h5>
-                                                    <p>Lorem ipsum dolor sit amet</p>
-                                                </div>
-                                            </div>
-                                            <div class="au-message__item-time">
-                                                <span>Yesterday</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="au-message__item js-load-item">
-                                        <div class="au-message__item-inner">
-                                            <div class="au-message__item-text">
-                                                <div class="avatar-wrap">
-                                                    <div class="avatar">
-                                                        <img src="images/icon/avatar-05.jpg" alt="Michelle Sims">
-                                                    </div>
-                                                </div>
-                                                <div class="text">
-                                                    <h5 class="name">Michelle Sims</h5>
-                                                    <p>Purus feugiat finibus</p>
-                                                </div>
-                                            </div>
-                                            <div class="au-message__item-time">
-                                                <span>Sunday</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="au-message__footer">
-                                    <button class="au-btn au-btn-load js-load-btn">load more</button>
-                                </div>
-                            </div>
-                            <div class="au-chat">
-                                <div class="au-chat__title">
-                                    <div class="au-chat-info">
-                                        <div class="avatar-wrap online">
-                                            <div class="avatar avatar--small">
-                                                <img src="images/icon/avatar-02.jpg" alt="John Smith">
-                                            </div>
-                                        </div>
-                                        <span class="nick">
-                                            <a href="#">John Smith</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="au-chat__content">
-                                    <div class="recei-mess-wrap">
-                                        <span class="mess-time">12 Min ago</span>
-                                        <div class="recei-mess__inner">
-                                            <div class="avatar avatar--tiny">
-                                                <img src="images/icon/avatar-02.jpg" alt="John Smith">
-                                            </div>
-                                            <div class="recei-mess-list">
-                                                <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                <div class="recei-mess">Donec tempor, sapien ac viverra</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="send-mess-wrap">
-                                        <span class="mess-time">30 Sec ago</span>
-                                        <div class="send-mess__inner">
-                                            <div class="send-mess-list">
-                                                <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="au-chat-textfield">
-                                    <form class="au-form-icon">
-                                        <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">
-                                        <button class="au-input-icon">
-                                            <i class="zmdi zmdi-camera"></i>
-                                        </button>
-                                    </form>
-                                </div>
                             </div>
                         </div>
                     </div>

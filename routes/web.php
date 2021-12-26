@@ -32,9 +32,6 @@ use App\models\Trip;
 Route::get('/admins', function () {
     $user = User::all();
     $trip = Trip::all();
-
-
-    // $admins = User::where('role_type','admin')->count();
     return view('admin.index', compact('user', 'trip'));
 })->name("admin");
 
@@ -51,9 +48,9 @@ Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 
 // Hazem
 Route::resource('/user', UserController::class);
+Route::resource('/userprofile', UserProfileController::class);
 
 // Sahar
-Route::resource('/userprofile', UserProfileController::class);
 Route::resource('/addtrip', AddTripController::class);
 Route::get('/addtrip.{id}', [AddTripController::class, 'create'])->name('addtrip');
 
@@ -76,5 +73,5 @@ Route::resource('trips-list',TripListController::class);
 Route::resource('trips-details',TripDetailsController::class);
 Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
-Route::get('/contact', [CategoryController::class,'contact']);
+Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 

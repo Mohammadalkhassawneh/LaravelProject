@@ -23,8 +23,10 @@
             <div class="col-lg-4 col-md-6">
                 <div class="team-one__single">
                     <div class="team-one__image">
-                        <a href="{{route('guide',['id'=>$guide->id])}}">
-                            <img src='{{asset("images/".$guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
+                        @auth
+                        <a href="{{route('guide',Auth::user()->id)}}">
+                            @endauth
+                            <img src='{{asset("images/". $guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
                         </a>
                     </div>
                     <div class="team-one__content">

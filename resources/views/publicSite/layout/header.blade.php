@@ -111,8 +111,9 @@
                                 </li>
 
                                 <li>
-                                    <a href="contact">Contact</a>
+                                    <a href="{{route("contact")}}">Contact</a>
                                 </li>
+<<<<<<< HEAD
                                 {{-- @auth
                                 @if($role != "")
                                     @if($role->role_type == "guide")
@@ -127,14 +128,18 @@
 
 
                             
+=======
+
+                            @auth
+>>>>>>> 7f372b37f7a534eed790bbb41f535068eec9b66f
                             @if(Auth::user()->role_type == "guide")
-                            {{-- @if(Session::get('role') == 'guide') --}}
                             <li>
-                                <a href="contact">Create Trip</a>
+                                <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
                             </li>
                             @endif
                             @endauth
 
+<<<<<<< HEAD
                                     
                                
 
@@ -146,6 +151,8 @@
                                 @endif
                                 @endauth
 
+=======
+>>>>>>> 7f372b37f7a534eed790bbb41f535068eec9b66f
                             </ul>
                         </div><!-- /.navbar-collapse -->
                         <div class="main-nav__right">
@@ -186,7 +193,7 @@
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
-                            <a href="" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>
+                            @auth <a href="{{route("userprofile.index")}}" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>@endauth
                         </div><!-- /.main-nav__right -->
                     </div>
                     <!-- /.container -->
