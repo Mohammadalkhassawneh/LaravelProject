@@ -23,17 +23,17 @@
                 </thead>
                 <tbody>
                     @foreach ($trips as $trip)
-                        
-                    
+
+
                     <tr class="tr-shadow">
-                        <td>{{ $trip->name }}</td>
+                        <td style="line-height: 45.5px">{{ $trip->name }}</td>
                         <td>
                             <span>{{ $trip->description }}</span>
                         </td>
                         <td>25</td>
-                        
+
                         <td class="desc">{{ $trip->max_visitors }}</td>
-                        
+
                         <td>
                             <span class="status--process">{{ $trip->date }}</span>
                         </td>
@@ -44,14 +44,14 @@
                                 <form method="post" action="/trips/{{$trip->id}}" >
                                     @csrf
                                     <input type="hidden" name="_method" value="DELETE">
-                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete"><i class="zmdi zmdi-delete"></i></button> 
+                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Delete"><i class="zmdi zmdi-delete"></i></button>
                                     </form>
                             </div>
                         </td>
                     </tr>
                     <tr class="spacer"></tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
         </div>

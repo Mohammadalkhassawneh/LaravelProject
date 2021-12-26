@@ -14,23 +14,9 @@
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">All Properties</option>
-                                                <option value="">Option 1</option>
-                                                <option value="">Option 2</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
                                         </div>
                                         <div class="rs-select2--light rs-select2--sm">
-                                            <select class="js-select2" name="time">
-                                                <option selected="selected">Today</option>
-                                                <option value="">3 Days</option>
-                                                <option value="">1 Week</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div> 
                                         </div>
-                                        <button class="au-btn-filter">
-                                            <i class="zmdi zmdi-filter-list"></i>filters</button>
                                     </div>
                                     <div class="table-data__tool-right">
                                     <a href="{{ route('categories.create') }}"  style="float: right;"class="au-btn au-btn-icon au-btn--green au-btn--small">Add Category</a>
@@ -49,7 +35,8 @@
                                                 <th> Image</th>
                                                 <th>Name </th>
                                                 <th> Description</th>
-                                                <th>Action</th>
+                                                <th></th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -61,11 +48,7 @@
                                                         <span class="au-checkmark"></span>
                                                     </label>
                                                 </td>
-
-
-
                                                 <td> <img src="{{ asset('uploads/'. $item->category_img) }}" width="100px" height="70px" alt="Image"></td>
-
 
                                                 <td>
                                                  <span>{{ $item->category_name}}</span>
@@ -74,24 +57,25 @@
 
                                                 <td class="desc">{{ $item->category_desc}}</td>
 
-
-
-                                                <td>
-                                                <div style="display: flex;">
-                                                 <a style="width: 60px;height: 30px;margin-right:10px" class="btn btn-info" href="{{ route ('categories.edit',$item->id)}}" > Edit</a>
-
-                                                <form action="{{ route ('categories.destroy',$item->id)}}" method="post"> {{-- Delete --}}
+                                    <td>
+                                        <div class="table-data-feature">
+                                            <form action="{{route("categories.destroy",$item->id)}}" method="POST">
                                                 @csrf
-                                                @method('delete')
-                                                <input style="width:60px;height: 30px;margin-right:10px" type="submit" class="btn btn-danger" value="delete">
-                                                 </form>
-                                                 </div>
-
-
-                                                </td>
+                                                @method("delete")
+                                                <button type="submit" class="item mr-2" data-toggle="tooltip" data-placement="top" title="Delete">
+                                                <i class="zmdi zmdi-delete"></i>
+                                            </button>
+                                            </form>
+                                            <a href="{{route("categories.edit",$item->id)}}">
+                                            <button class="item mr-2" data-toggle="tooltip" data-placement="top" title="Edit">
+                                                <i class="zmdi zmdi-edit"></i>
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </td>
                                             </tr>
 
-                                            @endforeach 
+                                            @endforeach
 
                                         </tbody>
                                     </table>
