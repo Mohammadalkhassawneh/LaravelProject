@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class TripController extends Controller
@@ -16,10 +15,10 @@ class TripController extends Controller
     public function index()
     {
         $trips = Trip::all();
-  
+
 
         return view('admin.trips', compact('trips'));
-        
+
     }
     /**
      * Show the form for creating a new resource.
@@ -87,5 +86,5 @@ class TripController extends Controller
         $del->delete();
         return redirect('/trips');
     }
-    
+
 }

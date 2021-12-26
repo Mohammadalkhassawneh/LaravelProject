@@ -96,7 +96,6 @@
 
                                 </li>
 
-
                                 <li class="dropdown">
                                     <a href="{{route("distination")}}">Destinations</a>
 
@@ -117,7 +116,7 @@
                             @auth
                             @if(Auth::user()->role_type == "guide")
                             <li>
-                                <a href="{{route('addtrip', Auth::user()->id)}}">Create Trip</a>
+                                <a href="{{route('guideTrip.create', Auth::user()->id)}}">Create Trip</a>
                             </li>
                             @endif
                             @endauth

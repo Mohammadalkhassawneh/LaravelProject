@@ -16,6 +16,8 @@ class Trip extends Model
         'price',
         'date',
         'image',
+        'guide_id',
+        'category_id',
     ];
 
     // For Guide [one-many]

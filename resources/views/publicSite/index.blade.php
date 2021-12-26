@@ -42,7 +42,7 @@
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
                                 <h3><a href="{{ route('distination')}}">{{$categories->category_name}}</a></h3>
-                                <p>24 Tours</p>
+                                <p>{{$categories->trip->count(). ' Tours'}}</p>
                                 <a href="{{ route('distination')}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->

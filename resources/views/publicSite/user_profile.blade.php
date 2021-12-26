@@ -45,7 +45,8 @@
                     <span style="margin-top: 7px">{{Auth::user()->phone}}</span>
                     </div>
                     </div>
-                   <a class="d-block mt-3" href="{{route('userprofile.edit', Auth::user()->id)}}"><button class="btn text-black" style="background-color:#FFA801; color:082740">Edit Profile</button></a>
+                    <a class="d-block mt-3" href="{{route('userprofile.edit', Auth::user()->id)}}"><button class="btn text-black" style=" background-color: #7C859B;color: white;">Edit Profile</button></a>
+                    <a class="d-block mt-3" href="{{route('guideTrip.create', Auth::user()->id)}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white;">Add Trip</button></a>
                 </div>
             </div>
             <!-- Guide Trips -->
@@ -62,11 +63,20 @@
                             </div>
                             <div class="col-7">
                                 <h4 style="text-transform: capitalize; color:#555">Name: {{$trip->name}}</h4>
-                                <p class="mypara">Description: {{$trip->description}}</p>
+                                <p style="height:100px ; overflow:hidden" class="mypara">Description: {{$trip->description}}</p>
                                 <h6 style="color:#FFA801">Price: {{$trip->price }} Jd</h6>
-                                <a href="{{route('trips-details.edit',$trip->id)}}"><button class="btn show-trip mt-3">Edit Trip</button></a>
+                                <a href="{{route('trips-details.show',$trip->id)}}"><button class="btn show-trip mt-3">Show Trip</button></a>
+                                <form action="{{route("guideTrip.destroy",$trip->id)}}" method="POST" class='deletion'>
+                                @csrf
+                                @method("delete")
+                                <button type="submit" class="btn show-trip" style="margin-top: 15px; margin-left: 10px; background-color:#DC3545">
+                                    Delete Trip
+                                </button>
+                            </form>
+                            <a href="{{route("guideTrip.edit",$trip->id)}}"><button  style="margin-top: 15px; margin-left: 10px; background-color:#FFA801" class="btn show-trip">Edit Trip</button></a>
                             </div>
                         </div>
+                        <hr>
                         @endforeach
                         <hr>
                     </div>
