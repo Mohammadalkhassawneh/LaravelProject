@@ -25,23 +25,30 @@
                     <table class="table table-striped">
                       <thead>
                         <tr>
+                          <th>ID</th>
                           <th>Customer Name</th>
                           <th>Customer Email</th>
                           <th>Custumer Phone</th>
                           <th>Trip Name</th>
+                          <th>Booking Date</th>
                           <th>Price</th>
-                          <th>Status</th>
+                          {{-- <th>Status</th> --}}
                         </tr>
                       </thead>
                       <tbody>
                          @foreach($reservations as $reservation) 
                         <tr>
+                          <td>{{$reservation->reservation_id}}</td>
+                         
+
                           <td scope="row">{{$reservation->name}}</td>
+
                           <td>{{$reservation->email}}</td>
                           <td>{{$reservation->phone}}</td>
                              <td>{{$reservation->tirp_name}}</td>
+                             <td>{{$reservation->booking_date}}</td>
                           <td>{{$reservation->price . " JD"}}</td>
-                          <td><a href="#" class="btn btn-success">Progress</a></td>
+                          {{-- <td><a href="#" class="btn btn-success">Progress</a></td> --}}
                         </tr>
                         @endforeach
                       </tbody>

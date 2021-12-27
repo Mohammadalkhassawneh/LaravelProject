@@ -26,28 +26,16 @@
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </th>
+                                                
                                                 <th> Image</th>
                                                 <th>Name </th>
                                                 <th> Description</th>
-                                                <th></th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach($category as $item)
                                             <tr class="tr-shadow">
-                                                <td>
-                                                    <label class="au-checkbox">
-                                                        <input type="checkbox">
-                                                        <span class="au-checkmark"></span>
-                                                    </label>
-                                                </td>
+                                               
                                                 <td> <img src="{{ asset('uploads/'. $item->category_img) }}" width="100px" height="70px" alt="Image"></td>
 
                                                 <td>
