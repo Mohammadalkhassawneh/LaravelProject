@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="login-header ">{{ __('Login') }}</div>
 
-                <div class="">
+                <div class="tour-sidebar__search tour-sidebar__single">
                     <form  method="POST" action="{{ route('login') }}">
                         @csrf
 
