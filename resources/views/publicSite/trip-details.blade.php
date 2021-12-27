@@ -54,9 +54,13 @@
                                  </div>
                                  <div class="modal-footer">
                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                   {{-- <button   type="button" class="edit-trip"><a href={{route('home2')}}>Send requet</a> </button> --}}
-                           <button class="edit-trip "   onclick="alert('Your Request successfully sent!')"><a href={{route('home2')}}>Send requet</a>  </button>
-
+                          
+                                   <form action="{{route('reservation.store')}}" method="Post">
+                                    @csrf
+     
+                                    <input type="hidden" value="{{$tripDetails->id}}" name="trip_id">
+                           <button class="edit-trip "  type="submit"  onclick="alert('Your Request successfully sent!')">Send requet </button>
+                        </form>
                                  </div>
                                </div>
                              </div>
