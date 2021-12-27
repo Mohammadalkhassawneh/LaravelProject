@@ -61,6 +61,14 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <label for="phone" class="yy mt-1 col-md-4 col-form-label text-md-end">Phone</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="number" class="xx" name="phone">
+                            </div>
+                        </div>
+
 
                         {{-- Hazem --}}
 

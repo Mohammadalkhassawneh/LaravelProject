@@ -45,9 +45,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">Descreption</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">
-                                               {{old('description')}}
-                                            </textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{old('description')}}</textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">Number Of Days</label>

@@ -41,7 +41,7 @@ class TourGuideController extends Controller
     {
         //
         $trip = new Trip();
-        $request['guide_id'] = "5";
+        $request['guide_id'] = Auth::id();
         $input = $request->all();
         if($request->file("image")) {
         $newImageName = time() . '-' . $request->image->getClientOriginalName();
