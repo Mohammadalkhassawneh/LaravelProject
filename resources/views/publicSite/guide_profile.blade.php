@@ -18,7 +18,7 @@
 
 <section class="page-header" style="background-image: url({{asset('assets/images/backgrounds/page-header-contact.jpg')}}) ; padding-top:200px;">
     <div class="container">
-        <h2>User Profile</h2>
+        <h2>Guide Profile</h2>
         <ul class="thm-breadcrumb list-unstyled s">
             <li><a href="{{ route("home2")}}">Home</a></li>
             <li><span>User Profile</span></li>
