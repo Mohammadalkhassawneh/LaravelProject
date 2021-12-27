@@ -21,8 +21,8 @@
                         <i class="tripo-icon-placeholder"></i>
                     </div><!-- /.contact-info-one__icon -->
                     <div class="contact-info-one__content">
-                        <p>77 Broklyn Street, D Capital <br>
-                            Road New York. USA 6666</p>
+                        <p>alabdali/aldakleah-circle <br>
+                            orange coding academy</p>
                     </div><!-- /.contact-info-one__content -->
                 </div><!-- /.contact-info-one__single -->
             </div><!-- /.col-lg-4 -->
@@ -33,7 +33,7 @@
                     </div><!-- /.contact-info-one__icon -->
                     <div class="contact-info-one__content">
                         <p>Local: <a href="tel:666-999-0000">666 999 0000</a> <br>
-                            Mobile: <a href="tel:+123-456-hello">+ 123 456 hello</a></p>
+                            Mobile: <a href="tel:+123-456-hello">0777665544</a></p>
                     </div><!-- /.contact-info-one__content -->
                 </div><!-- /.contact-info-one__single -->
             </div><!-- /.col-lg-4 -->
@@ -43,8 +43,8 @@
                         <i class="tripo-icon-message"></i>
                     </div><!-- /.contact-info-one__icon -->
                     <div class="contact-info-one__content">
-                        <p><a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a> <br>
-                            <a href="mailto:info@tripo.com">info@tripo.com</a>
+                        <p><a href="mailto:needhelp@tripo.com">tripo@gmail.com</a> <br>
+                            <a href="mailto:info@tripo.com">support@tripo.com</a>
                         </p>
                     </div><!-- /.contact-info-one__content -->
                 </div><!-- /.contact-info-one__single -->
