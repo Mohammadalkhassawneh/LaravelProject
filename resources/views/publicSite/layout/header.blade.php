@@ -18,6 +18,9 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:200,300,400,400i,500,600,700,800,900%7CSatisfy&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
 
 
     <link rel="stylesheet" href='{{asset("assets/css/animate.min.css")}}'>
@@ -127,13 +130,13 @@
                                     <a href="{{route("contact")}}">Contact</a>
                                 </li>
 
-                            @auth
-                            @if(Auth::user()->role_type == "guide")
-                            <li>
-                                <a href="{{route('guideTrip.create', Auth::user()->id)}}">Create Trip</a>
-                            </li>
-                            @endif
-                            @endauth
+                                @auth
+                                @if(Auth::user()->role_type == "guide")
+                                <li>
+                                    <a href="{{route('guideTrip.create', Auth::user()->id)}}">Create Trip</a>
+                                </li>
+                                @endif
+                                @endauth
 
                             </ul>
                         </div><!-- /.navbar-collapse -->
