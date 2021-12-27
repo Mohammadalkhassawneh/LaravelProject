@@ -122,8 +122,6 @@ class CategoryController extends Controller
         $request->validate([
             'category_name' => 'required',
             'category_desc' => 'required',
-            'category_img' => 'required',
-
         ]);
 
      $input = $request->all();

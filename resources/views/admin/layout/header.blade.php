@@ -66,15 +66,17 @@
 
 <body class="animsition">
 
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="min-height: 100vh">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src= {{asset("assets/images/logo-light.png")}}  alt="CoolAdmin" />
-                        </a>
+           <div class="logo" style="background: #333">
+                <a href="{{route('admin')}}">
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Tripo Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
+                </a>
+            </div>
                         <button class="hamburger hamburger--slider mr-3" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -119,7 +121,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo" style="background: #333">
                 <a href="{{route('admin')}}">
-                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Tripo Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

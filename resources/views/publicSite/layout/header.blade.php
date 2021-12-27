@@ -72,7 +72,7 @@
         <div class="site-header__header-one site-header__home-two-wrap">
             <div class="topbar-one">
                 <div class="container-fluid">
-                    <div class="topbar-one__left">
+                    <div class="topbar-one__left" style="margin-left: 55px;">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
                         <a>0777665544</a>
                         <a >alabdali/aldakleah-circle</a>
