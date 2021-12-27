@@ -8,7 +8,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Two || Tripo || Travel & Tourism Agencies HTML Template</title>
+    <meta name="descrption" content="Tripo is a website for internal tours in Jordan, you can book your tour in an easy way and you can join as guide in our team">
+    <title> Tripo || Internal Tours</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
@@ -90,7 +91,7 @@
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="main-nav__logo-box">
+                        <div class="main-nav__logo-box" style="    margin-left: 50px;">
                             <a href="{{ route('home2') }}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
