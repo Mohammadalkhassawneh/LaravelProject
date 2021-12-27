@@ -89,14 +89,7 @@
                         </div><!-- /.sidebar__social-list -->
                     </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
-<<<<<<< HEAD
-=======
-
-
->>>>>>> bdc17d963252c3875e73b2674c14afc676655780
-
-
-                
+    
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">
                 <div class="sidebar">
