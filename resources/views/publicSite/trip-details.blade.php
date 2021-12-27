@@ -24,7 +24,7 @@
                 </div><!-- /.blog-details__image -->
                 <div class="blog-details__content">
                     <ul class="list-unstyled blog-one__meta">
-                        <li><a href="{{route('guide',$tripDetails->guide->id)}}"><i class="far fa-user-circle"></i> {{$tripDetails->guide->name}}</a></li>
+                        <li><a href="{{route('guide',$tripDetails->guide_id)}}"><i class="far fa-user-circle"></i> {{$tripDetails->guide->name}}</a></li>
                         <li><a><i class="far fa-calendar-alt"></i> {{$tripDetails->date}}</a></li>
                     </ul><!-- /.list-unstyled blog-one__meta -->
                     <h3>{{$tripDetails->name}}</h3>
