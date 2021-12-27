@@ -20,15 +20,15 @@ class ReservationController extends Controller
         ->join('users', 'users.id', '=', 'user_id')
  
         ->where('guide_id','=',Auth::user()->id)
-        ->get(['*','trips.name As tirp_name',]);
-        $users= User::all();
+        ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+  
     //    $res= $reservation->booking_date;
 
 
 // select * from trip_user INNER join trips on (trip_id = trips.id) where (trips.guide_id = 4);
         // dd($reservations);
     
-        return view('publicsite.reservations', compact('reservations', 'users'));
+        return view('publicsite.reservations', compact('reservations'));
 
     }
     /**
