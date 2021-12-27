@@ -34,7 +34,7 @@ use App\models\Trip;
 //     $user = User::all();
 //     $trip = Trip::all();
 //     return view('admin.index', compact('user', 'trip'));
-    
+
 // })->name("admin")->middleware('admin');
 
 Route::get('/admin', function () {

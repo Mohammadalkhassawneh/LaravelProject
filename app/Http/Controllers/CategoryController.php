@@ -7,8 +7,10 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 class CategoryController extends Controller
 {
     /**
@@ -22,7 +24,7 @@ class CategoryController extends Controller
     {
         return view('publicSite.contact');
     }
-    
+
     public function destination()
     {
         $category = Category::all();
@@ -31,10 +33,21 @@ class CategoryController extends Controller
 
     public function  homeDestination()
     {
+
+                // $guide = User::find(3);
+        // // $trip  = Trip::find(1);
+        // $guide->reservation()->attach([
+        //      [
+        //         'trip_id' => 29,
+        //         'user_id' => Auth::id(),
+        //         'booking_date' => now(),
+        //         'status' => 'Hold'
+        //     ]
+        // ]);
+
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        // dd(Auth::user());
         if(Auth::user() != null){
         $role = User::find(Auth::user()->id);
         } else {
