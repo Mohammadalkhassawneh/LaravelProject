@@ -2,15 +2,6 @@
 
 @section('content')
 
-@if (Session::has('RequestSent'))
-<div class="col-lg-10">
-    <div role="alert" class="alert alert-success alert-dismissible fade in">
-        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-        <strong>Success! </strong>{{ Session::get('RequestSent') }}
-    </div>
-</div>
-<div class="clearfix"></div>
-@endif
         <section class="banner-two">
             <div class="banner-two__bg">
                 <div class="banner-two__bg-inner" data-options='{ "delay": 5000, "slides": [ { "src": "assets/images/backgrounds/banner-2-bg-1.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-2.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-3.jpg" } ], "transition": "fade", "timer": false }'></div><!-- /.banner-two__bg-inner -->
@@ -21,10 +12,6 @@
                 <h2>Jordan Tours</h2>
             </div><!-- /.container -->
         </section><!-- /.banner-two -->
-
-
-
-
 
         <section class="destinations-three">
             <div class="container">
@@ -122,12 +109,12 @@
             <div class="container">
                 <p>Find next place to visit</p>
                 <h3>Explore the beauty of<span style="color:white"> Jordan</span></h3>
-              
+
             </div><!-- /.container -->
         </section><!-- /.cta-four -->
 
 
- 
+
 
         <section class="blog-one">
             <div class="container">
@@ -176,7 +163,7 @@
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
 
-                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >sginup Now</a>
+                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >SIGN UP NOW</a>
 
                         <div class="mc-form__response"></div>
                     </div><!-- /.col-lg-7 -->

@@ -17,9 +17,15 @@ class UserProfileController extends Controller
     public function index()
     {
         if(Auth::id()) {
-            if(Auth::user()->role_type="guide")
-            $trips = User::find(Auth::id())->trip;
-        return view('publicSite/user_profile',compact('trips'));
+            if(Auth::user()->role_type == "guide"){
+                $trips = User::find(Auth::id())->trip;
+                return view('publicSite/user_profile',compact('trips'));
+            }
+            else if(Auth::user()->role_type == "user") {
+                $user         = User::findOrfail(Auth::id());
+                $reservations  = $user->reservation;
+                return view('publicSite/user_profile',compact('reservations'));
+            }
         }
         return redirect()->route("home2");
     }
