@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Trip;
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +61,9 @@ class TourGuideController extends Controller
      */
     public function show($id)
     {
-        //
+        $guide = User::findOrFail($id);
+        $trips = $guide->trip;
+        return view("publicSite.guide_profile",compact('guide','trips'));
     }
 
     /**
