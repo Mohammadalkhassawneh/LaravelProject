@@ -176,7 +176,7 @@
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
 
-                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >sginup Now</a>
+                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >SIGN UP NOW</a>
 
                         <div class="mc-form__response"></div>
                     </div><!-- /.col-lg-7 -->
