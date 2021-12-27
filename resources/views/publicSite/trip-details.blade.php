@@ -24,7 +24,7 @@
                 </div><!-- /.blog-details__image -->
                 <div class="blog-details__content">
                     <ul class="list-unstyled blog-one__meta">
-                        <li><a href="{{route('guide',$tripDetails->guide->id)}}"><i class="far fa-user-circle"></i> {{$tripDetails->guide->name}}</a></li>
+                        <li><a href="{{route('guide',$tripDetails->guide_id)}}"><i class="far fa-user-circle"></i> {{$tripDetails->guide->name}}</a></li>
                         <li><a><i class="far fa-calendar-alt"></i> {{$tripDetails->date}}</a></li>
                     </ul><!-- /.list-unstyled blog-one__meta -->
                     <h3>{{$tripDetails->name}}</h3>
@@ -33,13 +33,14 @@
                     <br>
                                 {{-- ======================= --}}
 
-                        
+
                         <!-- Button trigger modal -->
-                        <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
+                        <button type="button" style="padding: 6px 15px;" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
                             Book Now!
                            </button>
-                           
+
                            <!-- Modal -->
+
                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                              <div class="modal-dialog modal-dialog-centered" role="document">
                                <div class="modal-content">
@@ -54,24 +55,30 @@
                                  </div>
                                  <div class="modal-footer">
                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          
-                                   <form action="{{route('reservation.store')}}" method="Post">
+                                   @auth
+                                    <form action="{{route('reservation.store')}}" method="Post">
                                     @csrf
-     
                                     <input type="hidden" value="{{$tripDetails->id}}" name="trip_id">
-                           <button class="edit-trip "  type="submit"  onclick="alert('Your Request successfully sent!')">Send requet </button>
-                        </form>
+                                     <button class="edit-trip "  type="submit"  onclick="alert('Your Request successfully sent!')">Send requet </button>
+                                    </form>
+                                    @endauth
+                                    @guest
+                                    <form action="/register" method="get">
+                                     <button class="edit-trip "  type="submit"  onclick="alert('You Must be logged in')">Send requet </button>
+                                    </form>
+                                    @endguest
                                  </div>
                                </div>
                              </div>
                            </div>
-   
+
+
                            {{-- ==================================== --}}
                            {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
-                    
+
 
                     <div class="blog-details__bottom">
-                        
+
 
 
                         <div class="sidebar__social-list">
@@ -82,8 +89,8 @@
                         </div><!-- /.sidebar__social-list -->
                     </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
-                
-            
+
+
 
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">

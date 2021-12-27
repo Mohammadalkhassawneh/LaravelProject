@@ -30,7 +30,6 @@ class Trip extends Model
     public function user()
     {
         return $this->belongsToMany(User::class)->withPivot('id','booking_date','status');
-
     }
 
     public function category()

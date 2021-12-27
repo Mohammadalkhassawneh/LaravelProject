@@ -35,7 +35,7 @@ use App\models\Trip;
 //     $user = User::all();
 //     $trip = Trip::all();
 //     return view('admin.index', compact('user', 'trip'));
-    
+
 // })->name("admin")->middleware('admin');
 
 Route::get('/admin', function () {
@@ -55,7 +55,7 @@ Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 Route::resource('/user', UserController::class);
 Route::resource('/userprofile', UserProfileController::class);
 Route::resource('/guideTrip',TourGuideController::class);
-        
+
 
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
@@ -76,11 +76,6 @@ Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 
-//notifications(khassawneh)
-
-Route::get('/send-testrequest', [UserRequestController::class, 'sendTestNotification']);
-
 //reservation route
 
 Route::get('/reservations', [ReservationController::class, 'show'])->name('reservations');
-// Route::resource('/createReservation', [ReservationController::class, 'store'])->name('createReservations');
