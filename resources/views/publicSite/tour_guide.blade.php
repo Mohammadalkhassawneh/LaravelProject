@@ -45,7 +45,7 @@
     <div class="container">
         <h3>Work with our amazing tour guides</h3>
         <div class="cta-one__button-block">
-            <a href="contact.html" class="thm-btn cta-one__btn">Join our team</a><!-- /.thm-btn cta-one__btn -->
+            <a href="{{ asset('register')}}" class="thm-btn cta-one__btn">Join our team</a><!-- /.thm-btn cta-one__btn -->
         </div><!-- /.cta-one__button-block -->
     </div><!-- /.container -->
 </section><!-- /.cta-one -->

@@ -145,15 +145,15 @@ input::-webkit-inner-spin-button {
                 <div class="container-fluid">
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
-                        <a href="tel:666-999-0000">0799665544</a>
+                        <a href="tel:666-999-0000">0777665544</a>
                         <a href="#">alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="https:\\facebook.com"target="_blank"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https:\\twitter.com"target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https:\\instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://dribble.com" target="_blank"><i class="fab fa-dribbble"></i></a>
                         </div><!-- /.topbar-one__social -->
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
@@ -234,8 +234,6 @@ input::-webkit-inner-spin-button {
                                     </div>
                                 @endguest
                             </ul>
-                            <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
-                            <a href="" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>
                         </div><!-- /.main-nav__right -->
                     </div>
                     <!-- /.container -->

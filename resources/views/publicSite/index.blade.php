@@ -159,7 +159,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <h3>Get Latest Tour Updates <br>
-                            by Signing Up</h3>
+                            by Sign Up</h3>
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
 

@@ -1,34 +1,13 @@
-{{-- <footer class="site-footer">
-    <div class="site-footer__bg" style="background-image: url(assets/images/backgrounds/footer-bg-1-1.png);"></div>
-    <!-- /.site-footer__bg -->
-    <div class="container">
-        <div class="row">
 
-
-            <div class="footer-widget__column footer-widget__links">
-                <h3 class="footer-widget__title">Links</h3><!-- /.footer-widget__title -->
-                <ul class="footer-widget__links-list list-unstyled">
-                    <li><a href="destinations.html">Destinations</a></li>
-                    <li><a href="tour-sidebar.html">Tours</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="faq.html">FAQ's</a></li>
-                </ul><!-- /.footer-widget__links-list list-unstyled -->
-            </div><!-- /.footer-widget__column -->
-
-
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</footer><!-- /.site-footer --> --}}
 
 <div class="site-footer__bottom">
     <div class="container">
-        <p>@ All copyright 2020, <a href="#">Layerdrops.com</a></p>
+        <p>@ All copyright 201, <a style="color:#FFA801">Tripo</a></p>
         <div class="site-footer__social">
-            <a href="#"><i class="fab fa-facebook-square"></i><!-- /.fab fa-facebook-square --></a>
-            <a href="#"><i class="fab fa-twitter"></i><!-- /.fab fa-twitter --></a>
-            <a href="#"><i class="fab fa-instagram"></i><!-- /.fab fa-instagram --></a>
-            <a href="#"><i class="fab fa-dribbble"></i><!-- /.fab fa-dribbble --></a>
+            <a href="https:\\facebook.com"><i class="fab fa-facebook-square"></i><!-- /.fab fa-facebook-square --></a>
+            <a href="https:\\twitter.com"><i class="fab fa-twitter"></i><!-- /.fab fa-twitter --></a>
+            <a href="https:\\instagram.com"><i class="fab fa-instagram"></i><!-- /.fab fa-instagram --></a>
+            <a href="https:\\dribbble.com"><i class="fab fa-dribbble"></i><!-- /.fab fa-dribbble --></a>
         </div><!-- /.site-footer__social -->
     </div><!-- /.container -->
 </div><!-- /.site-footer__bottom -->
@@ -61,10 +40,10 @@
         <p>Tripo is a premium wordpress theme for travel, tours, trips, adventures and a wide range of other tour agencies.</p>
         <p><a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a> <br> <a href="tel:888-999-0000">888 999 0000</a></p>
         <div class="side-menu__social">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="https:\\facebook.com"><i class="fab fa-facebook-square"></i></a>
+            <a href="https:\\twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https:\\instagram.com"><i class="fab fa-instagram"></i></a>
+           <a href="https:\\dribbble.com"> <i class="fab fa-pinterest-p"></i></a>
         </div>
     </div><!-- /.side-menu__content -->
 </div><!-- /.side-menu__block-inner -->

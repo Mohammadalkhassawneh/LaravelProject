@@ -73,15 +73,15 @@
                 <div class="container-fluid">
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
-                        <a href="tel:666-999-0000">0799665544</a>
+                        <a>0777665544</a>
                         <a >alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="https:\\facebook.com"target="_blank"><i class="fab fa-facebook-square"></i></a>
+                            <a href="https:\\twitter.com"target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a href="https:\\instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://dribble.com" target="_blank"><i class="fab fa-dribbble"></i></a>
                         </div><!-- /.topbar-one__social -->
                     </div><!-- /.topbar-one__right -->
                 </div><!-- /.container-fluid -->
