@@ -13,6 +13,7 @@ use App\Http\Controllers\ReseverationController;
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\TripDetailsController;
+use App\Http\Controllers\UserRequestController;
 use App\models\User;
 use App\models\Trip;
 
@@ -29,15 +30,18 @@ use App\models\Trip;
 |
 */
 
-Route::get('/admins', function () {
-    $user = User::all();
-    $trip = Trip::all();
-    return view('admin.index', compact('user', 'trip'));
-})->name("admin");
+// Route::get('/admins', function () {
+//     $user = User::all();
+//     $trip = Trip::all();
+//     return view('admin.index', compact('user', 'trip'));
+    
+// })->name("admin")->middleware('admin');
 
 Route::get('/admin', function () {
-    return view('admin.index');
-})->middleware('admin');
+    $user = User::all();
+    $trip = Trip::all();
+    return view('admin.index', compact('user', 'trip') );
+})->name('admin')->middleware('admin');
 
 // Hazem
 
@@ -71,3 +75,6 @@ Route::resource('/categories',CategoryController::class);
 Route::get('/destination', [CategoryController::class,'destination'])->name('distination');
 Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 
+//notifications(khassawneh)
+
+Route::get('/send-testrequest', [UserRequestController::class, 'sendTestNotification']);

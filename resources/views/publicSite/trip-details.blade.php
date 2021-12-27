@@ -19,7 +19,8 @@
 
                 <div class="blog-details__image">
 
-                    <img src={{asset('trip_images/'.$tripDetails->image)}} alt="" class="img-fluid">
+                    <img src="{{asset('trip_images/'.$tripDetails->image)}}" alt="" class="img-fluid">
+
                 </div><!-- /.blog-details__image -->
                 <div class="blog-details__content">
                     <ul class="list-unstyled blog-one__meta">
@@ -27,11 +28,47 @@
                         <li><a><i class="far fa-calendar-alt"></i> {{$tripDetails->date}}</a></li>
                     </ul><!-- /.list-unstyled blog-one__meta -->
                     <h3>{{$tripDetails->name}}</h3>
+                    <p>{{$tripDetails->description}}</p>
 
                     <br>
-                    <p>{{$tripDetails->description}}</p>
-                    <button class="edit-trip"><a href="{{route('trips-details.edit',$tripDetails->id)}}">Edit Trip</button>
+                                {{-- ======================= --}}
+
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
+                            Book Now!
+                           </button>
+                           
+                           <!-- Modal -->
+                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                             <div class="modal-dialog modal-dialog-centered" role="document">
+                               <div class="modal-content">
+                                 <div class="modal-header">
+                                   <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                 </div>
+                                 <div class="modal-body">
+                                   Your Request Will be sent to the guide, The guide Will contact you within 24 hours
+                                 </div>
+                                 <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                   {{-- <button   type="button" class="edit-trip"><a href={{route('home2')}}>Send requet</a> </button> --}}
+                           <button class="edit-trip "   onclick="alert('Your Request successfully sent!')"><a href={{route('home2')}}>Send requet</a>  </button>
+
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+   
+                           {{-- ==================================== --}}
+                           {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
+                    
+
                     <div class="blog-details__bottom">
+                        
+
 
                         <div class="sidebar__social-list">
                             <a href="#"><i class="fab fa-facebook-square"></i></a>
@@ -41,6 +78,8 @@
                         </div><!-- /.sidebar__social-list -->
                     </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
+                
+            
 
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">
