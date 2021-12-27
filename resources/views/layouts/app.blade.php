@@ -144,9 +144,9 @@ input::-webkit-inner-spin-button {
             <div class="topbar-one">
                 <div class="container-fluid">
                     <div class="topbar-one__left">
-                        <a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a>
-                        <a href="tel:666-999-0000">666 999 0000</a>
-                        <a href="#">77 broklyn street new york</a>
+                        <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
+                        <a href="tel:666-999-0000">0799665544</a>
+                        <a href="#">alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">

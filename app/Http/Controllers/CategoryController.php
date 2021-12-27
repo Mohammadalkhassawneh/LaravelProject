@@ -34,17 +34,6 @@ class CategoryController extends Controller
     public function  homeDestination()
     {
 
-                // $guide = User::find(3);
-        // // $trip  = Trip::find(1);
-        // $guide->reservation()->attach([
-        //      [
-        //         'trip_id' => 29,
-        //         'user_id' => Auth::id(),
-        //         'booking_date' => now(),
-        //         'status' => 'Hold'
-        //     ]
-        // ]);
-
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
@@ -161,7 +150,7 @@ class CategoryController extends Controller
         return back();
     }
     public function createReservation() {
-        
+
 
 
 
