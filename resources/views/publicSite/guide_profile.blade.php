@@ -16,7 +16,7 @@
 @section('content')
 
 
-<section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-contact.jpg); padding-top:200px;">
+<section class="page-header" style="background-image: url({{asset('assets/images/backgrounds/page-header-contact.jpg')}}) ; padding-top:200px;">
     <div class="container">
         <h2>User Profile</h2>
         <ul class="thm-breadcrumb list-unstyled s">

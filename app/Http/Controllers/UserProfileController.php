@@ -26,6 +26,9 @@ class UserProfileController extends Controller
                 $reservations  = $user->reservation;
                 return view('publicSite/user_profile',compact('reservations'));
             }
+            else {
+                return redirect('/admin');
+            }
         }
         return redirect()->route("home2");
     }
