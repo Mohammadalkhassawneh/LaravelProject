@@ -25,12 +25,12 @@
                         <div class="destinations-three__single">
                             <img style="height: 45vh" src="uploads/{{$categories->category_img}}" alt="">
                             <div class="destinations-three__content">
-                                <h3><a href="{{ route('distination')}}">{{$categories->category_name}}</a></h3>
+                                <h3><a href="{{ route('trips-list.show',$categories->id)}}">{{$categories->category_name}}</a></h3>
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
-                                <h3><a href="{{ route('distination')}}">{{$categories->category_name}}</a></h3>
+                                <h3><a href="{{ route('trips-list.show',$categories->id)}}">{{$categories->category_name}}</a></h3>
                                 <p>{{$categories->trip->count(). ' Tours'}}</p>
-                                <a href="{{ route('distination')}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
+                                <a href="{{ route('trips-list.show',$categories->id)}}  " class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->
                         </div><!-- /.destinations-three__single -->
                     </div><!-- /.col-lg-4 col-md-6 -->
@@ -88,7 +88,7 @@
                                 <ul class="tour-one__meta list-unstyled">
                                     <li><a ><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
                                     <li><a><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
-                                    <li><a href="{{route('trips-list.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
+                                    <li><a href="{{route('trips-list.show',$trips->category->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
                                 </ul>
                             </div>
 
@@ -143,7 +143,7 @@
                                 <ul class="tour-one__meta list-unstyled">
                                     <li><a><i class="far fa-clock"></i> {{$tripDate->days . "day"}}</a></li>
                                     <li><a><i class="far fa-user-circle"></i> {{"+". $tripDate->minimum_age}}</a></li>
-                                    <li><a href="{{ route('trips-details.show',$tripDate->id)}}"><i class="far fa-map"></i>{{$tripDate->category->category_name}}</a></li>
+                                    <li><a href="{{ route('trips-list.show',$tripDate->category->id)}}"><i class="far fa-map"></i>{{$tripDate->category->category_name}}</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->

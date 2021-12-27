@@ -98,12 +98,7 @@ span.page-link {
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="sidebar">
-                            <div class="sidebar__single sidebar__search">
-                                <form action="#" class="sidebar__search-form">
-                                    <input type="search" placeholder="Search">
-                                    <button type="submit"><i class="tripo-icon-magnifying-glass"></i></button>
-                                </form><!-- /.sidebar__search-form -->
-                            </div><!-- /.sidebar__single -->
+                            
 
                             <div class="sidebar__single sidebar__category">
                                 <h3 class="sidebar__title">All Categories</h3><!-- /.sidebar__title -->
