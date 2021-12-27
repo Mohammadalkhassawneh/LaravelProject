@@ -17,18 +17,18 @@
 
 
 <section class="team-one">
-    <div class="container">  
+    <div class="container">
         <div class="row">
             @foreach ($guides as $guide)
-           
+
             <div class="col-lg-4 col-md-6">
                 <div class="team-one__single">
-                    <div class="team-one__image">
-                        
-                        <a href="{{route('guide',$guide->id)}}">
-                  
-                            <img src='{{asset("images/". $guide->image)}}' alt="guide_image" style="height:434.4px !important"></a>
-                      
+                    <div class="team-one__image" style="height: 360px;">
+
+                        <a href="{{route("guideTrip.show",$guide->id)}}">
+
+                            <img src='{{asset("user_images/". $guide->image)}}' alt="guide_image"  style="display: block; width: 100%;height: 100%;"></a>
+
                     </div>
                     <div class="team-one__content">
                         <h3>{{$guide->name}}</h3>

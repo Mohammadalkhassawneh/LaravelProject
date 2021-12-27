@@ -40,6 +40,13 @@
         .sign-my:hover {
             color: #ff0143 !important;
         }
+
+        input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
     </style>
 
 {{--  Me Above  --}}

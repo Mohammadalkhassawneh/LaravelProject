@@ -2,15 +2,6 @@
 
 @section('content')
 
-@if (Session::has('RequestSent'))
-<div class="col-lg-10">
-    <div role="alert" class="alert alert-success alert-dismissible fade in">
-        <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span></button>
-        <strong>Success! </strong>{{ Session::get('RequestSent') }}
-    </div>
-</div>
-<div class="clearfix"></div>
-@endif
         <section class="banner-two">
             <div class="banner-two__bg">
                 <div class="banner-two__bg-inner" data-options='{ "delay": 5000, "slides": [ { "src": "assets/images/backgrounds/banner-2-bg-1.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-2.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-3.jpg" } ], "transition": "fade", "timer": false }'></div><!-- /.banner-two__bg-inner -->
@@ -21,10 +12,6 @@
                 <h2>Jordan Tours</h2>
             </div><!-- /.container -->
         </section><!-- /.banner-two -->
-
-
-
-
 
         <section class="destinations-three">
             <div class="container">
@@ -85,11 +72,11 @@
 
                         <div class="tour-one__single">
                             <div class="tour-one__image">
-                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$trips->image)}}" alt="">
+                                <img style="min-width:35wh; max-height:30vh" src="{{asset('trip_images/'.$trips->image)}}" alt="">
 
                             </div><!-- /.tour-one__image -->
 
-                            <div class="tour-one__content">
+                            <div class="tour-one__content" style="min-height: 350px">
                                 <ul  class="list-unstyled blog-one__meta">
                                     <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $trips->guide->name}}</a></li>
                                     <li><a><i class="fas fa-calendar-day"></i> {{$trips->date}}</a></li>
@@ -122,12 +109,12 @@
             <div class="container">
                 <p>Find next place to visit</p>
                 <h3>Explore the beauty of<span style="color:white"> Jordan</span></h3>
-              
+
             </div><!-- /.container -->
         </section><!-- /.cta-four -->
 
 
- 
+
 
         <section class="blog-one">
             <div class="container">
@@ -135,18 +122,18 @@
                     <p>Check out Our</p>
                     <h3>Latest Trips</h3>
                 </div><!-- /.block-title -->
-                <div class="row">
+                <div class="row" >
                     @foreach ($news as $tripDate)
 
 
-                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                        <div class="blog-one__single">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms" >
+                        <div class="blog-one__single" >
                             <div class="blog-one__image">
-                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$tripDate->image)}}" alt="">
+                                <img style="min-width:35wh; max-height:30vh" src="{{asset('trip_images/'.$tripDate->image)}}" alt="">
 
                                 <a href="{{ route('trips-details.show',$tripDate->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                             </div><!-- /.blog-one__image -->
-                            <div class="blog-one__content">
+                            <div class="blog-one__content" style="min-height:280px">
                                 <ul class="list-unstyled blog-one__meta">
                                     <li><a href="{{route('guide',$tripDate->guide->id)}}"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
                                     <li><a href="news-details.html"><i class="far fa-comments"></i> {{$tripDate->date}}</a></li>
@@ -176,7 +163,7 @@
                     </div><!-- /.col-lg-5 -->
                     <div class="col-lg-5">
 
-                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >sginup Now</a>
+                            <a href="{{ asset('register')}}" class="thm-btn mailchimp-one__btn" >SIGN UP NOW</a>
 
                         <div class="mc-form__response"></div>
                     </div><!-- /.col-lg-7 -->

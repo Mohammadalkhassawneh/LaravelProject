@@ -10,7 +10,6 @@
                 <div class="tour-sidebar__search tour-sidebar__single">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end yy mt-1">{{ __('Name') }}</label>
 
@@ -58,6 +57,14 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="xx" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="phone" class="yy mt-1 col-md-4 col-form-label text-md-end">Phone</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="number" class="xx" name="phone">
                             </div>
                         </div>
 
