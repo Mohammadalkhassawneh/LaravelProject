@@ -8,7 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class TourGuideController extends Controller
+class   TourGuideController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -125,4 +125,6 @@ class TourGuideController extends Controller
         $guideTrip->delete();
         return redirect()->route("userprofile.index");
     }
+
+
 }

@@ -1,12 +1,36 @@
 <?php
 
+
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;    
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\Trip;
+use Illuminate\Support\Facades\Auth;
+class ReservationController extends Controller
 
-class ReseverationController extends Controller
+
 {
+    public function show(){
+        // $guide = User::findOrFail($id);
+        // $reservations = $guide->reservations->trip_id;
+        // $guide_name = $reservations->user_id;
+        $reservations = DB::table('trip_user')
+        ->join('trips', 'trips.id', '=', 'trip_id')
+        ->join('users', 'users.id', '=', 'user_id')
+ 
+        ->where('guide_id','=',Auth::user()->id)
+        ->get(['*','trips.name As tirp_name',]);
+        $users= User::all();
+    //    $res= $reservation->booking_date;
+
+
+// select * from trip_user INNER join trips on (trip_id = trips.id) where (trips.guide_id = 4);
+        // dd($reservations);
+    
+        return view('publicsite.reservations', compact('reservations', 'users'));
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,6 +52,7 @@ class ReseverationController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -39,6 +64,30 @@ class ReseverationController extends Controller
     public function store(Request $request)
     {
         //
+        
+       $trip = Trip::find($request->trip_id);
+
+    
+     
+     
+   
+         
+         $trip->user()->attach([
+            [
+               'trip_id' => $request->trip_id,
+               'user_id' => Auth::id(),
+               'booking_date' => now(),
+               'status' => 'Hold'
+           ]
+            
+           
+       ]);
+   
+
+       return redirect()->route("userprofile.index");
+
+
+         
     }
 
     /**
@@ -47,10 +96,10 @@ class ReseverationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     //
+    // }
 
     /**
      * Show the form for editing the specified resource.

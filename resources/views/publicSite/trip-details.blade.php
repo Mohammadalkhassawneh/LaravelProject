@@ -31,40 +31,44 @@
                     <p>{{$tripDetails->description}}</p>
 
                     <br>
-                    {{-- ======================= --}}
+                                {{-- ======================= --}}
 
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
-                        Book Now!
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Your Request Will be sent to the guide, The guide Will contact you within 24 hours
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    {{-- <button   type="button" class="edit-trip"><a href={{route('home2')}}>Send requet</a> </button> --}}
-                                    <button class="edit-trip " onclick="alert('Your Request successfully sent!')"><a href={{route('home2')}}>Send requet</a> </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {{-- ==================================== --}}
-                    {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
-
+                        
+                        <!-- Button trigger modal -->
+                        <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
+                            Book Now!
+                           </button>
+                           
+                           <!-- Modal -->
+                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                             <div class="modal-dialog modal-dialog-centered" role="document">
+                               <div class="modal-content">
+                                 <div class="modal-header">
+                                   <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                   </button>
+                                 </div>
+                                 <div class="modal-body">
+                                   Your Request Will be sent to the guide, The guide Will contact you within 24 hours
+                                 </div>
+                                 <div class="modal-footer">
+                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          
+                                   <form action="{{route('reservation.store')}}" method="Post">
+                                    @csrf
+     
+                                    <input type="hidden" value="{{$tripDetails->id}}" name="trip_id">
+                           <button class="edit-trip "  type="submit"  onclick="alert('Your Request successfully sent!')">Send requet </button>
+                        </form>
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+   
+                           {{-- ==================================== --}}
+                           {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
+                    
 
                     <div class="blog-details__bottom">
 
@@ -109,15 +113,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="sidebar__single sidebar__social">
-                        <h3 class="sidebar__title">Follow Us</h3><!-- /.sidebar__title -->
-                        <div class="sidebar__social-list">
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-dribbble"></i></a>
-                        </div><!-- /.sidebar__social-list -->
-                    </div><!-- /.sidebar__single sidebar__twitter -->
                 </div><!-- /.sidebar -->
             </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->

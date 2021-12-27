@@ -52,6 +52,12 @@
         .sign-my:hover {
             color: #ff0143 !important;
         }
+
+        @media(max-width:768px) {
+            .main-nav__right {
+                display: none;
+            }
+        }
     </style>
 
 
@@ -68,7 +74,7 @@
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
                         <a href="tel:666-999-0000">0799665544</a>
-                        <a>alabdali/aldakleah-circle</a>
+                        <a >alabdali/aldakleah-circle</a>
                     </div><!-- /.topbar-one__left -->
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
@@ -96,12 +102,20 @@
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
-
                                 </li>
+                                {{-- Hazem --}}
+                                 <li class="dropdown">
+                                    <a>Destinations</a>
+                                    <ul>
+                                        <li>  <a href="{{route("distination")}}">Cities</a> </li>
+                                        <li>  <a href="{{route("trips-list.index")}}">Tours</a> </li>
+                                                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
 
-                                <li class="dropdown">
+                                    </ul><!-- /.sub-menu -->
+                                </li>
+                                {{-- Hazem --}}
+                                {{-- <li class="dropdown">
                                     <a href="{{route("distination")}}">Destinations</a>
-
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{route("trips-list.index")}}">Tours</a>
@@ -110,7 +124,7 @@
                                 <li class="dropdown">
                                     <a href="{{route('tourGuide.index')}}">Tour Guides</a>
 
-                                </li>
+                                </li> --}}
 
                                 <li>
                                     <a href="{{route("contact")}}">Contact</a>

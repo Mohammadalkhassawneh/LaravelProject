@@ -73,7 +73,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <img src= {{asset('/images/icon/logo.png')}}  alt="CoolAdmin" />
+                            <img src= {{asset("assets/images/logo-light.png")}}  alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider mr-3" type="button">
                             <span class="hamburger-box">
@@ -119,7 +119,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="{{route('admin')}}">
-                    <img src="/images/icon/logo.png" alt="Cool Admin" />
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
