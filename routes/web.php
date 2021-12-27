@@ -9,7 +9,8 @@ use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FilterController;
-use App\Http\Controllers\ReseverationController;
+use App\Http\Controllers\ReservationController;
+
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\TripDetailsController;
@@ -45,7 +46,7 @@ Route::get('/admin', function () {
 
 // Hazem
 
-Route::resource("/reservation", ReseverationController::class);
+Route::resource("/reservation", ReservationController::class);
 
 //
 Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
@@ -54,7 +55,7 @@ Route::get('/', [CategoryController::class, 'homeDestination'])->name('home2');
 Route::resource('/user', UserController::class);
 Route::resource('/userprofile', UserProfileController::class);
 Route::resource('/guideTrip',TourGuideController::class);
-
+        
 
 
 Route::get("/filter", [FilterController::class, "roles"])->name("roles");
@@ -78,3 +79,8 @@ Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 //notifications(khassawneh)
 
 Route::get('/send-testrequest', [UserRequestController::class, 'sendTestNotification']);
+
+//reservation route
+
+Route::get('/reservations', [ReservationController::class, 'show'])->name('reservations');
+// Route::resource('/createReservation', [ReservationController::class, 'store'])->name('createReservations');

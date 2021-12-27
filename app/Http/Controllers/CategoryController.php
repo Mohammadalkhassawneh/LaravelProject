@@ -147,4 +147,10 @@ class CategoryController extends Controller
         $Category->delete();
         return back();
     }
+    public function createReservation() {
+        
+
+
+
+    }
 }

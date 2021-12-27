@@ -26,7 +26,7 @@ class UserProfileController extends Controller
                 $reservations  = $user->reservation;
                 return view('publicSite/user_profile',compact('reservations'));
             }
-            else {
+            else if(Auth::user()->role_type == "admin"){
                 return redirect('/admin');
             }
         }
