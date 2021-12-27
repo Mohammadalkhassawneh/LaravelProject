@@ -85,7 +85,7 @@
 
                         <div class="tour-one__single">
                             <div class="tour-one__image">
-                                <img src="assets/images/tour/tour-1-1.jpg" alt="">
+                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$trips->image)}}" alt="">
 
                             </div><!-- /.tour-one__image -->
 
@@ -117,224 +117,17 @@
         </section><!-- /.tour-one -->
 
 
-        {{-- <section class="testimonials-one">
-            <div class="container">
-                <div class="block-title text-center">
-                    <p>checkout our</p>
-                    <h3>Top Tour Reviews</h3>
-                </div><!-- /.block-title -->
-                <div class="testimonials-one__carousel thm__owl-carousel light-dots owl-carousel owl-theme" data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": true, "margin": 30, "loop": true, "responsive": { "0": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "767": { "items": 1, "nav": true, "navText": ["Prev", "Next"], "dots": false }, "991": { "items": 2 }, "1199": { "items": 2 }, "1200": { "items": 3 } }}'>
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-1.jpg" alt="">
-                                <h3>Kevin Smith</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-2.jpg" alt="">
-                                <h3>Christine Eve</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-3.jpg" alt="">
-                                <h3>Mike Hardson</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-1.jpg" alt="">
-                                <h3>Kevin Smith</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-2.jpg" alt="">
-                                <h3>Christine Eve</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-3.jpg" alt="">
-                                <h3>Mike Hardson</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-1.jpg" alt="">
-                                <h3>Kevin Smith</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-2.jpg" alt="">
-                                <h3>Christine Eve</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <div class="testimonials-one__single">
-                            <div class="testimonials-one__content">
-                                <div class="testimonials-one__stars">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div><!-- /.testimonials-one__stars -->
-                                <p>There are many variations of passages of lorem ipsum but the majority have alteration in some form, by randomised words look. Aene an commodo ligula eget dolorm sociis.</p>
-                            </div><!-- /.testimonials-one__content -->
-                            <div class="testimonials-one__info">
-                                <img src="assets/images/testimonials/testimonials-1-3.jpg" alt="">
-                                <h3>Mike Hardson</h3>
-                            </div><!-- /.testimonials-one__info -->
-                        </div><!-- /.testimonials-one__single -->
-                    </div><!-- /.item -->
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.testimonials-one --> --}}
 
         <section class="cta-four img-responsive" style="background-image: url(assets/images/gallery/FlagofJordan.jpg);">
             <div class="container">
                 <p>Find next place to visit</p>
                 <h3>Explore the beauty of<span style="color:white"> Jordan</span></h3>
-                {{-- <a href="tour-details.html" class="thm-btn cta-four__btn">Start Booking now</a><!-- /.thm-btn --> --}}
+              
             </div><!-- /.container -->
         </section><!-- /.cta-four -->
 
 
-        {{-- <div class="brand-one brand-one__home-two">
-            <div class="container">
-                <div class="brand-one__carousel owl-theme owl-carousel thm__owl-carousel" data-options='{"nav": false, "autoplay": true, "autoplayTimeout": 5000, "smartSpeed": 700, "dots": false, "margin": 115, "responsive": { "0": { "items": 2, "margin": 20 }, "480": { "items": 2, "margin": 20 }, "767": { "items": 3, "margin": 20 }, "991": { "items": 4, "margin": 40 }, "1199": { "items": 5 } }}'>
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/resources/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                </div><!-- /.brand-one__carousel owl-theme owl-carousel thm__owl-carousel -->
-            </div><!-- /.container -->
-        </div><!-- /.brand-one --> --}}
+ 
 
         <section class="blog-one">
             <div class="container">
@@ -349,20 +142,21 @@
                     <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
                         <div class="blog-one__single">
                             <div class="blog-one__image">
-                                <img src="assets/images/blog/blog-1-1.jpg" alt="">
-                                <a href="{{ route('trips-details.show',$trips->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
+                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$tripDate->image)}}" alt="">
+
+                                <a href="{{ route('trips-details.show',$tripDate->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
                                 <ul class="list-unstyled blog-one__meta">
-                                    <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
+                                    <li><a href="{{route('guide',$tripDate->guide->id)}}"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
                                     <li><a href="news-details.html"><i class="far fa-comments"></i> {{$tripDate->date}}</a></li>
 
                                 </ul><!-- /.list-unstyled blog-one__meta -->
-                                <h3><a href="{{ route('trips-details.show',$trips->id)}}">{{$tripDate->name}}</a></h3>
+                                <h3><a href="{{ route('trips-details.show',$tripDate->id)}}">{{$tripDate->name}}</a></h3>
                                 <ul class="tour-one__meta list-unstyled">
-                                    <li><a><i class="far fa-clock"></i> {{$trips->days . "day"}}</a></li>
-                                    <li><a><i class="far fa-user-circle"></i> {{"+". $trips->minimum_age}}</a></li>
-                                    <li><a href="{{ route('trips-details.show',$trips->id)}}"><i class="far fa-map"></i>{{$trips->category->category_name}}</a></li>
+                                    <li><a><i class="far fa-clock"></i> {{$tripDate->days . "day"}}</a></li>
+                                    <li><a><i class="far fa-user-circle"></i> {{"+". $tripDate->minimum_age}}</a></li>
+                                    <li><a href="{{ route('trips-details.show',$tripDate->id)}}"><i class="far fa-map"></i>{{$tripDate->category->category_name}}</a></li>
                                 </ul><!-- /.tour-one__meta -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
