@@ -104,13 +104,13 @@
 
                     <div class="container sidebar__single sahar-container">
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-6">
                                 <h5><i class="fas fa-user sahar-icon"></i> Trip Guide:</h5>
                                 <h5><i class="far fa-clock sahar-icon"></i> Trip Duration:</h5>
                                 <h5><i class="far fa-calendar-alt sahar-icon"></i> Trip Date:</h5>
                                 <h5><i class="fas fa-tag sahar-icon"></i> Trip Price:</h5>
                             </div>
-                            <div class="col-5">
+                            <div class="col-6">
                                 <h5>{{$tripDetails->guide->name}}</h5>
                                 <h5>{{$tripDetails->days}} days</h5>
                                 <h5>{{$tripDetails->date}}</h5>
