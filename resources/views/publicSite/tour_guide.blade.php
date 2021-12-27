@@ -25,7 +25,7 @@
                 <div class="team-one__single">
                     <div class="team-one__image" style="height: 360px;">
 
-                        <a href="{{route("guideTrip.show",$guide->id)}}">
+                        <a href="{{route('guide',$guide->id)}}">
 
                             <img src='{{asset("user_images/". $guide->image)}}' alt="guide_image"  style="display: block; width: 100%;height: 100%;"></a>
 
