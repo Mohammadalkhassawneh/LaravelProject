@@ -10,11 +10,11 @@ class UserRequestController extends Controller
 {
     //
     public function sendTestNotification(){
-        $user = User::first();
+        $user = User::all();
         $requestData = [
             'body' => 'You recieved an new test notification',
-            'enrollmentText' => 'You had a trip request',
-            'url' => url('/'),
+            'RequestText' => 'You had a trip request',
+            'url' => '/',
             'thankyou' => 'you have 1 day to accept'
 
 
