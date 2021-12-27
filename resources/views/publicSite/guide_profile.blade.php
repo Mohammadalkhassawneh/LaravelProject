@@ -20,7 +20,7 @@
     <div class="container">
         <h2>User Profile</h2>
         <ul class="thm-breadcrumb list-unstyled s">
-            <li><a href="{{ route("home2")}}">Home</a></li>
+            <li><a href="{{ route('home2')}}">Home</a></li>
             <li><span>User Profile</span></li>
         </ul>
     </div>
@@ -56,7 +56,7 @@
                         @foreach ($trips as $trip)
                         <div class="row">
                             <div class="col-5">
-                                <img src="{{asset("trip_images/" . $trip->image)}}" alt="trip_image" class="trip_img">
+                                <img src="{{asset('trip_images/' . $trip->image)}}" alt="trip_image" class="trip_img">
                             </div>
                             <div class="col-7">
                                 <h4 style="text-transform: capitalize; color:#555">Name: {{$trip->name}}</h4>

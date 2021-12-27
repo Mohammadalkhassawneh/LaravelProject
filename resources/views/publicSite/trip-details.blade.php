@@ -2,15 +2,15 @@
 
 @section('content')
 
-        <section class="page-header" style="background-image:url(../assets/images/backgrounds/page-header-contact.jpg);margin-top: 145px">
-            <div class="container">
-                <h2>News Details</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="{{route('home2')}}">Home</a></li>
-                    <li><span>News</span></li>
-                </ul><!-- /.thm-breadcrumb -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
+<section class="page-header" style="background-image:url(../assets/images/backgrounds/page-header-contact.jpg);margin-top: 145px">
+    <div class="container">
+        <h2>News Details</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="{{route('home2')}}">Home</a></li>
+            <li><span>News</span></li>
+        </ul><!-- /.thm-breadcrumb -->
+    </div><!-- /.container -->
+</section><!-- /.page-header -->
 
 <section class="blog-list">
     <div class="container">
@@ -31,43 +31,43 @@
                     <p>{{$tripDetails->description}}</p>
 
                     <br>
-                                {{-- ======================= --}}
+                    {{-- ======================= --}}
 
-                        
-                        <!-- Button trigger modal -->
-                        <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
-                            Book Now!
-                           </button>
-                           
-                           <!-- Modal -->
-                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                             <div class="modal-dialog modal-dialog-centered" role="document">
-                               <div class="modal-content">
-                                 <div class="modal-header">
-                                   <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                     <span aria-hidden="true">&times;</span>
-                                   </button>
-                                 </div>
-                                 <div class="modal-body">
-                                   Your Request Will be sent to the guide, The guide Will contact you within 24 hours
-                                 </div>
-                                 <div class="modal-footer">
-                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                   {{-- <button   type="button" class="edit-trip"><a href={{route('home2')}}>Send requet</a> </button> --}}
-                           <button class="edit-trip "   onclick="alert('Your Request successfully sent!')"><a href={{route('home2')}}>Send requet</a>  </button>
 
-                                 </div>
-                               </div>
-                             </div>
-                           </div>
-   
-                           {{-- ==================================== --}}
-                           {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
-                    
+                    <!-- Button trigger modal -->
+                    <button type="button" class="edit-trip" data-toggle="modal" data-target="#exampleModalCenter">
+                        Book Now!
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Your Request Will be sent to the guide, The guide Will contact you within 24 hours
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    {{-- <button   type="button" class="edit-trip"><a href={{route('home2')}}>Send requet</a> </button> --}}
+                                    <button class="edit-trip " onclick="alert('Your Request successfully sent!')"><a href={{route('home2')}}>Send requet</a> </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- ==================================== --}}
+                    {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
+
 
                     <div class="blog-details__bottom">
-                        
+
 
 
                         <div class="sidebar__social-list">
@@ -78,19 +78,37 @@
                         </div><!-- /.sidebar__social-list -->
                     </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
-                
-            
 
+
+                
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">
                 <div class="sidebar">
-                    <div class="sidebar__single sidebar__search">
-                        <form action="#" class="sidebar__search-form">
-                            <input type="search" placeholder="Search">
-                            <button type="submit"><i class="tripo-icon-magnifying-glass"></i></button>
-                        </form><!-- /.sidebar__search-form -->
-                    </div><!-- /.sidebar__single -->
+                    @section('style')
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Mochiy+Pop+One&family=Mohave&display=swap');
+                        h1,h2,h3,h4,h5,h6 {
+                            font-family: "Barlow Condensed", sans-serif !important;
+                        }
+                        </style>
+                        @endsection
 
+                    <div class="container sidebar__single sahar-container">
+                        <div class="row">
+                            <div class="col-7">
+                                <h5><i class="fas fa-user sahar-icon"></i> Trip Guide:</h5>
+                                <h5><i class="far fa-clock sahar-icon"></i> Trip Duration:</h5>
+                                <h5><i class="far fa-calendar-alt sahar-icon"></i> Trip Date:</h5>
+                                <h5><i class="fas fa-tag sahar-icon"></i> Trip Price:</h5>
+                            </div>
+                            <div class="col-5">
+                                <h5>{{$tripDetails->guide->name}}</h5>
+                                <h5>{{$tripDetails->days}} days</h5>
+                                <h5>{{$tripDetails->date}}</h5>
+                                <h5>{{$tripDetails->price}} Jd</h5>
+                            </div>
+                        </div>
+                    </div>
                     <div class="sidebar__single sidebar__social">
                         <h3 class="sidebar__title">Follow Us</h3><!-- /.sidebar__title -->
                         <div class="sidebar__social-list">

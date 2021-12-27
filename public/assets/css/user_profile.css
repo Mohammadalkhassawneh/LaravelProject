@@ -29,3 +29,15 @@
     color: #fff;
     background-color: #082740;
 }
+
+.sahar-icon {
+    color: #FFA801;
+}
+
+.sahar-container h5 {
+    margin-bottom: 3rem;
+}
+
+.sahar-container {
+    font-family: var(--thm-font);
+}
