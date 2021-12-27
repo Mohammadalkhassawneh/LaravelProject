@@ -13,8 +13,9 @@
                 <thead>
                     <tr>
                         <th>name</th>
+                        <th>image</th>
                         <th>description</th>
-                        <th>Number of visitors</th>
+                        
                         <th>maximum capasity of visitors</th>
                         <th>trip date</th>
                         <th>price</th>
@@ -27,10 +28,11 @@
 
                     <tr class="tr-shadow">
                         <td style="line-height: 45.5px">{{ $trip->name }}</td>
+                        <td><img src="{{asset('trip_images/'. $trip->image) }}"></td>
                         <td>
                             <span>{{ $trip->description }}</span>
                         </td>
-                        <td>25</td>
+                        
 
                         <td class="desc">{{ $trip->max_visitors }}</td>
 
