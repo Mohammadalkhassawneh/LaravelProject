@@ -85,11 +85,11 @@
 
                         <div class="tour-one__single">
                             <div class="tour-one__image">
-                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$trips->image)}}" alt="">
+                                <img style="min-width:35wh; max-height:30vh" src="{{asset('trip_images/'.$trips->image)}}" alt="">
 
                             </div><!-- /.tour-one__image -->
 
-                            <div class="tour-one__content">
+                            <div class="tour-one__content" style="min-height: 350px">
                                 <ul  class="list-unstyled blog-one__meta">
                                     <li><a href="{{route('guide',$trips->guide->id)}}"><i></i> {{"guide: " . $trips->guide->name}}</a></li>
                                     <li><a><i class="fas fa-calendar-day"></i> {{$trips->date}}</a></li>
@@ -135,18 +135,18 @@
                     <p>Check out Our</p>
                     <h3>Latest Trips</h3>
                 </div><!-- /.block-title -->
-                <div class="row">
+                <div class="row" >
                     @foreach ($news as $tripDate)
 
 
-                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
-                        <div class="blog-one__single">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms" >
+                        <div class="blog-one__single" >
                             <div class="blog-one__image">
-                                <img style="min-width:35wh; max-height:25vh" src="{{asset('trip_images/'.$tripDate->image)}}" alt="">
+                                <img style="min-width:35wh; max-height:30vh" src="{{asset('trip_images/'.$tripDate->image)}}" alt="">
 
                                 <a href="{{ route('trips-details.show',$tripDate->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
                             </div><!-- /.blog-one__image -->
-                            <div class="blog-one__content">
+                            <div class="blog-one__content" style="min-height:280px">
                                 <ul class="list-unstyled blog-one__meta">
                                     <li><a href="{{route('guide',$tripDate->guide->id)}}"><i></i> {{"guide: " . $tripDate->guide->name}}</a></li>
                                     <li><a href="news-details.html"><i class="far fa-comments"></i> {{$tripDate->date}}</a></li>
