@@ -25,7 +25,7 @@
     <link href={{asset("/vendor/bootstrap-4.1/bootstrap.min.css")}} rel="stylesheet" media="all">
 
     <!-- Vendor CSS-->
-    <link href={{asset("vendor/animsition/animsition.min.css")}} rel="stylesheet" media="all">
+    <link href="{{asset('vendor/animsition/animsition.min.css')}}" rel="stylesheet" media="all">
     <link href={{asset("vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css")}} rel="stylesheet" media="all">
     <link href={{asset("vendor/wow/animate.css")}} rel="stylesheet" media="all">
     <link href={{asset("vendor/css-hamburgers/hamburgers.min.css")}} rel="stylesheet" media="all">
@@ -117,9 +117,9 @@
 
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
+            <div class="logo" style="background: #333">
                 <a href="{{route('admin')}}">
-                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" />
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
