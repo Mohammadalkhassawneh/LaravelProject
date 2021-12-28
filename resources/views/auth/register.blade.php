@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="margin-top: 10px;">
                 <div class="login-header">{{ __('Register') }}</div>
 
                 <div class="tour-sidebar__search tour-sidebar__single">
@@ -68,10 +68,6 @@
                             </div>
                         </div>
 
-
-                        {{-- Hazem --}}
-
-
                             <div class="row  mb-4">
                             <label for="role" class=" yy mt-1 col-md-4 col-form-label text-md-end">Role</label>
                             <div class="col-md-6">
@@ -81,8 +77,6 @@
                                 </select>
                             </div>
                         </div>
-
-                        {{-- Hazem  --}}
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

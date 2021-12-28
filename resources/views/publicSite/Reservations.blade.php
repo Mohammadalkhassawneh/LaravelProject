@@ -7,12 +7,12 @@
         font-family: "Barlow Condensed", sans-serif !important;
     }
 </style>
- 
+
 
 @endsection
 @section('content')
 <div class="container" style="margin-top: 200px">
-<section class="ftco-section">
+<section class="ftco-section" style="margin-bottom:81px">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
@@ -36,10 +36,10 @@
                         </tr>
                       </thead>
                       <tbody>
-                         @foreach($reservations as $reservation) 
+                         @foreach($reservations as $reservation)
                         <tr>
                           <td>{{$reservation->reservation_id}}</td>
-                         
+
 
                           <td scope="row">{{$reservation->name}}</td>
 

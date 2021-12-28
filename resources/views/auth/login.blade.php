@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="margin-top: 30px;">
                 <div class="login-header ">{{ __('Login') }}</div>
 
                 <div class="tour-sidebar__search tour-sidebar__single">
@@ -47,9 +47,9 @@
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
-                                
+
                             </div>
-                          
+
                         </div>
 
                         <div class="row mb-3 ">
@@ -62,10 +62,10 @@
                             <a class="forgot-link mt-2" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
-                        @endif 
-                            
+                        @endif
+
                         </div>
-                        
+
                     </form>
                 </div>
             </div>

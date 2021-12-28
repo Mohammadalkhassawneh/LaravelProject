@@ -47,7 +47,7 @@
                     <a class="d-block mt-3" href="{{route('userprofile.edit', Auth::user()->id)}}"><button class="btn text-black" style=" background-color: #7C859B;color: white; width:130px">Edit Profile</button></a>
                         @if(Auth::user()->role_type == 'guide')
                         <a class="d-block mt-3" href="{{route('guideTrip.create', Auth::user()->id)}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">Add Trip</button></a>
-                        <a class="d-block mt-3" href="{{route('reservations'), Auth::user()->id}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">show reservations</button></a>
+                        <a class="d-block mt-3" href="{{route('reservations'), Auth::user()->id}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">Show Reservations</button></a>
                         @endif
                 </div>
             </div>
@@ -81,7 +81,6 @@
                         </div>
                         <hr>
                         @endforeach
-                        <hr>
                     </div>
                 </div>
             </div>
@@ -109,7 +108,6 @@
                         </div>
                         <hr>
                         @endforeach
-                        <hr>
                     </div>
                 </div>
             </div>

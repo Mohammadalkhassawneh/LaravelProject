@@ -54,11 +54,6 @@
         .color-white:hover {
             color: white
         }
-/*
-        table tr {
-            display: flex;
-            align-items: center
-        } */
 
     </style>
 
@@ -66,15 +61,17 @@
 
 <body class="animsition">
 
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="min-height: 100vh">
         <!-- HEADER MOBILE-->
         <header class="header-mobile d-block d-lg-none">
             <div class="header-mobile__bar">
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src= {{asset("assets/images/logo-light.png")}}  alt="CoolAdmin" />
-                        </a>
+           <div class="logo" style="background: #333">
+                <a href="{{route('admin')}}">
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Tripo Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
+                </a>
+            </div>
                         <button class="hamburger hamburger--slider mr-3" type="button">
                             <span class="hamburger-box">
                                 <span class="hamburger-inner"></span>
@@ -99,11 +96,11 @@
                                 <i class="fas fa-table"></i>categories</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href={{ asset('trips') }}>
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
+                            <a href={{route('reservation.index')}}>
                                 <i class="fas fa-calendar-alt"></i>Reservation</a>
                         </li>
 
@@ -119,8 +116,8 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo" style="background: #333">
                 <a href="{{route('admin')}}">
-                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
-                    </a>
+                    <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Tripo Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
+                </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
@@ -129,16 +126,16 @@
                             <a class="js-arrow" href="{{route('admin')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'user') ? 'active' : '' }}">
                             <a href="{{route("user.index")}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'categories') ? 'active' : '' }}">
                             <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>Categories</a>
 
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'trips') ? 'active' : '' }}">
                             <a href="{{ asset('trips') }}">
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
@@ -180,13 +177,9 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        @if (Auth::user() != null)
                                                         <a href="">{{ Auth::user()->name }}</a>
-                                                        {{-- @else
-                                                            {!! redirect('/') !!} --}}
-                                                        @endif
                                                     </h5>
-                                                    <span class="email">{{ Session::get('email');}}</span>
+                                                    <span class="email">{{Auth::user()->email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -199,7 +192,6 @@
                                                             @csrf
                                                         </form>
                                                     </a>
-
                                                 </div>
                                                 <div class="account-dropdown__footer">
                                                 </div>

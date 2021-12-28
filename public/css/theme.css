@@ -1299,7 +1299,13 @@ section {
 @media (max-width: 991px) {
     .logo {
         text-align: center;
+        width: 200px;
     }
+
+      .logo > a > img {
+              padding-top: 10px;
+                  max-width: 60%;
+      }
 }
 
 .header-wrap {

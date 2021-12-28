@@ -31,7 +31,7 @@
 
                     </div>
                     <div class="team-one__content">
-                        <h3>{{$guide->name}}</h3>
+                        <a href="{{route('guide',$guide->id)}}"><h3>{{$guide->name}}</h3></a>
                         <p class="text-uppercase">Tour Guide</p>
                     </div>
                 </div>
