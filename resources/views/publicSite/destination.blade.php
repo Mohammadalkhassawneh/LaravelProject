@@ -27,7 +27,7 @@
 
                             </div><!-- /.destinations-three__content -->
                             <div class="destinations-three__hover-content">
-                                <h3><a href="{{route("trips-list.index",$val->id)}}">{{ $val->category_name}}</a></h3>
+                                <h3><a href="{{route("trips-list.show",$val->id)}}">{{ $val->category_name}}</a></h3>
                                 <p>{{$val->trip()->count(). ' Tours'}}</p>
                                 <a href="{{route('trips-list.show', $val->id)}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
                             </div><!-- /.destinations-three__hover-content -->

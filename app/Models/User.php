@@ -48,7 +48,7 @@ class User extends Authenticatable
     public function trip() {
         return $this->hasMany(Trip::class,'guide_id');
     }
-
+    //many to many
     public function reservation() {
         return $this->belongsToMany(Trip::class)->withPivot('id','booking_date','status');
     }

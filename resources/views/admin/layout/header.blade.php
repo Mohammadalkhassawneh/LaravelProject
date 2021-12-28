@@ -120,7 +120,7 @@
             <div class="logo" style="background: #333">
                 <a href="{{route('admin')}}">
                     <img class="admin-logo" src="{{asset("assets/images/logo-light.png")}}" alt="Cool Admin" style="display: block;max-width: 70%;margin-left: auto;margin-right: auto;" />
-                </a>
+                    </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">

@@ -27,12 +27,8 @@ class FilterController extends Controller
 
                 $cats = Category::all();
                 $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
-        if(Auth::user() != null){
-        $role = User::find(Auth::user()->id);
-        } else {
-            $role = "";
-        }
-             return view('publicSite.trips-list', compact('trips','cats','role'));
+     
+             return view('publicSite.trips-list', compact('trips','cats'));
     }
 
 }

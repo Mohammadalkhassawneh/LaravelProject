@@ -37,12 +37,9 @@ class CategoryController extends Controller
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        if(Auth::user() != null){
-        $role = User::find(Auth::user()->id);
-        } else {
-            $role = "";
-        }
-        return view('publicSite.index', compact('category', 'trip', 'news','role'));
+
+        
+        return view('publicSite.index', compact('category', 'trip', 'news'));
 
     }
 
