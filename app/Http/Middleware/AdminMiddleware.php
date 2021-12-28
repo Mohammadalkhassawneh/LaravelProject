@@ -18,10 +18,12 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->role_type == 'admin'){
+        if(Auth::user() == null){
+             return redirect('home')->with('error' , 'only admin can access');
+        }
+        else if(Auth::user()->role_type == 'admin'){
         return $next($request);
         }
-    return redirect('home')->with('error' , 'only admin can access');
-       
+
     }
 }

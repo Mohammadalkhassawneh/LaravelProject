@@ -4,12 +4,12 @@
         <div class="col-lg-12" style="margin-top: 120px">
             <!-- DATA TABLE -->
             <h3 class="title-5 m-b-35">data table</h3>
-           
+
             <div class="table-responsive table-responsive-data2">
                 <table class="table table-data2">
                     <thead>
                     <tr>
-                       
+
                         <th>Reservation_id</th>
                         <th>user_id</th>
                         <th>trip_id</th>
@@ -22,7 +22,6 @@
                         @if((count($user->reservation)) > 0)
                         @foreach ($user->reservation as $value)
                         <tr class="tr-shadow">
-                       
                             <td>{{$value->pivot->id}}</td>
                             <td>{{$value->pivot->user_id}}</td>
                             <td>{{$value->pivot->trip_id}}</td>

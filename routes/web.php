@@ -10,11 +10,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\FilterController;
 use App\Http\Controllers\ReservationController;
-
 use App\Http\Controllers\TourController;
 use App\Http\Controllers\TourGuideController;
 use App\Http\Controllers\TripDetailsController;
-use App\Http\Controllers\UserRequestController;
 use App\models\User;
 use App\models\Trip;
 
@@ -30,13 +28,6 @@ use App\models\Trip;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/admins', function () {
-//     $user = User::all();
-//     $trip = Trip::all();
-//     return view('admin.index', compact('user', 'trip'));
-
-// })->name("admin")->middleware('admin');
 
 Route::get('/admin', function () {
     $user = User::all();

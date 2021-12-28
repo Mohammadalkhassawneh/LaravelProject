@@ -59,16 +59,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
 
-        $newImage = time() . '-' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('user_images'), $newImage);
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->phone = $request->phone;
-        $user->image = $newImage;
-        $user->role_type = 'admin';
-        $user->save();
+    $input = $request->all();
+    if($request->file("image")) {
+        $newImageName = time() . '-' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('user_images'), $newImageName);
+        $input['image'] = $newImageName;
+    }
+        $input['role_type'] = 'admin';
+        User::create($input);
         return redirect()->route("user.index");
     }
     /**
@@ -82,11 +80,6 @@ class UserController extends Controller
         $edited_user = User::find($user);
         return view('admin.edit_user', compact('edited_user'));
     }
-    public function editGuideProfile($id)
-    {
-        $edited_user = User::find($id);
-        return view('edit_guide_profile', compact('edited_user'));
-    }
 
     /**
      * Update the specified resource in storage.
@@ -95,18 +88,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        $user = User::find($id);
-        $newImage = time() . '-' . $request->image->getClientOriginalName();
-        $request->image->move(public_path('user_images'), $newImage);
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->phone = $request->phone;
-        $user->image = $newImage;
-        $user->role_type = 'admin';
-        $user->save();
+
+    $input = $request->all();
+    if($request->file("image")) {
+        $newImageName = time() . '-' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('user_images'), $newImageName);
+        $input['image'] = $newImageName;
+    }
+    $input['role_type'] = "admin";
+    $user->update($input);
         return redirect()->route("user.index");
     }
 

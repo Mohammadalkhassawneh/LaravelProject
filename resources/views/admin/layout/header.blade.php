@@ -54,11 +54,6 @@
         .color-white:hover {
             color: white
         }
-/*
-        table tr {
-            display: flex;
-            align-items: center
-        } */
 
     </style>
 
@@ -101,11 +96,11 @@
                                 <i class="fas fa-table"></i>categories</a>
                         </li>
                         <li>
-                            <a href="form.html">
+                            <a href={{ asset('trips') }}>
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
                         <li>
-                            <a href="calendar.html">
+                            <a href={{route('reservation.index')}}>
                                 <i class="fas fa-calendar-alt"></i>Reservation</a>
                         </li>
 
@@ -131,16 +126,16 @@
                             <a class="js-arrow" href="{{route('admin')}}">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'user') ? 'active' : '' }}">
                             <a href="{{route("user.index")}}">
                                 <i class="fas fa-chart-bar"></i>Users</a>
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'categories') ? 'active' : '' }}">
                             <a href="{{ route('categories.index')}}">
                                 <i class="fas fa-table"></i>Categories</a>
 
                         </li>
-                        <li>
+                        <li class="{{(request()->segment(1) == 'trips') ? 'active' : '' }}">
                             <a href="{{ asset('trips') }}">
                                 <i class="far fa-check-square"></i>Trips</a>
                         </li>
@@ -182,13 +177,9 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        @if (Auth::user() != null)
                                                         <a href="">{{ Auth::user()->name }}</a>
-                                                        {{-- @else
-                                                            {!! redirect('/') !!} --}}
-                                                        @endif
                                                     </h5>
-                                                    <span class="email">{{ Session::get('email');}}</span>
+                                                    <span class="email">{{Auth::user()->email}}</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
@@ -201,7 +192,6 @@
                                                             @csrf
                                                         </form>
                                                     </a>
-
                                                 </div>
                                                 <div class="account-dropdown__footer">
                                                 </div>

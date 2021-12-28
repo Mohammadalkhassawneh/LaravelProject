@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-header">Edit Admin</div>
                             <div class="card-body card-block">
-                                <form action="{{route("user.update",$edited_user->id)}}" method="POST"  enctype="multipart/form-data">
+                                <form action="{{route("user.update",$edited_user->id)}}" method="POST"  enctype='multipart/form-data'>
                                     @csrf
                                     @method("PUT")
                                     <div class="form-group">
@@ -47,7 +47,7 @@
                                     </div>
                                         <div class="form-group">
                                         <div class="input-group">
-                                            <input type="file" id="image" name="image" placeholder="Image" class="form-control">
+                                            <input type="file" id="image" name="image" value="{{$edited_user->image}}" placeholder="Image" class="form-control">
                                             <div class="input-group-addon">
                                                 <i class="fas fa-camera"></i>
                                             </div>
