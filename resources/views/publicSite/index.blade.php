@@ -6,11 +6,19 @@
             <div class="banner-two__bg">
                 <div class="banner-two__bg-inner" data-options='{ "delay": 5000, "slides": [ { "src": "assets/images/backgrounds/banner-2-bg-1.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-2.jpg" }, { "src": "assets/images/backgrounds/banner-2-bg-3.jpg" } ], "transition": "fade", "timer": false }'></div><!-- /.banner-two__bg-inner -->
             </div><!-- /.banner-two__bg -->
-            <img src="assets/images/shapes/banner-two__flotated-text.png" alt="" class="banner-two__floated-text">
-            <div class="container">
-                <p>explore</p>
-                <h2>Jordan Tours</h2>
+            <img src="assets/images/shapes/banner-two__flotated-text.png" alt="" class="banner-two__floated-text mb-5">
+            <div class="container ">
+                <div class="mb-5">
+                    <p>explore</p>
+                    <h2>Jordan Tours</h2>
+                </div>
+                
+                <div style="margin-left: 105px;" >
+                    <a class="thm-btn rounded-pill" href="{{ route('trips-list.index') }}">Explore Now</a>
+                </div>
             </div><!-- /.container -->
+           
+            
         </section><!-- /.banner-two -->
 
         <section class="destinations-three">

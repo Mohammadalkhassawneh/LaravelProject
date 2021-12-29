@@ -18,18 +18,13 @@ class ReservationController extends Controller
         $reservations = DB::table('trip_user')
         ->join('trips', 'trips.id', '=', 'trip_id')
         ->join('users', 'users.id', '=', 'user_id')
- 
         ->where('guide_id','=',Auth::user()->id)
-        ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+        ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);//<==================================
   
     //    $res= $reservation->booking_date;
-
-
 // select * from trip_user INNER join trips on (trip_id = trips.id) where (trips.guide_id = 4);
         // dd($reservations);
-    
         return view('publicsite.reservations', compact('reservations'));
-
     }
     /**
      * Display a listing of the resource.
@@ -63,31 +58,17 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        
+        //  
        $trip = Trip::find($request->trip_id);
-
-    
-     
-     
-   
-         
-         $trip->user()->attach([
+         $trip->user()->attach([//<================================
             [
                'trip_id' => $request->trip_id,
                'user_id' => Auth::id(),
                'booking_date' => now(),
                'status' => 'Hold'
            ]
-            
-           
        ]);
-   
-
-       return redirect()->route("userprofile.index");
-
-
-         
+       return redirect()->route("userprofile.index");    
     }
 
     /**

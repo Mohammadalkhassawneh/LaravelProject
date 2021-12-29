@@ -37,7 +37,7 @@ class CategoryController extends Controller
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        if(Auth::user() != null){
+        if(Auth::user() != null){//<=========================================================
         $role = User::find(Auth::user()->id);
         } else {
             $role = "";
@@ -74,7 +74,6 @@ class CategoryController extends Controller
             'category_name' => 'required',
             'category_desc' => 'required',
             'category_img' => 'required',
-
         ]);
 
      $input = $request->all();
@@ -147,7 +146,7 @@ class CategoryController extends Controller
     {
 
         $Category->delete();
-        return back();
+        return back();//<============
     }
     public function createReservation() {
 

@@ -10,11 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class FilterController extends Controller
 {
-    //
+   
 
     public function roles(Request $request) {
 
-        if($request->user == "All Users") {
+        if($request->user == "All Users") {//<=================================
             $users = User::all();
         }
         else {
@@ -27,7 +27,7 @@ class FilterController extends Controller
 
                 $cats = Category::all();
                 $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
-        if(Auth::user() != null){
+        if(Auth::user() != null){//<=====================================================
         $role = User::find(Auth::user()->id);
         } else {
             $role = "";
