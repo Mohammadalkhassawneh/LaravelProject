@@ -15,7 +15,6 @@ class TripListController extends Controller
      */
     public function index()
     {
-        // $trips = Trip::all();
         $trips = Trip::paginate(5);
         $cats = Category::all();
         $status = true;

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from layerdrops.com/tripo/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 13:10:37 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +64,7 @@
 
     <div class="preloader">
         <img src='{{asset("assets/images/loader.png")}}' class="preloader__image" alt="">
-    </div><!-- /.preloader -->
+    </div>
     <div class="page-wrapper">
         <div class="site-header__header-one site-header__home-two-wrap">
            
@@ -75,19 +72,19 @@
                 <nav class="header-navigation stricky">
                     <div class="container">
                         <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="main-nav__logo-box" style="    margin-left: 50px;">
+                        <div class="main-nav__logo-box" style="margin-left: 50px;">
                             <a href="{{ route('home2') }}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
-                            <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
-                                <!-- /.smpl-icon-menu --></a>
-                        </div><!-- /.logo-box -->
+                            <a class="side-menu__toggler"><i class="fa fa-bars"></i></a>
+                        </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="main-nav__main-navigation">
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
                                 </li>
+<<<<<<< HEAD
                                 {{-- Hazem --}}
                                  
                                  
@@ -104,11 +101,17 @@
                                 <li class="dropdown">
                                     <a href="{{route("trips-list.index")}}">Tours</a>
 
-                                </li>
-                                <li class="dropdown">
-                                    <a href="{{route('tourGuide.index')}}">Tour Guides</a>
+=======
+                                 <li class="dropdown">
+                                    <a>Destinations</a>
+                                    <ul>
+                                        <li><a href="{{route("distination")}}">Cities</a> </li>
+                                        <li><a href="{{route("trips-list.index")}}">Tours</a> </li>
+                                                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
 
-                                </li> --}}
+                                    </ul>
+>>>>>>> 60c20ec5cd18355f2a6a5c69752d1695ade6d15a
+                                </li>
 
                                 <li>
                                     <a href="{{route("contact")}}">Contact</a>
@@ -121,9 +124,8 @@
                                 </li>
                                 @endif
                                 @endauth
-
                             </ul>
-                        </div><!-- /.navbar-collapse -->
+                        </div>
                         <div class="main-nav__right">
                             <ul class="navbar-nav ms-auto flex-row">
                                 <!-- Authentication Links -->
@@ -146,28 +148,21 @@
                                     </a>
                                 </li>
                                 <div>
-                                    <a class="" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
+                                    <a class="" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         <button class="btn btn-danger mr-5">
                                             {{ __('Logout') }}
                                         </button>
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-
-
                                 </div>
                                 @endguest
                             </ul>
                             <a href="" class="text-white search-popup__toggler"><i class="tripo-icon-magnifying-glass"></i></a>
                             @auth <a href="{{route("userprofile.index")}}" class="main-nav__login"><i class="tripo-icon-avatar"></i></a>@endauth
-                        </div><!-- /.main-nav__right -->
+                        </div>
                     </div>
-                    <!-- /.container -->
                 </nav>
-            </header><!-- /.site-header -->
+            </header>
         </div>
-
-        <!-- /.site-header__header-one site-header__home-two-wrap -->

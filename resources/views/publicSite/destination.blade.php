@@ -9,9 +9,9 @@
                 <ul class="thm-breadcrumb list-unstyled">
                     <li><a href="{{route('home2')}}">Home</a></li>
                     <li><span>Destination</span></li>
-                </ul><!-- /.thm-breadcrumb -->
-            </div><!-- /.container -->
-        </section><!-- /.page-header -->
+                </ul>
+            </div>
+        </section>
 
 
         <section class="destinations-three">
@@ -25,19 +25,18 @@
                             <div class="destinations-three__content">
                                 <h3><a href="{{route("trips-list.show",$val->id)}}">{{ $val->category_name}}</a></h3>
 
-                            </div><!-- /.destinations-three__content -->
+                            </div>
                             <div class="destinations-three__hover-content">
-                                <h3><a href="{{route("trips-list.index",$val->id)}}">{{ $val->category_name}}</a></h3>
+                                <h3><a href="{{route("trips-list.show",$val->id)}}">{{ $val->category_name}}</a></h3>
                                 <p>{{$val->trip()->count(). ' Tours'}}</p>
                                 <a href="{{route('trips-list.show', $val->id)}}" class="destinations-three__link"><i class="tripo-icon-right-arrow"></i></a>
-                            </div><!-- /.destinations-three__hover-content -->
-                        </div><!-- /.destinations-three__single -->
-                    </div><!-- /.col-lg-4 col-md-6 -->
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
-
-                </div><!-- /.row -->
-            </div><!-- /.container -->
-        </section><!-- /.destinations-three -->
+                </div>
+            </div>
+        </section>
 
 
 

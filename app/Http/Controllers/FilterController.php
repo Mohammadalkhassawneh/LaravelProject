@@ -25,6 +25,7 @@ class FilterController extends Controller
 
     public function search(Request $request) {
 
+<<<<<<< HEAD
                 $cats = Category::all();
                 $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
         if(Auth::user() != null){//<=====================================================
@@ -33,6 +34,11 @@ class FilterController extends Controller
             $role = "";
         }
              return view('publicSite.trips-list', compact('trips','cats','role'));
+=======
+        $cats = Category::all();
+        $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
+        return view('publicSite.trips-list', compact('trips','cats'));
+>>>>>>> 60c20ec5cd18355f2a6a5c69752d1695ade6d15a
     }
 
 }

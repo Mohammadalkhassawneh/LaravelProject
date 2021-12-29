@@ -28,7 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
         $trip = Trip::all();//</=======================
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();

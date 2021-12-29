@@ -7,9 +7,7 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
 
 class CategoryController extends Controller
 {
@@ -31,19 +29,12 @@ class CategoryController extends Controller
         return view('publicSite.destination', compact('category'));
     }
 
-    public function  homeDestination()
+    public function homeDestination()
     {
-
-        $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
+        $category = Category::orderBy('id', 'DESC')->limit(3)->get();
         $trip = Trip::all();
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
-        if(Auth::user() != null){//<=========================================================
-        $role = User::find(Auth::user()->id);
-        } else {
-            $role = "";
-        }
-        return view('publicSite.index', compact('category', 'trip', 'news','role'));
-
+        return view('publicSite.index', compact('category', 'trip', 'news'));
     }
 
     public function index()
@@ -121,8 +112,6 @@ class CategoryController extends Controller
         $request->validate([
             'category_name' => 'required',
             'category_desc' => 'required',
-            'category_img' => 'required',
-
         ]);
 
      $input = $request->all();

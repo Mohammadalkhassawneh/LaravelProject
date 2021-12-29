@@ -53,20 +53,12 @@ class LoginController extends Controller
         ]);
 
         if(auth()->attempt(array('email' => $inputVal['email'], 'password' => $inputVal['password']))){
-            $user = User::find(Auth::user()->id);
-            $email = $user->email;
-            $name = $user->name;
-            $role = $user->role_type;
-            Session::put("email" , $email);
-            Session::put("name" , $name);
-            Session::put("role" , $role);
-          
 
             if (auth()->user()->role_type == 'admin') {
-             
+
                 return redirect()->route('admin.route');
             }else{
-                return redirect()->route('home');
+                return redirect()->route('home2');
             }
         }else{
             return redirect()->route('login')
