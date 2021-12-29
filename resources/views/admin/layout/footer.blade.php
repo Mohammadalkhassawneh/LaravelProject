@@ -1,4 +1,4 @@
-<div class="row" style="width: 100%; text-align:center">
+<div class="row" style="width: 100%; text-align:center ;position: fixed; left: 0;bottom: 0;margin-left:100px">
     <div class="col-md-12">
         <div class="copyright">
             <p>Copyright © 2021 Tripo - All rights reserved</p>
