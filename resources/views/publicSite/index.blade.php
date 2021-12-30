@@ -13,20 +13,12 @@
                     <h2>Jordan Tours</h2>
                 </div>
 
-                <div style="margin-left: 105px;" >
+                <div style="margin-left: 70px;" >
                     <a class="thm-btn rounded-pill" href="{{ route('trips-list.index') }}">Explore Now</a>
                 </div>
             </div><!-- /.container -->
-
-
         </section><!-- /.banner-two -->
-            </div>
-            <img src="assets/images/shapes/banner-two__flotated-text.png" alt="" class="banner-two__floated-text">
-            <div class="container">
-                <p>explore</p>
-                <h2>Jordan Tours</h2>
-            </div>
-        </section>
+
         <section class="destinations-three">
             <div class="container">
                 <div class="block-title text-center">

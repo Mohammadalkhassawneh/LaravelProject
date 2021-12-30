@@ -84,23 +84,9 @@
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
                                 </li>
-                                 <li class="dropdown">
-                                    <a>Destinations</a>
-                                    <ul>
                                         <li><a href="{{route("distination")}}">Cities</a> </li>
                                         <li><a href="{{route("trips-list.index")}}">Tours</a> </li>
-                                                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
-
-                                    </ul>
-                                 <li class="dropdown">
-                                    <a>Destinations</a>
-                                    <ul>
-                                        <li><a href="{{route("distination")}}">Cities</a> </li>
-                                        <li><a href="{{route("trips-list.index")}}">Tours</a> </li>
-                                                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
-
-                                    </ul>
-                                </li>
+                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
 
                                 <li>
                                     <a href="{{route("contact")}}">Contact</a>
