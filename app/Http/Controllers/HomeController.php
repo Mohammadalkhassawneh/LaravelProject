@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $category = Category::orderBy('id', 'DESC')->limit(3)-> get();
-        $trip = Trip::all();
+        $trip = Trip::all();//
         $news = Trip::orderBy('id', 'DESC')->limit(3)-> get();
         if(Auth::user() != null){
             $role = User::find(Auth::user()->id);
@@ -42,7 +42,6 @@ class HomeController extends Controller
 
     public function show($id)
     {
-
         $user = User::find($id);
         return view('publicSite.index',compact('user'));
     }

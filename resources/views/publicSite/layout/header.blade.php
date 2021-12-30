@@ -67,23 +67,7 @@
     </div>
     <div class="page-wrapper">
         <div class="site-header__header-one site-header__home-two-wrap">
-            <div class="topbar-one">
-                <div class="container-fluid">
-                    <div class="topbar-one__left" style="margin-left: 55px;">
-                        <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
-                        <a>0777665544</a>
-                        <a >alabdali/aldakleah-circle</a>
-                    </div>
-                    <div class="topbar-one__right">
-                        <div class="topbar-one__social">
-                            <a href="https:\\facebook.com"target="_blank"><i class="fab fa-facebook-square"></i></a>
-                            <a href="https:\\twitter.com"target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a href="https:\\instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://dribble.com" target="_blank"><i class="fab fa-dribbble"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
             <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">
