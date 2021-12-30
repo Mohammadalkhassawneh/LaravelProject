@@ -17,6 +17,10 @@
                                     <div class="input-group position-relative">
                                         <input type="text" id="username2" name="name" placeholder="Admin Name" class="form-control" value="{{$user->name}}" style="padding-left: 40px">
                                             <span style="left: 8px; z-index:5" class="position-absolute"><i class="fa fa-user"></i></span>
+                                            @error ('name')
+                                            <strong>{{ $message }}</strong>
+
+                                            @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">

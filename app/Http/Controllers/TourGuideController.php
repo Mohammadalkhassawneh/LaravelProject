@@ -40,8 +40,18 @@ class   TourGuideController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'days' => 'required',
+            'minimum_age' => 'required',
+            'max_visitors' => 'required',
+            'price' => 'required',
+            'date' => 'required',
+            'category_id' => 'required'
+        ]);
         //
-        $trip = new Trip();
+        // $trip = new Trip();
         $request['guide_id'] = Auth::id();
         $input = $request->all();
         if($request->file("image")) {
@@ -49,7 +59,7 @@ class   TourGuideController extends Controller
         $request->image->move(public_path('trip_images'), $newImageName);
         $input['image'] = $newImageName;
         }
-        $trip::create($input);
+        Trip::create($input);
         return redirect()->route("userprofile.index");
     }
 
@@ -100,7 +110,7 @@ class   TourGuideController extends Controller
             'category_id' => 'required'
         ]);
 
-        $request['guide_id'] =$guideTrip->guide_id;
+        $request['guide_id'] =Auth::id();
 
         $input = $request->all();
 

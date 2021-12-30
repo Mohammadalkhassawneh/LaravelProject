@@ -21,7 +21,23 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="table-wrap">
+                <div class="tab">
+                <form action="{{route('tripFilter' ,Auth::user()->id)}}" method="get">
+                  <div class="table-data__tool-left">
+                      <div class="rs-select2--light rs-select2--md">
+                          <select class="js-select2" name="trip">
+                            <option selected="">All Trips</option>
+
+                            @foreach($guide_trip as $guide_trips)
+                            {{-- <h1>dsddssddsdssd</h1> --}}
+                              <option selected="">{{$guide_trips->name}}</option>
+                             {{-- <h3>{{$guide_trips->trip_name}}</h3>  --}}
+                             @endforeach
+                          </select>
+                          <div class="dropDownSelect2"></div>
+                      </div>
+                      <button class="btn btn-primary" type="submit">Filter</button>
+                       </form>
                     <table class="table table-striped">
                       <thead>
                         <tr>

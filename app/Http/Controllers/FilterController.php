@@ -31,4 +31,5 @@ class FilterController extends Controller
              return view('publicSite.trips-list', compact('trips','cats'));
     }
 
+
 }

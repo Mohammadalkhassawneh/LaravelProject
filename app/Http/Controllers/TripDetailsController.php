@@ -60,12 +60,12 @@ class TripDetailsController extends Controller
      */
     public function edit($id)
     {
-        $edited_trip = Trip::find($id);
-        $current_category_id = $edited_trip->category_id;
-        $current_category = Category::find($current_category_id);
+        // $edited_trip = Trip::find($id);
+        // $current_category_id = $edited_trip->category_id;
+        // $current_category = Category::find($current_category_id);
 
-        $categories = Category::all();
-        return view('publicSite.edit_trip', compact('edited_trip', 'categories', 'current_category'));
+        // $categories = Category::all();
+        // return view('publicSite.edit_trip', compact('edited_trip', 'categories', 'current_category'));
     }
 
     /**
