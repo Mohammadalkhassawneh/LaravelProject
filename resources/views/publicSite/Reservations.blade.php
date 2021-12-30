@@ -24,9 +24,9 @@
                 <div class="tab">
                 <form action="{{route('tripFilter' ,Auth::user()->id)}}" method="get">
                   <div class="table-data__tool-left">
-                      <div class="rs-select2--light rs-select2--md">
-                          <select class="js-select2" name="trip">
-                            <option selected="">All Trips</option>
+                      <div class="rs-select2--light rs-select2--md dropdown">
+                          <select class="js-select2 " name="trip">
+                            <option selected="selected">All Trips</option>
 
                             @foreach($guide_trip as $guide_trips)
                             {{-- <h1>dsddssddsdssd</h1> --}}
@@ -52,6 +52,13 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @if($reservations->count() == 0)
+                      </tbody>
+                    </table>
+                    <h1 class=" text-center">No Reserevations</h1>
+                        {{-- <td>No Reservations</td> --}}
+                        @endif
+                       
                          @foreach($reservations as $reservation)
                         <tr>
                           <td>{{$reservation->reservation_id}}</td>
@@ -67,6 +74,7 @@
                           {{-- <td><a href="#" class="btn btn-success">Progress</a></td> --}}
                         </tr>
                         @endforeach
+                   
                       </tbody>
                     </table>
                 </div>
