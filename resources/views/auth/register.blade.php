@@ -12,12 +12,12 @@ input , select {
 
 @endsection
 @section('content')
+{{Session::get("message")}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="margin-top: 10px;">
                 <div class="login-header">{{ __('Register') }}</div>
-
                 <div class="tour-sidebar__search tour-sidebar__single">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

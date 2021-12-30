@@ -1,5 +1,4 @@
 @extends('publicSite.layout.master')
-
 @section('content')
 
         <section class="banner-two">

@@ -87,8 +87,18 @@
             @endif
             {{-- User Reservations --}}
             @if(Auth::user()->role_type == 'user')
+
             <div class="col-8 guide-trips">
                 <h1 class="mb-5" style="color:#FFA801">My Reservations</h1>
+
+                 @if (Session::has("reservation"))
+
+                <div class="alert alert-success" role="alert">
+                 {{Session::get("reservation")}}
+                 {{Session::forget("reservation")}}
+                </div>
+                   @endif
+
                 <!-- Trips -->
                 <div class="trip mt-2">
                     <div class="container">
