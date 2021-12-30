@@ -14,7 +14,6 @@ class TourController extends Controller
 
         $guides = User::where('role_type', 'guide')->get();
         return view("publicSite.tour_guide", compact('guides'));
-
     }
 
     public function getGuide($id)

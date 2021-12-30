@@ -59,7 +59,7 @@
                                 <img src="{{asset('trip_images/' . $trip->image)}}" alt="trip_image" class="trip_img">
                             </div>
                             <div class="col-7">
-                                <h4 style="text-transform: capitalize; color:#555">Name: {{$trip->name}}</h4>
+                                <h4 style="text-transform: capitalize; color:#555"> {{$trip->name}}</h4>
                                 <p class="mypara">Description: {{$trip->description}}</p>
                                 <h6 style="color:#FFA801">Price: {{$trip->price }} JD</h6>
                                 <a href="{{route('trips-details.show',$trip->id)}}"><button class="btn show-trip mt-3">Show Trip</button></a>

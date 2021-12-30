@@ -6,11 +6,10 @@ use App\Models\Trip;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class FilterController extends Controller
 {
-    //
+
 
     public function roles(Request $request) {
 
@@ -24,6 +23,7 @@ class FilterController extends Controller
     }
 
     public function search(Request $request) {
+
 
         $cats = Category::all();
         $trips = Trip::where('name', 'Like', '%' . $request->search. '%')->paginate(500);
