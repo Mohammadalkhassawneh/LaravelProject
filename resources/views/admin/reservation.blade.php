@@ -9,7 +9,6 @@
                 <table class="table table-data2">
                     <thead>
                     <tr>
-
                         <th>Reservation_id</th>
                         <th>user_id</th>
                         <th>trip_id</th>
@@ -28,9 +27,9 @@
                             <td>{{$value->pivot->booking_date}}</td>
                             <td>{{$value->pivot->status}}</td>
                     </tr>
-                        @endforeach
-                            @endif
-                        @endforeach
+                    @endforeach
+                    @endif
+                     @endforeach
                     </tbody>
                 </table>
             </div>

@@ -1,12 +1,23 @@
 @extends('layouts.app')
+@section('style')
 
+<style>
+
+input , select {
+    font-size: 14px !important;
+    padding-left: 12px !important;
+}
+
+</style>
+
+@endsection
 @section('content')
+{{Session::get("message")}}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="margin-top: 10px;">
                 <div class="login-header">{{ __('Register') }}</div>
-
                 <div class="tour-sidebar__search tour-sidebar__single">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -79,7 +90,7 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4"  style="margin-left: 38%;">
                                 <button type="submit" class="login-submit">
                                     {{ __('Register') }}
                                 </button>

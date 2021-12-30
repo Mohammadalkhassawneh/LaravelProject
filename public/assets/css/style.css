@@ -133,7 +133,7 @@ h6 {
 	padding: 20px 50.5px;
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
-	
+
 }
 .xx{
 	width: 100%;
@@ -162,12 +162,12 @@ h6 {
 .y{
 	font-size: 20px !important;
 	font-weight: 600;
-	
+
 }
 .yy{
 	font-size: 14px !important;
 	font-weight: 600;
-	
+
 }
 .login-submit{
 	display: inline-block;
@@ -210,10 +210,10 @@ h6 {
 	color: var(--thm-black);
 	font-weight: 600;
 	text-transform: uppercase;
-	
+
 	-webkit-transition: all .4s ease;
 	transition: all .4s ease;
-	
+
 }
 
 .thm-btn:hover {
@@ -1051,7 +1051,7 @@ h6 {
 
 .site-header__home-two-wrap {
 	position: absolute;
-	top: 0;
+	top: 0px;
 	left: 0;
 	width: 100%;
 	z-index: 100;
@@ -1062,7 +1062,7 @@ h6 {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	max-width: 123px;
-	margin-right: 125px;
+	margin-right: 45px;
 }
 
 .site-header__home-two .main-nav__main-navigation .main-nav__navigation-box>li {
@@ -2196,8 +2196,8 @@ h6 {
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: center center;
-	padding-top: 307.5px;
-	padding-bottom: 307.5px;
+    padding-top: 220.5px;
+    padding-bottom: 170.5px;
 }
 
 .banner-two__bg {
@@ -6084,7 +6084,7 @@ h6 {
 /* destinations three */
 
 .destinations-three {
-	padding-top: 120px;
+	padding-top: 80px;
 	padding-bottom: 90px;
 }
 
@@ -6559,7 +6559,7 @@ h6 {
 .tour-search-one__home-four {
 	padding-top: 250px;
 	padding-bottom: 120px;
-	
+
 	background-repeat: no-repeat;
 	background-position: top left;
 	position: relative;
@@ -7009,7 +7009,7 @@ tour-search-one__home-seven .tour-search-one__input-box .bootstrap-select > .dro
 .tour-search-one__home-8 {
 	width: 100%;
 	max-width: 1250px;
-	background-color: #fff;	
+	background-color: #fff;
 	padding: 40px;
 	position: absolute;
 	top: 50%;

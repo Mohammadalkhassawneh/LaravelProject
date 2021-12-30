@@ -59,12 +59,12 @@
                                     <form action="{{route('reservation.store')}}" method="Post">
                                     @csrf
                                     <input type="hidden" value="{{$tripDetails->id}}" name="trip_id">
-                                     <button class="edit-trip "  type="submit"  onclick="alert('Your Request successfully sent!')">Send requet </button>
+                                     <button class="edit-trip "  type="submit"  onclick="{{Session::put("reservation","Your Request successfully sent!")}}">Send requet </button>
                                     </form>
                                     @endauth
                                     @guest
                                     <form action="/register" method="get">
-                                     <button class="edit-trip "  type="submit"  onclick="alert('You Must be logged in')">Send requet </button>
+                                     <button class="edit-trip"  type="submit">Send requet </button>
                                     </form>
                                     @endguest
                                  </div>
@@ -74,7 +74,6 @@
 
 
                            {{-- ==================================== --}}
-                           {{-- <button   onclick="alert('Test me')">Send requet </button> --}}
 
 
                     <div class="blog-details__bottom">
@@ -89,7 +88,7 @@
                         </div><!-- /.sidebar__social-list -->
                     </div><!-- /.blog-details__bottom -->
                 </div><!-- /.blog-details__content -->
-    
+
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">
                 <div class="sidebar">

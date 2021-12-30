@@ -87,13 +87,24 @@
             @endif
             {{-- User Reservations --}}
             @if(Auth::user()->role_type == 'user')
+
             <div class="col-8 guide-trips">
                 <h1 class="mb-5" style="color:#FFA801">My Reservations</h1>
+
+                 @if (Session::has("reservation"))
+
+                <div class="alert alert-success" role="alert">
+                 {{Session::get("reservation")}}
+                 {{Session::forget("reservation")}}
+                </div>
+                   @endif
+
                 <!-- Trips -->
                 <div class="trip mt-2">
                     <div class="container">
                         <!-- Trip Information -->
-                        @foreach ($reservations as $reservation)
+
+                        @forelse ($reservations as $reservation)
                         <div class="row">
                             <div class="col-5">
                                 <img src="{{asset("trip_images/" . $reservation->image)}}" alt="trip_image" class="trip_img">
@@ -107,7 +118,9 @@
                             </div>
                         </div>
                         <hr>
-                        @endforeach
+                        @empty
+                            <h2 style="margin-top:70px">You don't have any reservation, <a href="{{route("trips-list.index")}}">We wish you to book one</a></h2>
+                        @endforelse
                     </div>
                 </div>
             </div>

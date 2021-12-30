@@ -33,6 +33,7 @@
                     <div class="team-one__content">
                         <a href="{{route('guide',$guide->id)}}"><h3>{{$guide->name}}</h3></a>
                         <p class="text-uppercase">Tour Guide</p>
+                        <a href="{{route('guide',$guide->id)}}"><button class="btn btn-warning mt-3">Show Profile</button></a>
                     </div>
                 </div>
             </div>

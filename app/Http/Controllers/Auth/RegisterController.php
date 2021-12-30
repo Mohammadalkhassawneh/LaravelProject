@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -29,8 +34,14 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    
+
     protected $redirectTo = RouteServiceProvider::HOME;
+
+        protected function redirectTo()
+    {
+            return Session::get('url.intended');
+
+    }
 
     /**
      * Create a new controller instance.
@@ -75,4 +86,11 @@ class RegisterController extends Controller
             'phone'     => $data['phone']
         ]);
     }
+
+    public function showRegistrationForm()
+    {
+        Session::put('url.intended',URL::previous());
+        return view('auth.register');
+    }
+
 }

@@ -25,8 +25,7 @@ class ReservationController extends Controller
 
     
 
-// select * from trip_user INNER join trips on (trip_id = trips.id) where (trips.guide_id = 4);
-        // dd($reservations);
+// select * from trip_user INNER join trips on (trip_id = trips.id) INNER JOIN users on (trips.guide_id = users.id) where (trips.guide_id = 4);
 
         return view('publicsite.reservations', compact('reservations'));
 
@@ -118,9 +117,9 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //  
+        //
        $trip = Trip::find($request->trip_id);
-         $trip->user()->attach([
+         $trip->user()->attach([//
             [
                'trip_id' => $request->trip_id,
                'user_id' => Auth::id(),
@@ -128,7 +127,7 @@ class ReservationController extends Controller
                'status' => 'Hold'
            ]
        ]);
-       return redirect()->route("userprofile.index");    
+       return redirect()->route("userprofile.index");
     }
 
     /**

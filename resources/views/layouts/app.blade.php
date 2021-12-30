@@ -48,6 +48,8 @@
         }
     </style>
 
+    @yield('style')
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -85,7 +87,6 @@
 
         <div class="page-wrapper">
         <div class="site-header__header-one site-header__home-two-wrap">
-           
             <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">

@@ -1,5 +1,4 @@
 @extends('publicSite.layout.master')
-
 @section('content')
 
         <section class="banner-two">
@@ -12,13 +11,11 @@
                     <p>explore</p>
                     <h2>Jordan Tours</h2>
                 </div>
-                
-                <div style="margin-left: 105px;" >
+
+                <div style="margin-left: 70px;" >
                     <a class="thm-btn rounded-pill" href="{{ route('trips-list.index') }}">Explore Now</a>
                 </div>
             </div><!-- /.container -->
-           
-            
         </section><!-- /.banner-two -->
 
         <section class="destinations-three">

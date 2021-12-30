@@ -67,7 +67,7 @@
     </div>
     <div class="page-wrapper">
         <div class="site-header__header-one site-header__home-two-wrap">
-           
+
             <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">
@@ -84,6 +84,7 @@
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
                                 </li>
+<<<<<<< HEAD
                                  <li class="dropdown">
                                     <a>Destinations</a>
                                     <ul>
@@ -93,6 +94,11 @@
 
                                     </ul>
                                 </li>
+=======
+                                        <li><a href="{{route("distination")}}">Cities</a> </li>
+                                        <li><a href="{{route("trips-list.index")}}">Tours</a> </li>
+                                        <li>  <a href="{{route('tourGuide.index')}}">Tour Guides</a> </li>
+>>>>>>> d65cf3579c064632e65e0270f743be736d286099
 
                                 <li>
                                     <a href="{{route("contact")}}">Contact</a>
