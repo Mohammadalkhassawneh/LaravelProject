@@ -19,7 +19,7 @@
 	.main-nav__logo, .main-nav__logo-box .side-menu__toggler {
 		position: relative;
 	}
-	
+
 	.main-nav__header-four  .main-nav__logo-box::before,
 	.main-nav__header-three  .main-nav__logo-box::before,
 	.site-header__home-two .main-nav__logo-box::before {
@@ -44,7 +44,7 @@
 	.mailchimp-one h3 {
 		font-size: 45px;
 	}
-	.features-two__single p br, 
+	.features-two__single p br,
 	.mailchimp-one h3 br {
 		display: none;
 	}
@@ -280,6 +280,7 @@
 	.site-header__home-two .main-nav__logo-box {
 		max-width: 100%;
 		margin-right: 0;
+        margin-left: 0 !important;
 	}
 	.banner-two p {
 		font-size: 80px;

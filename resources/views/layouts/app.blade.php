@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home Two || Tripo || Travel & Tourism Agencies HTML Template</title>
+    <title>Tripo || Internal Tours</title>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
@@ -42,14 +42,13 @@
         }
 
         input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
     </style>
 
-{{--  Me Above  --}}
+    @yield('style')
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,18 +92,18 @@ input::-webkit-inner-spin-button {
                     <div class="topbar-one__left">
                         <a href="mailto:needhelp@tripo.com">tripo@gmail.com</a>
                         <a href="tel:666-999-0000">0777665544</a>
-                        <a href="#">alabdali/aldakleah-circle</a>
-                    </div><!-- /.topbar-one__left -->
+                        <a href="">alabdali/aldakleah-circle</a>
+                    </div>
                     <div class="topbar-one__right">
                         <div class="topbar-one__social">
                             <a href="https:\\facebook.com"target="_blank"><i class="fab fa-facebook-square"></i></a>
                             <a href="https:\\twitter.com"target="_blank"><i class="fab fa-twitter"></i></a>
                             <a href="https:\\instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                             <a href="https://dribble.com" target="_blank"><i class="fab fa-dribbble"></i></a>
-                        </div><!-- /.topbar-one__social -->
-                    </div><!-- /.topbar-one__right -->
-                </div><!-- /.container-fluid -->
-            </div><!-- /.topbar-one -->
+                        </div>
+                    </div>
+                </div>
+            </div><
             <header class="main-nav__header-one site-header__home-two" style="background-color:#082740">
                 <nav class="header-navigation stricky">
                     <div class="container">
@@ -113,36 +112,32 @@ input::-webkit-inner-spin-button {
                             <a href="{{route('home2')}}" class="main-nav__logo">
                                 <img src={{asset("assets/images/logo-light.png")}} class="main-logo" width="123" alt="Awesome Image" />
                             </a>
-                            <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i>
-                                <!-- /.smpl-icon-menu --></a>
-                        </div><!-- /.logo-box -->
+                            <a href="#" class="side-menu__toggler"><i class="fa fa-bars"></i></a>
+                        </div>
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="main-nav__main-navigation">
                             <ul class=" main-nav__navigation-box">
                                 <li class="dropdown current">
                                     <a href={{route("home2")}}>Home</a>
-
-                                        </li>
-
-
+                                </li>
                                 <li class="dropdown">
                                     <a href="{{route("distination")}}">Destinations</a>
 
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{route("trips-list.index")}}">Tours</a>
-
                                 </li>
+
                                 <li class="dropdown">
                                     <a href="tour-guide">Tour Guides</a>
-
                                 </li>
 
                                 <li>
                                     <a href="contact">Contact</a>
                                 </li>
+
                             </ul>
-                        </div><!-- /.navbar-collapse -->
+                        </div>
                         <div class="main-nav__right">
                             <ul class="navbar-nav ms-auto flex-row">
                                 <!-- Authentication Links -->
@@ -165,9 +160,7 @@ input::-webkit-inner-spin-button {
                                         </a>
                                     </li>
                                     <div>
-                                        <a class="" href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                          document.getElementById('logout-form').submit();">
+                                        <a class="" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                             <button class="btn btn-danger mr-5">
                                             {{   __('Logout') }}
                                             </button>
@@ -177,17 +170,14 @@ input::-webkit-inner-spin-button {
                                             @csrf
                                         </form>
 
-
                                     </div>
                                 @endguest
                             </ul>
-                        </div><!-- /.main-nav__right -->
+                        </div>
                     </div>
-                    <!-- /.container -->
                 </nav>
-            </header><!-- /.site-header -->
+            </header>
         </div>
-
         <main class="py-4">
             @yield('content')
         </main>

@@ -1,5 +1,16 @@
 @extends('layouts.app')
+@section('style')
 
+<style>
+
+input , select {
+    font-size: 14px !important;
+    padding-left: 12px !important;
+}
+
+</style>
+
+@endsection
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -68,10 +79,6 @@
                             </div>
                         </div>
 
-
-                        {{-- Hazem --}}
-
-
                             <div class="row  mb-4">
                             <label for="role" class=" yy mt-1 col-md-4 col-form-label text-md-end">Role</label>
                             <div class="col-md-6">
@@ -82,10 +89,8 @@
                             </div>
                         </div>
 
-                        {{-- Hazem  --}}
-
                         <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-6 offset-md-4"  style="margin-left: 38%;">
                                 <button type="submit" class="login-submit">
                                     {{ __('Register') }}
                                 </button>

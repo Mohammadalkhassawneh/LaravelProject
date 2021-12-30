@@ -47,7 +47,7 @@
                     <a class="d-block mt-3" href="{{route('userprofile.edit', Auth::user()->id)}}"><button class="btn text-black" style=" background-color: #7C859B;color: white; width:130px">Edit Profile</button></a>
                         @if(Auth::user()->role_type == 'guide')
                         <a class="d-block mt-3" href="{{route('guideTrip.create', Auth::user()->id)}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">Add Trip</button></a>
-                        <a class="d-block mt-3" href="{{route('reservations'), Auth::user()->id}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">show reservations</button></a>
+                        <a class="d-block mt-3" href="{{route('reservations'), Auth::user()->id}}"><button class="btn text-black" style="width:85px; background-color: #7C859B;color: white; width:130px">Show Reservations</button></a>
                         @endif
                 </div>
             </div>
@@ -93,7 +93,8 @@
                 <div class="trip mt-2">
                     <div class="container">
                         <!-- Trip Information -->
-                        @foreach ($reservations as $reservation)
+
+                        @forelse ($reservations as $reservation)
                         <div class="row">
                             <div class="col-5">
                                 <img src="{{asset("trip_images/" . $reservation->image)}}" alt="trip_image" class="trip_img">
@@ -107,7 +108,9 @@
                             </div>
                         </div>
                         <hr>
-                        @endforeach
+                        @empty
+                            <h2 style="margin-top:70px">You don't have any reservation, <a href="{{route("trips-list.index")}}">We wish you to book one</a></h2>
+                        @endforelse
                     </div>
                 </div>
             </div>

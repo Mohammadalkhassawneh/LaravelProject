@@ -61,24 +61,23 @@ span.page-link {
                         @foreach ($trips as $trip)
                         <div class="blog-two__single blog-one__single">
                             <div class="row">
-
                                 <div class="col-md-6">
                                     <div class="blog-one__image">
                                         <img src="{{asset('trip_images/'. $trip->image)}}" alt="">
                                         <a href="{{route('trips-details.show',$trip->id)}}"><i class="fa fa-long-arrow-alt-right"></i></a>
-                                    </div><!-- /.blog-one__image -->
-                                </div><!-- /.col-md-6 -->
+                                    </div>
+                                </div>
                                 <div class="col-md-6 d-flex">
                                     <div class="blog-two__content my-auto">
                                         <ul class="list-unstyled blog-one__meta">
                                             <li><a href="{{route('guide',$trip->guide->id)}}"><i class="far fa-user-circle"></i>{{$trip->guide->name}}</a></li>
                                             <li><a><i class="far fa-calendar-alt"></i>{{ $trip->date }}</a></li>
-                                        </ul><!-- /.list-unstyled blog-one__meta -->
+                                        </ul>
                                         <h3><a href="{{route('trips-details.show',$trip->id)}}">{{ $trip->name }}</a></h3>
                                         <p>{{ $trip->description}}</p>
                                         <a href="{{route('trips-details.show',$trip->id)}}" class="blog-two__link">Read More</a>
-                                    </div><!-- /.blog-two__content -->
-                                </div><!-- /.col-md-6 -->
+                                    </div>
+                                </div>
 
 
                             </div><!-- /.row -->
@@ -98,7 +97,7 @@ span.page-link {
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="sidebar">
-                            
+
 
                             <div class="sidebar__single sidebar__category">
                                 <h3 class="sidebar__title">All Categories</h3><!-- /.sidebar__title -->
