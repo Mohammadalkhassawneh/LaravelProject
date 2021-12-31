@@ -15,8 +15,8 @@
                 <div style="margin-left: 70px;" >
                     <a class="thm-btn rounded-pill" href="{{ route('trips-list.index') }}">Explore Now</a>
                 </div>
-            </div><!-- /.container -->
-        </section><!-- /.banner-two -->
+            </div>
+        </section>
 
         <section class="destinations-three">
             <div class="container">
