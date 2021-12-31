@@ -54,13 +54,14 @@ class ReservationController extends Controller
         ->join('trips', 'trips.id', '=', 'trip_id')
         ->join('users', 'users.id', '=', 'user_id')
         ->where('guide_id','=',$id)
-        ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+        ->orderBy('trip_user.id',"asc")
+        ->paginate(10, ['*','trips.name As tirp_name','trip_user.id As reservation_id']);
 
         $guide = User::find($id);
         $guide_trip = $guide->trip;
         return  view("publicSite.reservations",[
             'reservations'=>$reservations,
-            'guide_trip'  =>$guide_trip
+            'guide_trip'  =>$guide_trip,
         ]);
 
 
@@ -75,7 +76,8 @@ class ReservationController extends Controller
             ->join('trips', 'trips.id', '=', 'trip_id')
             ->join('users', 'users.id', '=', 'user_id')
             ->where('trips.name' , '=', $request->trip)
-            ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+            ->orderBy('trip_user.id',"asc")
+            ->paginate(10, ['*','trips.name As tirp_name','trip_user.id As reservation_id']);
             $guide = User::find($id);
             $guide_trip = $guide->trip;
         }

@@ -66,6 +66,8 @@
                         @endforeach
 
                       </tbody>
+
+                      {!! $reservations->appends($_GET)->links() !!}
                     </table>
                   </div>
             </div>
