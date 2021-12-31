@@ -1,8 +1,10 @@
 
 
+
+</div><!-- /.page-wrapper -->
 <div class="site-footer__bottom">
     <div class="container">
-        <p>@ All copyright 201, <a style="color:#FFA801">Tripo</a></p>
+        <p>@ All copyright 2022, <a style="color:#FFA801">Tripo</a></p>
         <div class="site-footer__social">
             <a href="https:\\facebook.com"><i class="fab fa-facebook-square"></i><!-- /.fab fa-facebook-square --></a>
             <a href="https:\\twitter.com"><i class="fab fa-twitter"></i><!-- /.fab fa-twitter --></a>
@@ -11,8 +13,6 @@
         </div><!-- /.site-footer__social -->
     </div><!-- /.container -->
 </div><!-- /.site-footer__bottom -->
-
-</div><!-- /.page-wrapper -->
 
 
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -31,14 +31,8 @@
         <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="assets/images/shapes/close-1-1.png" alt=""></a>
     </div><!-- /.side-menu__top -->
 
-
-    <nav class="mobile-nav__container">
-        <!-- content is loading via js -->
-    </nav>
     <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
     <div class="side-menu__content">
-        <p>Tripo is a premium wordpress theme for travel, tours, trips, adventures and a wide range of other tour agencies.</p>
-        <p><a href="mailto:needhelp@tripo.com">needhelp@tripo.com</a> <br> <a href="tel:888-999-0000">888 999 0000</a></p>
         <div class="side-menu__social">
             <a href="https:\\facebook.com"><i class="fab fa-facebook-square"></i></a>
             <a href="https:\\twitter.com"><i class="fab fa-twitter"></i></a>
@@ -90,5 +84,4 @@
 </body>
 
 
-<!-- Mirrored from layerdrops.com/tripo/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Dec 2021 13:11:05 GMT -->
 </html>

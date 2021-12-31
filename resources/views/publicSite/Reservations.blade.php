@@ -21,23 +21,20 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <div class="tab">
                 <form action="{{route('tripFilter' ,Auth::user()->id)}}" method="get">
                   <div class="table-data__tool-left">
-                      <div class="rs-select2--light rs-select2--md dropdown">
-                          <select class="js-select2 " name="trip">
-                            <option selected="selected">All Trips</option>
-
+                      <div class="rs-select2--light rs-select2--md dropdown d-flex mb-4">
+                          <select class="js-select2 mr-2 " name="trip">
+                            <option selected>All Trips</option>
                             @foreach($guide_trip as $guide_trips)
-                            {{-- <h1>dsddssddsdssd</h1> --}}
-                              <option selected="">{{$guide_trips->name}}</option>
-                             {{-- <h3>{{$guide_trips->trip_name}}</h3>  --}}
+                              <option>{{$guide_trips->name}}</option>
                              @endforeach
                           </select>
                           <div class="dropDownSelect2"></div>
+                        <button class="btn btn-primary" type="submit">Filter</button>
                       </div>
-                      <button class="btn btn-primary" type="submit">Filter</button>
                        </form>
+                       <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                         <tr>
@@ -48,36 +45,29 @@
                           <th>Trip Name</th>
                           <th>Booking Date</th>
                           <th>Price</th>
-                          {{-- <th>Status</th> --}}
                         </tr>
                       </thead>
                       <tbody>
                         @if($reservations->count() == 0)
-                      </tbody>
-                    </table>
                     <h1 class=" text-center">No Reserevations</h1>
                         {{-- <td>No Reservations</td> --}}
                         @endif
-                       
+
                          @foreach($reservations as $reservation)
                         <tr>
                           <td>{{$reservation->reservation_id}}</td>
-
-
-                          <td scope="row">{{$reservation->name}}</td>
-
+                          <td>{{$reservation->name}}</td>
                           <td>{{$reservation->email}}</td>
                           <td>{{$reservation->phone}}</td>
-                             <td>{{$reservation->tirp_name}}</td>
-                             <td>{{$reservation->booking_date}}</td>
+                          <td>{{$reservation->tirp_name}}</td>
+                          <td>{{$reservation->booking_date}}</td>
                           <td>{{$reservation->price . " JD"}}</td>
-                          {{-- <td><a href="#" class="btn btn-success">Progress</a></td> --}}
                         </tr>
                         @endforeach
-                   
+
                       </tbody>
                     </table>
-                </div>
+                  </div>
             </div>
         </div>
     </div>
