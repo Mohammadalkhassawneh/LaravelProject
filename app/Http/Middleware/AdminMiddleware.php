@@ -16,13 +16,14 @@ class AdminMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if(Auth::user() == null){
-             return redirect('home')->with('error' , 'only admin can access');
-        }
-        else if(Auth::user()->role_type == 'admin'){
-        return $next($request);
+        public function handle(Request $request, Closure $next)
+        {
+            if(Auth::user() == null){
+                return redirect('home')->with('error' , 'only admin can access');
+            }
+            else if(Auth::user()->role_type == 'admin'){
+            return $next($request);
+            }
+
         }
     }
-}

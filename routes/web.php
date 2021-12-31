@@ -70,3 +70,6 @@ Route::get('/contact', [CategoryController::class,'contact'])->name("contact");
 //reservation route
 
 Route::get('/reservations', [ReservationController::class, 'show'])->name('reservations');
+Route::get('/reservation.{id}', [ReservationController::class, 'getGuide'])->name('guideReservations');
+Route::get('/reservations.{id}', [ReservationController::class, 'tripFilter'])->name('tripFilter');
+

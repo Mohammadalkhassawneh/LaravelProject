@@ -16,11 +16,19 @@ class ReservationController extends Controller
         ->join('trips', 'trips.id', '=', 'trip_id')
         ->join('users', 'users.id', '=', 'user_id')
         ->where('guide_id','=',Auth::user()->id)
+
         ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+  
+    //    $res= $reservation->booking_date;
+// select * from trip_user INNER join trips on (trip_id = trips.id) where (trips.guide_id = 4);
+        // dd($reservations);
+
+    
 
 // select * from trip_user INNER join trips on (trip_id = trips.id) INNER JOIN users on (trips.guide_id = users.id) where (trips.guide_id = 4);
 
         return view('publicsite.reservations', compact('reservations'));
+
     }
     /**
      * Display a listing of the resource.
@@ -30,6 +38,8 @@ class ReservationController extends Controller
     public function index()
     {
         $users = User::all();
+     
+      
         return  view("admin.reservation",compact('users'));
     }
 
@@ -44,6 +54,61 @@ class ReservationController extends Controller
 
     }
 
+    public function getGuide($id)
+    {
+        //
+        
+        $reservations = DB::table('trip_user')
+        ->join('trips', 'trips.id', '=', 'trip_id')
+        ->join('users', 'users.id', '=', 'user_id')
+        ->where('guide_id','=',$id)
+        ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+
+
+       
+        $guide = User::find($id);
+        $guide_trip = $guide->trip;
+        // dd($guide_trip);
+        return  view("publicSite.reservations",[
+            'reservations'=>$reservations,
+            'guide_trip'  =>$guide_trip
+        ]);
+
+
+    }
+    public function tripFilter(Request $request , $id) {
+
+        if($request->trip == "All Trips") {
+            $reservations =   DB::table('trip_user')
+            ->join('trips', 'trips.id', '=', 'trip_id')
+            ->join('users', 'users.id', '=', 'user_id')
+            // ->where('guide_id','=',Auth::user()->id)
+            ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+            $guide = User::find($id);
+            $guide_trip = $guide->trip; 
+            
+            
+
+        }
+        else {
+            $reservations =   DB::table('trip_user')
+            ->join('trips', 'trips.id', '=', 'trip_id')
+            ->join('users', 'users.id', '=', 'user_id')
+            // ->where('guide_id','=',Auth::user()->id)
+
+            ->where('trips.name' , '=', $request->trip)
+            ->get(['*','trips.name As tirp_name','trip_user.id As reservation_id']);
+            // dd($reservations);
+            $guide = User::find($id);
+
+
+            $guide_trip = $guide->trip; 
+
+        }
+        return  view("publicSite.reservations", compact('reservations', 'guide', 'guide_trip'));
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -54,7 +119,7 @@ class ReservationController extends Controller
     {
         //
        $trip = Trip::find($request->trip_id);
-         $trip->user()->attach([//<================================
+         $trip->user()->attach([//
             [
                'trip_id' => $request->trip_id,
                'user_id' => Auth::id(),

@@ -61,7 +61,7 @@
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">Price</label>
-                                            <input type="number" id="price" name="price" value="{{old('price')}}" class="form-control">
+                                            <input type="number" min="0" id="price" name="price" value="{{old('price')}}" class="form-control">
                                         </div>
                                         <div class="mb-3">
                                             <label for="" class="form-label">Date Of Trip</label>

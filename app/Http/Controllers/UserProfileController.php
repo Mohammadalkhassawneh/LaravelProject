@@ -88,7 +88,7 @@ class UserProfileController extends Controller
     {
 
          $request->validate([
-            'name' => 'required',
+            'name' => 'required ',
             'email' => 'required',
             'password' => 'required',
             'phone' => 'required',
